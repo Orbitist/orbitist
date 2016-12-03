@@ -12,7 +12,7 @@ Template.storyEdit.events({
     Stories.update(currentStoryId, {$set: storyProperties}, function(error) {
       if (error) {
         // display the error to the user
-        alert(error.reason);
+        throwError(error.reason);
       } else {
         Router.go('storyPage', {_id: currentStoryId});
       }
