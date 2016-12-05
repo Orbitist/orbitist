@@ -1,4 +1,4 @@
-.grid-block, .main, .story, .comments li, .comment-form {
+.grid-block, .main, .story, .tiles li, .tile-form {
   background: #fff;
   border-radius: 3px;
   padding: 10px;
@@ -77,18 +77,18 @@ body {
     float: right;
     margin-top: 7px; }
 
-.comments {
+.tiles {
   list-style-type: none;
   margin: 0; }
-  .comments li h4 {
+  .tiles li h4 {
     font-size: 16px;
     margin: 0; }
-    .comments li h4 .date {
+    .tiles li h4 .date {
       font-size: 12px;
       font-weight: normal; }
-    .comments li h4 a {
+    .tiles li h4 a {
       font-size: 12px; }
-  .comments li p:last-child {
+  .tiles li p:last-child {
     margin-bottom: 0; }
 
 .dropdown-menu span {
