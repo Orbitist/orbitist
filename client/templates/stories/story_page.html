@@ -7,5 +7,11 @@
         {{> tileItem}}
       {{/each}}
     </ul>
+
+    {{#if currentUser}}
+      {{> tileSubmit}}
+    {{else}}
+      <p>Please log in to add tiles.</p>
+    {{/if}}
   </div>
 </template>
