@@ -3,5 +3,6 @@ Meteor.publish('stories', function() {
 });
 
 Meteor.publish('tiles', function() {
-  return Tiles.find();
+  check(storyId, String);
+  return Tiles.find({storyId: storyId});
 });
