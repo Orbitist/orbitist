@@ -18,7 +18,7 @@ Template.tileSubmit.events({
     var $body = $(e.target).find('[name=body]');
     var tile = {
       body: $body.val(),
-      postId: template.data._id
+      storyId: template.data._id
     };
 
     var errors = {};
