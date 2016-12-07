@@ -1,5 +1,9 @@
-Meteor.publish('stories', function() {
-  return Stories.find();
+Meteor.publish('stories', function(options) {
+  check(options, {
+    sort: Object,
+    limit: Number
+  });
+  return Stories.find({}, options);
 });
 
 Meteor.publish('tiles', function(storyId) {
