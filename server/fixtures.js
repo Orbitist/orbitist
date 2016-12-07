@@ -55,7 +55,7 @@ if (Stories.find().count() === 0) {
     tilesCount: 0
   });
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 30; i++) {
     Stories.insert({
       title: 'Test post #' + i,
       author: sacha.profile.name,
