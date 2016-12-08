@@ -10,11 +10,7 @@
   -moz-transition: all 300ms 0ms ease-in;
   -o-transition: all 300ms 0ms ease-in;
   transition: all 300ms 0ms ease-in;
-  background: url(http://orbitist.s3.amazonaws.com/_toplevel/images/backgrounds/cover.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #eee;
 }
 
 .login-form {
