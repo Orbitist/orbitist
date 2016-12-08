@@ -1,8 +1,10 @@
 <template name="storiesList">
   <div class="stories">
-    {{#each stories}}
-      {{> storyItem}}
-    {{/each}}
+    <div class="wrapper">
+      {{#each stories}}
+        {{> storyItem}}
+      {{/each}}
+    </div>
 
     {{#if nextPath}}
       <a class="load-more" href="{{nextPath}}">Load more</a>
