@@ -10,12 +10,16 @@
   -moz-transition: all 300ms 0ms ease-in;
   -o-transition: all 300ms 0ms ease-in;
   transition: all 300ms 0ms ease-in;
-  background-color: #eee;
+  background: url(http://orbitist.s3.amazonaws.com/_toplevel/images/backgrounds/cover.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .login-form {
   margin: 0 auto;
-  margin-top: calc(50vh - 160px);
+  margin-top: 100px;
   width: 300px;
   padding: 20px;
   background-color: white;
@@ -39,8 +43,9 @@
   position: fixed;
   z-index: 9;
   top: 20px;
-  left: 20px;
-  width: 300px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
   line-height: 2em;
   font-size: 14px;
 }
