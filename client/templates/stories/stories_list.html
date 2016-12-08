@@ -1,4 +1,9 @@
 <template name="storiesList">
+
+  {{#unless currentUser }}
+    {{> loginButtons}}
+  {{/unless}}
+
   <div class="stories">
     <div class="wrapper">
       {{#each stories}}
