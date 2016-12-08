@@ -1,9 +1,4 @@
 <template name="storiesList">
-
-  {{#unless currentUser }}
-    {{> loginButtons}}
-  {{/unless}}
-
   <div class="stories">
     <div class="wrapper">
       {{#each stories}}
@@ -19,4 +14,9 @@
       {{/unless}}
     {{/if}}
   </div>
+
+  {{#unless currentUser }}
+    <p class="login-heading lead"><img src="http://static1.squarespace.com/static/55a95d75e4b0ca41a09fafe7/t/55ad2769e4b0ef0d23b4e452/1481197561871/?format=1500w"/> Sign in to Orbitist</p>
+    {{> loginButtons}}
+  {{/unless}}
 </template>
