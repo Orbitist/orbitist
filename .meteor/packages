@@ -24,11 +24,9 @@ iron:router
 sacha:spin
 stylus
 npm-bcrypt
-accounts-password
 check
 audit-argument-checks
 iron:middleware-stack
 mrt:jquery-masonry
 fortawesome:fontawesome
-accounts-ui-unstyled
-jamielob:accounts-ui-no-dropdown
+accounts-password
