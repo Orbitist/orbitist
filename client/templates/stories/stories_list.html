@@ -1,22 +1,26 @@
 <template name="storiesList">
-  <div class="stories">
-    <div class="wrapper">
-      {{#each stories}}
-        {{> storyItem}}
-      {{/each}}
-    </div>
+  {{#if loggingIn}}
+    {{> spinner}}
+  {{else}}
+    {{#if currentUser}}
+      <div class="stories">
+        <div class="wrapper">
+          {{#each stories}}
+            {{> storyItem}}
+          {{/each}}
+        </div>
 
-    {{#if nextPath}}
-      <a class="load-more" href="{{nextPath}}">Load more</a>
+        {{#if nextPath}}
+          <a class="load-more" href="{{nextPath}}">Load more</a>
+        {{else}}
+          {{#unless ready}}
+            {{> spinner}}
+          {{/unless}}
+        {{/if}}
+      </div>
     {{else}}
-      {{#unless ready}}
-        {{> spinner}}
-      {{/unless}}
+      {{> loginScreen}}
     {{/if}}
-  </div>
+  {{/if}}
 
-  {{#unless currentUser }}
-    {{> loginScreen}}
-  {{/unless}}
-  
 </template>
