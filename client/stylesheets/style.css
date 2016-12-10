@@ -2,6 +2,13 @@ body {
   color: #333;
 }
 
+a {
+  color: #1E5D81;
+}
+a:hover {
+  color: #2675a2;
+}
+
 #main {
   position: relative;
 }
