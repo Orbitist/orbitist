@@ -30,11 +30,6 @@
   width: 100%;
 }
 
-.login-form label {
-  font-weight: lighter;
-  display: block;
-}
-
 .login-heading {
   position: fixed;
   z-index: 9;
@@ -48,4 +43,9 @@
 .login-heading img {
   width: 30px;
   border-radius: 3px;
+}
+
+#email2 {
+  position: fixed;
+  left: -3000px;
 }

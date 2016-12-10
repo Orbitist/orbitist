@@ -4,7 +4,11 @@ if (Meteor.isClient) {
       event.preventDefault();
       var usernameVar = event.target.registerUsername.value;
       var emailVar = event.target.registerEmail.value;
+      var email2Var = event.target.registerEmail2.value;
       var passwordVar = event.target.registerPassword.value;
+      if (email2Var.length > 0) {
+        return throwError("Please pick a different email.");
+      };
       if (usernameVar.length < 1) {
         return throwError("You must enter a username.");
       };
