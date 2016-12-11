@@ -1,0 +1,17 @@
+.navbar-default {
+  background-color: white;
+  border-color: #eee;
+}
+
+.navbar-collapse {
+  border-color: #eee;
+}
+
+.navbar-brand {
+  padding: 10px 15px;
+}
+
+.navbar-brand img {
+  width: 30px;
+  border-radius: 3px;
+}
