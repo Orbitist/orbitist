@@ -18,12 +18,11 @@ Template.storyEdit.events({
     var currentStoryId = this._id;
 
     var storyProperties = {
-      url: $(e.target).find('[name=url]').val(),
       title: $(e.target).find('[name=title]').val()
     }
 
     var errors = validateStory(storyProperties);
-    if (errors.title || errors.url)
+    if (errors.title)
       return Session.set('storyEditErrors', errors);
 
     Stories.update(currentStoryId, {$set: storyProperties}, function(error) {

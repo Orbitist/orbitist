@@ -27,6 +27,7 @@ npm-bcrypt
 check
 audit-argument-checks
 iron:middleware-stack
-mrt:jquery-masonry
 fortawesome:fontawesome
 accounts-password
+mrt:jquery-masonry
+mrt:jquery-imagesloaded

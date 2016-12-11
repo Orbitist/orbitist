@@ -4,14 +4,11 @@
   {{else}}
     {{#if currentUser}}
       <div class="stories">
-        <div class="wrapper">
-          {{#each stories}}
-            {{> storyItem}}
-          {{/each}}
-        </div>
-
+        {{#each stories}}
+          {{> storyItem}}
+        {{/each}}
         {{#if nextPath}}
-          <a class="load-more" href="{{nextPath}}">Load more</a>
+          <a class="load-more btn btn-default" href="{{nextPath}}">Load more</a>
         {{else}}
           {{#unless ready}}
             {{> spinner}}

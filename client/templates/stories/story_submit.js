@@ -16,7 +16,6 @@ Template.storySubmit.events({
     e.preventDefault();
 
     var story = {
-      url: $(e.target).find('[name=url]').val(),
       title: $(e.target).find('[name=title]').val()
     };
 
