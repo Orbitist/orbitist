@@ -29,5 +29,3 @@ audit-argument-checks
 iron:middleware-stack
 fortawesome:fontawesome
 accounts-password
-mrt:jquery-masonry
-mrt:jquery-imagesloaded
