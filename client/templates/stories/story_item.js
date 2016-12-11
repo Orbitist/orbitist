@@ -3,6 +3,3 @@ Template.storyItem.helpers({
     return this.userId === Meteor.userId();
   }
 });
-Template.storyItem.onRendered(function() {
-  $grid.masonry('reloadItems')
-});
