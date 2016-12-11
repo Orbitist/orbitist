@@ -4,7 +4,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  z-index: 8;
+  z-index: 1001;
   -webkit-transition: all 300ms 0ms;
   -moz-transition: all 300ms 0ms ease-in;
   -o-transition: all 300ms 0ms ease-in;
