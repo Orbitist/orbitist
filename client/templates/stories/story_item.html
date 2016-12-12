@@ -1,13 +1,7 @@
 <template name="storyItem">
   <div class="story">
-    <div class="story-content">
-      <p>{{title}}</p>
-      <p>
-        submitted by {{author}}
-        <a href="{{pathFor 'storyPage'}}">{{tilesCount}} tiles</a>
-        {{#if ownStory}}<a href="{{pathFor 'storyEdit'}}">Edit</a>{{/if}}
-      </p>
-    </div><!-- story-content -->
-    <a href="{{pathFor 'storyPage'}}" class="discuss btn btn-default">View Story</a>
+    {{#if ownStory}}<small><a href="{{pathFor 'storyEdit'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
+    <p class="lead"><small>by {{author}}</small><br><a href="{{pathFor 'storyPage'}}">{{title}}</a></p>
+    <p>{{tilesCount}} tiles</p>
   </div>
 </template>
