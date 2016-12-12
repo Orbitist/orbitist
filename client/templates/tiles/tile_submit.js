@@ -15,15 +15,15 @@ Template.tileSubmit.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-    var $body = $(e.target).find('[name=body]');
+    var $text = $(e.target).find('[name=text]');
     var tile = {
-      body: $body.val(),
+      text: $text.val(),
       storyId: template.data._id
     };
 
     var errors = {};
-    if (! tile.body) {
-      errors.body = "Please write some content";
+    if (! tile.text) {
+      errors.text = "Please write some content";
       return Session.set('tileSubmitErrors', errors);
     }
 
@@ -31,7 +31,7 @@ Template.tileSubmit.events({
       if (error){
         throwError(error.reason);
       } else {
-        $body.val('');
+        $text.val('');
       }
     });
   }

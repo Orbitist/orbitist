@@ -26,7 +26,7 @@ if (Stories.find().count() === 0) {
     userId: tom._id,
     author: tom.profile.name,
     submitted: new Date(now - 5 * 3600 * 1000),
-    body: 'Interesting project Sacha, can I get involved?'
+    text: 'Interesting project Sacha, can I get involved?'
   });
 
   Tiles.insert({
@@ -34,7 +34,7 @@ if (Stories.find().count() === 0) {
     userId: sacha._id,
     author: sacha.profile.name,
     submitted: new Date(now - 3 * 3600 * 1000),
-    body: 'You sure can Tom!'
+    text: 'You sure can Tom!'
   });
 
   Stories.insert({

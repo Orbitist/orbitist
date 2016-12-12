@@ -9,6 +9,11 @@ a:hover {
   color: #2675a2;
 }
 
+form {
+  max-width: 640px;
+  margin: auto;
+}
+
 #main {
   position: relative;
   width: 100%;
