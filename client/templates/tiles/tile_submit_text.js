@@ -1,8 +1,8 @@
-Template.tileSubmit.onCreated(function() {
+Template.tileSubmitText.onCreated(function() {
   Session.set('tileSubmitErrors', {});
 });
 
-Template.tileSubmit.helpers({
+Template.tileSubmitText.helpers({
   errorMessage: function(field) {
     return Session.get('tileSubmitErrors')[field];
   },
@@ -11,12 +11,13 @@ Template.tileSubmit.helpers({
   }
 });
 
-Template.tileSubmit.events({
+Template.tileSubmitText.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
     var $text = $(e.target).find('[name=text]');
     var tile = {
+      tileType: 'text',
       text: $text.val(),
       storyId: template.data._id
     };

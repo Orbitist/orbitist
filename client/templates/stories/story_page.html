@@ -9,7 +9,17 @@
     </ul>
 
     {{#if currentUser}}
-      {{> tileSubmit}}
+      <a class="btn btn-primary" id="tileTypeText">Text</a>
+      <a class="btn btn-primary" id="tileTypeImage">Image</a>
+
+      {{#if isTileType 'text'}}
+        {{> tileSubmitText}}
+      {{/if}}
+
+      {{#if isTileType 'image'}}
+        <p>Image form here</p>
+      {{/if}}
+
     {{else}}
       <p>Please log in to add tiles.</p>
     {{/if}}
