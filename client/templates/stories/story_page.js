@@ -4,7 +4,6 @@ Template.storyPage.helpers({
   }
 });
 
-
 // Set session variable for which tile form to use
 Template.storyPage.created = function() {
   Session.setDefault('tileType', 'text');
