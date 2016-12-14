@@ -27,21 +27,19 @@ Template.tileEditText.events({
 
     Tiles.update(currentTileId, {$set: tileProperties}, function(error) {
       if (error) {
-        // display the error to the user
-        throwError(error.reason);
-      } else {
-        Router.go('storiesList');
+        return throwError(error.reason);
       }
     });
+    Router.go('storyPage', {_id: this.storyId});
   },
 
   'click .delete': function(e) {
     e.preventDefault();
 
-    if (confirm("Delete this story?")) {
+    if (confirm("Delete this tile?")) {
       var currentTileId = this._id;
       Tiles.remove(currentTileId);
-      Router.go('storiesList');
+      Router.go('storyPage', {_id: this.storyId});
     }
   }
 });

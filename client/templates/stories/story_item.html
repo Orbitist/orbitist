@@ -1,7 +1,6 @@
 <template name="storyItem">
   <div class="story">
     {{#if ownStory}}<small><a href="{{pathFor 'storyEdit'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
-    <p class="lead"><small>by {{author}}</small><br><a href="{{pathFor 'storyPage'}}">{{title}}</a></p>
-    <p>{{tilesCount}} tiles</p>
+    <p class="lead"><a href="{{pathFor 'storyPage'}}">{{title}}</a><small> by {{author}}</small></p>
   </div>
 </template>

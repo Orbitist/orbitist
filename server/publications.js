@@ -15,3 +15,8 @@ Meteor.publish('tiles', function(storyId) {
   check(storyId, String);
   return Tiles.find({storyId: storyId});
 });
+
+Meteor.publish('singleTile', function(id) {
+  check(id, String)
+  return Tiles.find(id);
+});
