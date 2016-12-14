@@ -1,13 +1,13 @@
 Template.tileEditText.onCreated(function() {
-  Session.set('tileEditErrors', {});
+  Session.set('tileEditTextErrors', {});
 });
 
 Template.tileEditText.helpers({
   errorMessage: function(field) {
-    return Session.get('tileEditErrors')[field];
+    return Session.get('tileEditTextErrors')[field];
   },
   errorClass: function (field) {
-    return !!Session.get('tileEditErrors')[field] ? 'has-error' : '';
+    return !!Session.get('tileEditTextErrors')[field] ? 'has-error' : '';
   }
 });
 
@@ -23,14 +23,14 @@ Template.tileEditText.events({
 
     var errors = validateTile(tileProperties);
     if (errors.text)
-      return Session.set('tileEditErrors', errors);
+      return Session.set('tileEditTextErrors', errors);
 
     Tiles.update(currentTileId, {$set: tileProperties}, function(error) {
       if (error) {
         // display the error to the user
         throwError(error.reason);
       } else {
-        Router.go('storyPage', {_id: this.storyId});
+        Router.go('storiesList');
       }
     });
   },
@@ -38,10 +38,10 @@ Template.tileEditText.events({
   'click .delete': function(e) {
     e.preventDefault();
 
-    if (confirm("Delete this tile?")) {
+    if (confirm("Delete this story?")) {
       var currentTileId = this._id;
       Tiles.remove(currentTileId);
-      Router.go('storyPage', {_id: this.storyId});
+      Router.go('storiesList');
     }
   }
 });
