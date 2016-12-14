@@ -4,6 +4,12 @@ Template.tileMenu.events({
   },
   'click #tileTypeImage': function() {
     return Session.set('tileType', 'image');
+  },
+  'click .popup-screen': function(e) {
+    var container = $('.popup-menu');
+    if (!container.is(e.target)&& container.has(e.target).length === 0) {
+      return Session.set('tileMenu', 'false');
+    }
   }
 });
 
