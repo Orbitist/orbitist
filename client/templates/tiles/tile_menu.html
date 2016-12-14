@@ -1,0 +1,17 @@
+<template name="tileMenu">
+  <div class="popup-screen">
+    <div class="popup-menu">
+      <a class="btn btn-primary" id="tileTypeText">Text</a>
+      <a class="btn btn-primary" id="tileTypeImage">Image</a>
+
+      {{#if isTileType 'text'}}
+        {{> tileSubmitText}}
+      {{/if}}
+
+      {{#if isTileType 'image'}}
+        <p>Image form here</p>
+      {{/if}}
+
+    </div><!-- popup-menu -->
+  </div><!-- popup-screen -->
+</template>

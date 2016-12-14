@@ -5,21 +5,15 @@ Template.storyPage.helpers({
 });
 
 // Set session variable for which tile form to use
-Template.storyPage.created = function() {
-  Session.setDefault('tileType', 'text');
-};
 
 Template.storyPage.events({
-  'click #tileTypeText': function() {
-    return Session.set('tileType', 'text');
-  },
-  'click #tileTypeImage': function() {
-    return Session.set('tileType', 'image');
+  'click .create-tile': function() {
+    return Session.set('tileMenu', 'true');
   }
 });
 
 Template.storyPage.helpers({
-  isTileType: function(n) {
-    return Session.equals('tileType', n);
+  showTileMenu: function(n) {
+    return Session.equals('tileMenu', n);
   }
 });

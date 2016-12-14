@@ -33,6 +33,7 @@ Template.tileSubmitText.events({
         throwError(error.reason);
       } else {
         $text.val('');
+        Session.set('tileMenu', 'false');
       }
     });
   }
