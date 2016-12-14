@@ -1,0 +1,14 @@
+<template name="tileEditText">
+  <form name="tile" class="tile-form form">
+    <div class="form-group {{errorClass 'body'}}">
+        <div class="controls">
+            <label for="text">Create Text</label>
+            <textarea name="text" id="text" class="form-control" rows="5" value="{{text}}"></textarea>
+            <span class="help-block">{{errorMessage 'text'}}</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Update tile</button>
+    <hr/>
+    <a class="btn btn-danger delete" href="#">Delete tile</a>
+  </form>
+</template>
