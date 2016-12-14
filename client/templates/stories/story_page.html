@@ -2,11 +2,9 @@
   <div class="story-page page">
     {{> storyItem}}
 
-    <ul class="tiles">
-      {{#each tiles}}
-        {{> tileItem}}
-      {{/each}}
-    </ul>
+    {{#each tiles}}
+      {{> tileItem}}
+    {{/each}}
 
     {{#if currentUser}}
       <p><a href="#" class="create-tile"><i class="fa fa-plus-circle" aria-hidden="true"></i> Create a tile</a></p>
