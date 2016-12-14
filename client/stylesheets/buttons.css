@@ -1,3 +1,7 @@
 .btn {
     border: none !important;
 }
+
+.btn-add {
+  text-align: center;
+}
