@@ -1,3 +1,23 @@
+Template.storiesList.events({
+  'click .create-story': function() {
+    return Session.set('storyMenu', 'true');
+  },
+  'click .popup-screen': function(e) {
+    var container = $('.popup-menu');
+    if (!container.is(e.target)&& container.has(e.target).length === 0) {
+      return Session.set('storyMenu', 'false');
+    }
+  }
+});
+
+Template.storiesList.helpers({
+  showStoryMenu: function(n) {
+    return Session.equals('storyMenu', n);
+  }
+});
+
+
+
 // This was the 'Runner' Animation process
 
 // Template.storiesList.onRendered(function () {

@@ -28,6 +28,7 @@ Template.storySubmit.events({
       if (error)
         return throwError(error.reason);
 
+      Session.set('storyMenu', 'false');
       Router.go('storyPage', {_id: result._id});
     });
   }
