@@ -30,3 +30,4 @@ iron:middleware-stack
 fortawesome:fontawesome
 accounts-password
 sjors:meteor-masonry
+mrt:jquery-ui

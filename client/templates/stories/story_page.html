@@ -2,9 +2,13 @@
   <div class="story-page page">
     {{> storyItem}}
 
-    {{#each tiles}}
-      {{> tileItem}}
-    {{/each}}
+    <div id="tile-items">
+      {{#each tiles}}
+        <div class="tile-item">
+          {{> tileItem}}
+        </div><!-- tileItem -->
+      {{/each}}
+    </div><!-- #items -->
 
     {{#if currentUser}}
       {{#if ownStory}}
