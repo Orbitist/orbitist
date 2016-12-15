@@ -7,14 +7,12 @@
     {{/each}}
 
     {{#if currentUser}}
-      <p class="btn-add"><a href="#" class="create-tile"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a tile</a></p>
-
-      {{#if showTileMenu 'true'}}
-        {{> tileMenu}}
-      {{/if}}
-
-    {{else}}
-      <p>Please log in to add tiles.</p>
+      {{#if ownStory}}
+        <p class="btn-add"><a href="#" class="create-tile"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a tile</a></p>
+        {{#if showTileMenu 'true'}}
+          {{> tileMenu}}
+        {{/if}}
+      {{/if}}<!-- if ownStory -->
     {{/if}}
   </div>
 </template>

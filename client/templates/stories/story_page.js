@@ -15,5 +15,8 @@ Template.storyPage.events({
 Template.storyPage.helpers({
   showTileMenu: function(n) {
     return Session.equals('tileMenu', n);
+  },
+  ownStory: function() {
+    return this.userId === Meteor.userId();
   }
 });
