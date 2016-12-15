@@ -19,7 +19,8 @@ Template.tileSubmitText.events({
     var tile = {
       tileType: 'text',
       text: $text.val(),
-      storyId: template.data._id
+      storyId: template.data._id,
+      rank: 1
     };
 
     var errors = {};
