@@ -21,7 +21,9 @@ Template.storyPage.helpers({
 //Once the Template is rendered, run this function which
 //  sets up JQuery UI's sortable functionality
 Template.storyPage.rendered = function() {
-  if (!Meteor.userId()) {return}
+  if (!Meteor.userId()) {return};
+  var pageStory= Blaze.getData($('.story')[0]);
+  if (pageStory.userId !== Meteor.userId()){return};
    this.$('#tile-items').sortable({
        stop: function(e, ui) {
          // get the dragged html element and the one before
