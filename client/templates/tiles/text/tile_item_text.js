@@ -1,4 +1,4 @@
-Template.tileItem.helpers({
+Template.tileItemText.helpers({
   submittedText: function() {
     return this.submitted.toString();
   },
