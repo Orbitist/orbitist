@@ -15,12 +15,20 @@ Template.tileSubmitText.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
+    var topTile = Tiles.findOne({storyId: template.data._id}, {sort: {rank: 1}});
+    if (topTile) {
+      var topRank = topTile.rank - 1;
+    } else {
+      var topRank = 1;
+    }
+    alert(topRank);
+
     var $text = $(e.target).find('[name=text]');
     var tile = {
       tileType: 'text',
       text: $text.val(),
       storyId: template.data._id,
-      rank: 1
+      rank: topRank
     };
 
     var errors = {};
