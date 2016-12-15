@@ -21,7 +21,6 @@ Template.tileSubmitText.events({
     } else {
       var topRank = 1;
     }
-    alert(topRank);
 
     var $text = $(e.target).find('[name=text]');
     var tile = {
