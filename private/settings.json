@@ -1,7 +1,7 @@
 {
   "galaxy.meteor.com": {
      "env": {
-       "ROOT_URL": "http://orbitist.meteorapp.com",
+       "ROOT_URL": "https://go.orbitist.com",
        "MONGO_URL": "mongodb://orbitistdbadmin:76wpAn2o6tp8xo@ds133358.mlab.com:33358/orbitist_mongodb"
      }
    }
