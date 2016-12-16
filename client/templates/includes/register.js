@@ -6,12 +6,17 @@ if (Meteor.isClient) {
       var emailVar = event.target.registerEmail.value;
       var email2Var = event.target.registerEmail2.value;
       var passwordVar = event.target.registerPassword.value;
+      var secretRegister = event.target.registerSecret.value;
       if (email2Var.length > 0) {
         return throwError("Please pick a different email.");
       };
       if (usernameVar.length < 1) {
         return throwError("You must enter a username.");
       };
+      if (secretRegister !== 'Qros9cn9') {
+        return throwError("Wrong code fool!");
+      };
+
       Accounts.createUser({
         username: usernameVar,
         email: emailVar,
