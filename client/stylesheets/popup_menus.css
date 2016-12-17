@@ -6,6 +6,7 @@
   width: 100%;
   z-index: 1001;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
 }
 
 .popup-menu {
