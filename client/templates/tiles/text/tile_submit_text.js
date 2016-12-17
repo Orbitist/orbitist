@@ -27,6 +27,8 @@ Template.tileSubmitText.events({
       tileType: 'text',
       text: $text.val(),
       storyId: template.data._id,
+      imageUrl: '',
+      imageId: '',
       rank: topRank
     };
 

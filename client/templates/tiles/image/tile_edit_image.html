@@ -1,0 +1,14 @@
+<template name="tileEditImage">
+  <form>
+    <div class="form-group {{errorClass 'image'}}">
+      <label class="control-label" for="image">Image</label>
+      <div class="controls">
+        <input type="file" name="image" id="image" class="form-control" accept="image/*" value="{{image}}">
+        <span class="help-block">{{errorMessage 'image'}}</span>
+      </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+    <hr/>
+    <a class="btn btn-danger delete" href="#">Delete tile</a>
+  </form>
+</template>

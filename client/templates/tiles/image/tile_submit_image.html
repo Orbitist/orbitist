@@ -1,0 +1,16 @@
+<template name="tileSubmitImage">
+  <form name="tile" class="tile-form form">
+    <div class="form-group {{errorClass 'image'}}">
+        {{#if uploadingImage 'true'}}
+          {{> loading}}
+        {{/if}}
+        <div class="controls">
+            <label for="image">Upload Image</label>
+            <div class="imageUploadThumb"></div>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
+            <span class="help-block">{{errorMessage 'image'}}</span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Tile</button>
+  </form>
+</template>
