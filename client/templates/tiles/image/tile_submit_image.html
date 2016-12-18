@@ -1,4 +1,5 @@
 <template name="tileSubmitImage">
+  <hr>
   <form name="tile" class="tile-form form">
     <div class="form-group {{errorClass 'image'}}">
         {{#if uploadingImage 'true'}}
@@ -9,8 +10,9 @@
             <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
             <span class="help-block">{{errorMessage 'image'}}</span>
             <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your image..."></textarea>
+            {{> tileLocationControl}}
         </div>
     </div>
-    <button type="submit" class="btn btn-lg btn-primary">Add Tile</button>
+    {{> tileSubmitButton}}
   </form>
 </template>
