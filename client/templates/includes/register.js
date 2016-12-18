@@ -13,7 +13,7 @@ if (Meteor.isClient) {
       if (usernameVar.length < 1) {
         return throwError("You must enter a username.");
       };
-      if (secretRegister !== 'go2mordor') {
+      if (secretRegister !== 'leavetheshire') {
         return throwError("Wrong code fool!");
       };
 
