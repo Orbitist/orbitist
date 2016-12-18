@@ -18,3 +18,8 @@
   background-color: white;
   border-radius: 3px;
 }
+
+/* Google autocomplete above popup-menu */
+.pac-container {
+    z-index: 1051 !important;
+}
