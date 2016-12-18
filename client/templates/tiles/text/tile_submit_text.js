@@ -47,6 +47,7 @@ Template.tileSubmitText.events({
       }
     });
   }
+
 });
 
 Template.tileSubmitText.onRendered(function() {

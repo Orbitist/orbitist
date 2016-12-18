@@ -4,15 +4,52 @@
         <div class="controls">
             <textarea name="text" id="text" class="form-control" rows="5" placeholder="Tell a story..."></textarea>
             <span class="help-block">{{errorMessage 'text'}}</span>
+            <a href="#" class="btn btn-default geolocate" onclick="getLocation();"><i class="fa fa-location-arrow" aria-hidden="true"></i> Use my location</a>
+            <a href="#" class="pull-right" id="advanced-location-toggle">Advanced location search <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <div id="advanced-location">
             <hr>
-            <label>Location</label>
             <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
             <div id="map" style="height:200px;"></div>
-            <input name="lat" type="text" value="" placeholder="Latitude" class="form-control">
-            <input name="lng" type="text" value="" placeholder="Longitude" class="form-control">
-            <input name="formatted_address" type="text" value="" placeholder="Address" class="form-control">
+            <input name="lat" id="lat" type="text" value="" placeholder="Latitude" class="form-control">
+            <input name="lng" id="lng" type="text" value="" placeholder="Longitude" class="form-control">
+            <hr>
+          </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Add Tile</button>
+    <button type="submit" class="btn btn-lg btn-primary">Add Tile</button>
   </form>
+
+  <script>
+
+  //Show advanced location menu
+  $("#advanced-location").css({'visibility':'hidden', 'position':'absolute'});
+  $("#advanced-location-toggle").click(function() {
+      $("#advanced-location").css({'visibility':'visible', 'position':'static'});
+      $("#advanced-location-toggle").css({'visibility':'hidden'});
+      google.maps.event.trigger(map, 'resize');
+  });
+
+    //Use Geolocation
+    function getLocation(){
+      if(navigator.geolocation){
+        $( ".geolocate" ).html('<i class="fa fa-spinner" aria-hidden="true"></i> Getting your location...');
+        navigator.geolocation.getCurrentPosition(handleGetCurrentPosition, onPositionError);
+      } else {
+        throwError("Your browser does not support geolocation.");
+        $( ".geolocate" ).html('<i class="fa fa-exclamation" aria-hidden="true"></i> Could not get your location.');
+        $( ".geolocate" ).addClass( "btn-danger");
+      }
+    };
+    function handleGetCurrentPosition(location){
+      $("#lat").val(location.coords.latitude);
+      $("#lng").val(location.coords.longitude);
+      $( ".geolocate" ).html('<i class="fa fa-location-arrow" aria-hidden="true"></i> Located successfully');
+      $( ".geolocate" ).addClass( "btn-success");
+    };
+    function onPositionError(){
+      throwError("There was an issue getting your location.");
+      $( ".geolocate" ).html('<i class="fa fa-exclamation" aria-hidden="true"></i> Could not get your location.');
+      $( ".geolocate" ).addClass( "btn-warning");
+    };
+  </script>
 </template>
