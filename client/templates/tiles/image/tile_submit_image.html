@@ -5,10 +5,10 @@
           {{> uploading}}
         {{/if}}
         <div class="controls">
-            <label for="image">Upload Image</label>
             <div class="imageUploadThumb"></div>
             <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
             <span class="help-block">{{errorMessage 'image'}}</span>
+            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your image..."></textarea>
         </div>
     </div>
     <button type="submit" class="btn btn-primary">Add Tile</button>

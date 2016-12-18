@@ -47,9 +47,15 @@ Template.tileSubmitImage.events({
       var topRank = 1;
     }
 
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
     var tile = {
       tileType: 'image',
-      text: '',
+      text: textInput,
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
       storyId: template.data._id,

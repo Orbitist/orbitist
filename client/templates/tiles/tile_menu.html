@@ -1,8 +1,9 @@
 <template name="tileMenu">
   <div class="popup-screen">
     <div class="popup-menu">
-      <a class="btn btn-primary" id="tileTypeText">Text</a>
-      <a class="btn btn-primary" id="tileTypeImage">Image</a>
+      <a class="btn btn-primary" id="tileTypeText"><i class="fa fa-font" aria-hidden="true"></i> Text</a>
+      <a class="btn btn-primary" id="tileTypeImage"><i class="fa fa-camera-retro" aria-hidden="true"></i> Image</a>
+      <hr>
 
       {{#if isTileType 'text'}}
         {{> tileSubmitText}}

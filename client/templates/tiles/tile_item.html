@@ -1,7 +1,7 @@
 <template name="tileItem">
   <div class="tile">
     {{#if ownTile}}<small><a href="{{pathFor 'tileEditText'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
-    <p>{{text}}</p>
     <img class="img-responsive" src ="{{imageUrl}}"/>
+    <p>{{text}}</p>
   </div><!-- tile-text -->
 </template>
