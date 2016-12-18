@@ -2,7 +2,7 @@
   <form name="tile" class="tile-form form">
     <div class="form-group {{errorClass 'image'}}">
         {{#if uploadingImage 'true'}}
-          {{> loading}}
+          {{> uploading}}
         {{/if}}
         <div class="controls">
             <label for="image">Upload Image</label>

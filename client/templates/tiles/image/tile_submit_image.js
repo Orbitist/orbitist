@@ -26,8 +26,6 @@ Template.tileSubmitImage.events({
       if (error){
         return throwError(error)
       }
-      alert("Image URL: " + result.secure_url);
-      alert("Image ID: " + result.public_id);
       Session.set('imageUrlVar', result.secure_url);
       Session.set('imageIdVar', result.public_id);
       Session.set('uploadingImage', 'false');
