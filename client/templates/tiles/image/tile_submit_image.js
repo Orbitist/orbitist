@@ -53,13 +53,27 @@ Template.tileSubmitImage.events({
       textInput = '';
     }
 
+    var $lat = $(e.target).find('[name=lat]');
+    var latInput = $lat.val();
+    if (!latInput) {
+      latInput = '';
+    }
+
+    var $lng = $(e.target).find('[name=lng]');
+    var lngInput = $lng.val();
+    if (!lngInput) {
+      lngInput = '';
+    }
+
     var tile = {
       tileType: 'image',
       text: textInput,
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
       storyId: template.data._id,
-      rank: topRank
+      rank: topRank,
+      latitude: latInput,
+      longitude: lngInput
     };
 
     var errors = {};

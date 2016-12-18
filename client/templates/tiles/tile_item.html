@@ -3,5 +3,8 @@
     {{#if ownTile}}<small><a href="{{pathFor 'tileEditText'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
     <img class="img-responsive" src ="{{imageUrl}}"/>
     <p>{{text}}</p>
+    {{#if latitude}}
+      <small>{{latitude}}, {{longitude}}</small>
+    {{/if}}
   </div><!-- tile-text -->
 </template>

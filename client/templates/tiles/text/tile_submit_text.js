@@ -22,6 +22,18 @@ Template.tileSubmitText.events({
       var topRank = 1;
     }
 
+    var $lat = $(e.target).find('[name=lat]');
+    var latInput = $lat.val();
+    if (!latInput) {
+      latInput = '';
+    }
+
+    var $lng = $(e.target).find('[name=lng]');
+    var lngInput = $lng.val();
+    if (!lngInput) {
+      lngInput = '';
+    }
+
     var $text = $(e.target).find('[name=text]');
     var tile = {
       tileType: 'text',
@@ -29,7 +41,9 @@ Template.tileSubmitText.events({
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',
-      rank: topRank
+      rank: topRank,
+      latitude: latInput,
+      longitude: lngInput
     };
 
     var errors = {};
