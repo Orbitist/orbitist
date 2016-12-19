@@ -1,10 +1,22 @@
 <template name="tileItem">
   <div class="tile">
-    {{#if ownTile}}<small><a href="{{pathFor 'tileEditText'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
-    <img class="img-responsive" src ="{{imageUrl}}"/>
-    <p>{{text}}</p>
-    {{#if latitude}}
-      <small>{{latitude}}, {{longitude}}</small>
+
+    {{#if tileTypeText}}
+      {{#if ownTile}}<small><a href="{{pathFor 'tileEditText'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
+      <p>{{text}}</p>
+      {{#if latitude}}
+        <small>{{latitude}}, {{longitude}}</small>
+      {{/if}}
     {{/if}}
+
+    {{#if tileTypeImage}}
+      {{#if ownTile}}<small><a href="{{pathFor 'tileEditImage'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
+      <img class="img-responsive" src ="{{imageUrl}}"/>
+      <p>{{text}}</p>
+      {{#if latitude}}
+        <small>{{latitude}}, {{longitude}}</small>
+      {{/if}}
+    {{/if}}
+
   </div><!-- tile-text -->
 </template>

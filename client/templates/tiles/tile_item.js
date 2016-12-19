@@ -4,5 +4,11 @@ Template.tileItem.helpers({
   },
   ownTile: function() {
     return this.userId === Meteor.userId();
+  },
+  tileTypeText: function() {
+    return this.tileType === 'text';
+  },
+  tileTypeImage: function() {
+    return this.tileType === 'image';
   }
 });

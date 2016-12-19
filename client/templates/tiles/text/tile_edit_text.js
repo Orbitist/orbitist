@@ -17,8 +17,22 @@ Template.tileEditText.events({
 
     var currentTileId = this._id;
 
+    var $lat = $(e.target).find('[name=lat]');
+    var latInput = $lat.val();
+    if (!latInput) {
+      latInput = '';
+    }
+
+    var $lng = $(e.target).find('[name=lng]');
+    var lngInput = $lng.val();
+    if (!lngInput) {
+      lngInput = '';
+    }
+
     var tileProperties = {
-      text: $(e.target).find('[name=text]').val()
+      text: $(e.target).find('[name=text]').val(),
+      latitude: latInput,
+      longitude: lngInput
     }
 
     var errors = validateTile(tileProperties);
