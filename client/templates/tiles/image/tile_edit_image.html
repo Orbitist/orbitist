@@ -1,11 +1,16 @@
 <template name="tileEditImage">
   <form>
     <div class="form-group {{errorClass 'image'}}">
-      <label class="control-label" for="image">Image</label>
-      <div class="controls">
-        <input type="file" name="image" id="image" class="form-control" accept="image/*" value="{{image}}">
-        <span class="help-block">{{errorMessage 'image'}}</span>
-      </div>
+        {{#if uploadingImage 'true'}}
+          {{> uploading}}
+        {{/if}}
+        <div class="controls">
+            <div class="imageUploadThumb"><img class="img-responsive" src="{{imageUrl}}"/></div>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
+            <span class="help-block">{{errorMessage 'image'}}</span>
+            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your image..." value="{{text}}"></textarea>
+            {{> tileLocationControlEdit}}
+        </div>
     </div>
     <input type="submit" value="Submit" class="btn btn-primary submit"/>
     <hr/>

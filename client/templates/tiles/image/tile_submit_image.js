@@ -11,7 +11,7 @@ Template.tileSubmitImage.helpers({
   },
   uploadingImage: function(n) {
     return Session.equals('uploadingImage', n);
-  },
+  }
 });
 
 Template.tileSubmitImage.events({

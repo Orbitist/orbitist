@@ -8,23 +8,71 @@ Template.tileEditImage.helpers({
   },
   errorClass: function (field) {
     return !!Session.get('tileEditImageErrors')[field] ? 'has-error' : '';
+  },
+  uploadingImage: function(n) {
+    return Session.equals('uploadingImage', n);
   }
 });
 
+
 Template.tileEditImage.events({
-  'submit form': function(e) {
+  "change input[type='file']": function(e, template) {
+    Session.set('uploadingImage', 'true');
+    var files;
+    files = e.currentTarget.files;
+    return Cloudinary.upload(files, {
+      // folder: "secret",
+      // type: "private"
+    }, function(error, result) {
+      if (error){
+        return throwError(error)
+      }
+      Session.set('imageUrlVar', result.secure_url);
+      Session.set('imageIdVar', result.public_id);
+      Session.set('uploadingImage', 'false');
+      $( '.imageUploadThumb' ).replaceWith( '<img class="img-responsive" src="' + result.secure_url + '"/>');
+
+    });
+  },
+
+  'submit form': function(e, template) {
     e.preventDefault();
 
-    var currentTileId = this._id;
+    var imageUrlVar = Session.get('imageUrlVar');
+    var imageIdVar = Session.get('imageIdVar');
 
-    var tileProperties = {
-      image: $(e.target).find('[name=image]').val()
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
     }
 
-    var errors = validateTile(tileProperties);
-    if (errors.image)
-      return Session.set('tileEditImageErrors', errors);
+    var $lat = $(e.target).find('[name=lat]');
+    var latInput = $lat.val();
+    if (!latInput) {
+      latInput = '';
+    }
 
+    var $lng = $(e.target).find('[name=lng]');
+    var lngInput = $lng.val();
+    if (!lngInput) {
+      lngInput = '';
+    }
+
+    var currentTileId = this._id;
+    var tileProperties = {
+      text: textInput,
+      imageUrl: imageUrlVar,
+      imageId: imageIdVar,
+      latitude: latInput,
+      longitude: lngInput
+    }
+
+    var errors = {};
+    if (! tileProperties.imageUrl) {
+      errors.image = "Please select an image.";
+      return Session.set('tileSubmitErrors', errors);
+    }
     Tiles.update(currentTileId, {$set: tileProperties}, function(error) {
       if (error) {
         return throwError(error.reason);
@@ -32,7 +80,6 @@ Template.tileEditImage.events({
     });
     Router.go('storyPage', {_id: this.storyId});
   },
-
   'click .delete': function(e) {
     e.preventDefault();
 
