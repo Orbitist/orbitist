@@ -41,6 +41,13 @@ Template.tileEditImage.events({
     var imageUrlVar = Session.get('imageUrlVar');
     var imageIdVar = Session.get('imageIdVar');
 
+    var $checkImageField = $(e.target).find('[name=image]');
+    var imageInput = $checkImageField.val();
+    if (imageInput < 1) {
+      imageUrlVar = this.imageUrl;
+      imageIdVar = this.imageId;
+    }
+
     var $text = $(e.target).find('[name=text]');
     var textInput = $text.val();
     if (!textInput) {
