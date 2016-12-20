@@ -2,20 +2,20 @@
   <div class="tile">
 
     {{#if tileTypeText}}
-      {{#if ownTile}}<small><a href="{{pathFor 'tileEditText'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
       <p>{{text}}</p>
       {{#if latitude}}
-        <small>{{latitude}}, {{longitude}}</small>
+        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
       {{/if}}
+      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditImage'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
     {{/if}}
 
     {{#if tileTypeImage}}
-      {{#if ownTile}}<small><a href="{{pathFor 'tileEditImage'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
-      <img class="img-responsive" src ="{{imageUrl}}"/>
+      <img class="img-responsive" src ="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
       <p>{{text}}</p>
       {{#if latitude}}
-        <small>{{latitude}}, {{longitude}}</small>
+        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
       {{/if}}
+      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditImage'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
     {{/if}}
 
   </div><!-- tile-text -->

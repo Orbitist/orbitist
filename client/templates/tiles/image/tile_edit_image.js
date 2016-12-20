@@ -30,7 +30,7 @@ Template.tileEditImage.events({
       Session.set('imageUrlVar', result.secure_url);
       Session.set('imageIdVar', result.public_id);
       Session.set('uploadingImage', 'false');
-      $( '.imageUploadThumb' ).replaceWith( '<img class="img-responsive" src="' + result.secure_url + '"/>');
+      $( '.imageUploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
 
     });
   },
