@@ -25,13 +25,13 @@ Template.tileSubmitText.events({
     var $lat = $(e.target).find('[name=lat]');
     var latInput = $lat.val();
     if (!latInput) {
-      latInput = '';
+      latInput = NaN;
     }
 
     var $lng = $(e.target).find('[name=lng]');
     var lngInput = $lng.val();
     if (!lngInput) {
-      lngInput = '';
+      lngInput = NaN;
     }
 
     var $text = $(e.target).find('[name=text]');
@@ -41,6 +41,8 @@ Template.tileSubmitText.events({
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',
+      videoUrl: '',
+      videoId: '',
       rank: topRank,
       latitude: latInput,
       longitude: lngInput

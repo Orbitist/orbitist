@@ -1,0 +1,20 @@
+<template name="tileEditVideo">
+  <form>
+    <div class="form-group {{errorClass 'video'}}">
+        {{#if uploadingVideo 'true'}}
+          {{> uploading}}
+        {{/if}}
+        <div class="controls">
+            <div class="videoUploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}"/></div>
+            <input type="file" name="video" id="video" class="form-control" accept="video/mp4,video/x-m4v,video/*" value="">
+            <span class="help-block">{{errorMessage 'video'}}</span>
+            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your video..." value="{{text}}"></textarea>
+            {{> tileLocationControlEdit}}
+        </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-primary submit"/>
+    <hr/>
+    <a class="btn btn-danger delete" href="#">Delete tile</a>
+    <hr>
+  </form>
+</template>

@@ -1,36 +1,37 @@
-Template.tileEditImage.onCreated(function() {
-  Session.set('tileEditImageErrors', {});
+Template.tileEditVideo.onCreated(function() {
+  Session.set('tileEditVideoErrors', {});
 });
 
-Template.tileEditImage.helpers({
+Template.tileEditVideo.helpers({
   errorMessage: function(field) {
-    return Session.get('tileEditImageErrors')[field];
+    return Session.get('tileEditVideoErrors')[field];
   },
   errorClass: function (field) {
-    return !!Session.get('tileEditImageErrors')[field] ? 'has-error' : '';
+    return !!Session.get('tileEditVideoErrors')[field] ? 'has-error' : '';
   },
-  uploadingImage: function(n) {
-    return Session.equals('uploadingImage', n);
+  uploadingVideo: function(n) {
+    return Session.equals('uploadingVideo', n);
   }
 });
 
 
-Template.tileEditImage.events({
+Template.tileEditVideo.events({
   "change input[type='file']": function(e, template) {
-    Session.set('uploadingImage', 'true');
+    Session.set('uploadingVideo', 'true');
     var files;
     files = e.currentTarget.files;
     return Cloudinary.upload(files, {
+      resource_type: "video"
       // folder: "secret",
       // type: "private"
     }, function(error, result) {
       if (error){
         return throwError(error)
       }
-      Session.set('imageUrlVar', result.secure_url);
-      Session.set('imageIdVar', result.public_id);
-      Session.set('uploadingImage', 'false');
-      $( '.imageUploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      Session.set('videoUrlVar', result.secure_url);
+      Session.set('videoIdVar', result.public_id);
+      Session.set('uploadingVideo', 'false');
+      $( '.videoUploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/video/upload/' + result.public_id + '.jpg"/>');
 
     });
   },
@@ -38,14 +39,14 @@ Template.tileEditImage.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-    var imageUrlVar = Session.get('imageUrlVar');
-    var imageIdVar = Session.get('imageIdVar');
+    var videoUrlVar = Session.get('videoUrlVar');
+    var videoIdVar = Session.get('videoIdVar');
 
-    var $checkImageField = $(e.target).find('[name=image]');
-    var imageInput = $checkImageField.val();
-    if (imageInput < 1) {
-      imageUrlVar = this.imageUrl;
-      imageIdVar = this.imageId;
+    var $checkVideoField = $(e.target).find('[name=video]');
+    var videoInput = $checkVideoField.val();
+    if (videoInput < 1) {
+      videoUrlVar = this.videoUrl;
+      videoIdVar = this.videoId;
     }
 
     var $text = $(e.target).find('[name=text]');
@@ -69,15 +70,15 @@ Template.tileEditImage.events({
     var currentTileId = this._id;
     var tileProperties = {
       text: textInput,
-      imageUrl: imageUrlVar,
-      imageId: imageIdVar,
+      videoUrl: videoUrlVar,
+      videoId: videoIdVar,
       latitude: latInput,
       longitude: lngInput
     }
 
     var errors = {};
-    if (! tileProperties.imageUrl) {
-      errors.image = "Please select an image.";
+    if (! tileProperties.videoUrl) {
+      errors.video = "Please select an video.";
       return Session.set('tileSubmitErrors', errors);
     }
     Tiles.update(currentTileId, {$set: tileProperties}, function(error) {

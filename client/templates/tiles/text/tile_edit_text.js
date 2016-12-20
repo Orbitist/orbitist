@@ -20,13 +20,13 @@ Template.tileEditText.events({
     var $lat = $(e.target).find('[name=lat]');
     var latInput = $lat.val();
     if (!latInput) {
-      latInput = '';
+      latInput = NaN;
     }
 
     var $lng = $(e.target).find('[name=lng]');
     var lngInput = $lng.val();
     if (!lngInput) {
-      lngInput = '';
+      lngInput = NaN;
     }
 
     var tileProperties = {

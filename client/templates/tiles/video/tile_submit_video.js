@@ -1,35 +1,36 @@
-Template.tileSubmitImage.onCreated(function() {
+Template.tileSubmitVideo.onCreated(function() {
   Session.set('tileSubmitErrors', {});
 });
 
-Template.tileSubmitImage.helpers({
+Template.tileSubmitVideo.helpers({
   errorMessage: function(field) {
     return Session.get('tileSubmitErrors')[field];
   },
   errorClass: function (field) {
     return !!Session.get('tileSubmitErrors')[field] ? 'has-error' : '';
   },
-  uploadingImage: function(n) {
-    return Session.equals('uploadingImage', n);
+  uploadingVideo: function(n) {
+    return Session.equals('uploadingVideo', n);
   }
 });
 
-Template.tileSubmitImage.events({
+Template.tileSubmitVideo.events({
   "change input[type='file']": function(e, template) {
-    Session.set('uploadingImage', 'true');
+    Session.set('uploadingVideo', 'true');
     var files;
     files = e.currentTarget.files;
     return Cloudinary.upload(files, {
+      resource_type: "video"
       // folder: "secret",
       // type: "private"
     }, function(error, result) {
       if (error){
-        return throwError(error)
+        return throwError(error.message)
       }
-      Session.set('imageUrlVar', result.secure_url);
-      Session.set('imageIdVar', result.public_id);
-      Session.set('uploadingImage', 'false');
-      $( '.imageUploadThumb' ).append( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      Session.set('videoUrlVar', result.secure_url);
+      Session.set('videoIdVar', result.public_id);
+      Session.set('uploadingVideo', 'false');
+      $( '.videoUploadThumb' ).append( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/video/upload/' + result.public_id + '.jpg"/>');
 
     });
   },
@@ -37,8 +38,8 @@ Template.tileSubmitImage.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-    var imageUrlVar = Session.get('imageUrlVar');
-    var imageIdVar = Session.get('imageIdVar');
+    var videoUrlVar = Session.get('videoUrlVar');
+    var videoIdVar = Session.get('videoIdVar');
 
     var topTile = Tiles.findOne({storyId: template.data._id}, {sort: {rank: 1}});
     if (topTile) {
@@ -66,12 +67,12 @@ Template.tileSubmitImage.events({
     }
 
     var tile = {
-      tileType: 'image',
+      tileType: 'video',
       text: textInput,
-      imageUrl: imageUrlVar,
-      imageId: imageIdVar,
-      videoUrl: '',
-      videoId: '',
+      imageUrl: '',
+      imageId: '',
+      videoUrl: videoUrlVar,
+      videoId: videoIdVar,
       storyId: template.data._id,
       rank: topRank,
       latitude: latInput,
@@ -79,8 +80,8 @@ Template.tileSubmitImage.events({
     };
 
     var errors = {};
-    if (! tile.imageUrl) {
-      errors.image = "Please select an image.";
+    if (! tile.videoUrl) {
+      errors.video = "Please select a video.";
       return Session.set('tileSubmitErrors', errors);
     }
 
@@ -88,8 +89,8 @@ Template.tileSubmitImage.events({
       if (error){
         throwError(error.reason);
       } else {
-        var $imageField = $(e.target).find('[name=image]');
-        $imageField.val('');
+        var $videoField = $(e.target).find('[name=video]');
+        $videoField.val('');
         Session.set('tileMenu', 'false');
       }
     });
