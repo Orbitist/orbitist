@@ -10,5 +10,8 @@ Template.tileItem.helpers({
   },
   tileTypeImage: function() {
     return this.tileType === 'image';
+  },
+  tileTypeVideo: function() {
+    return this.tileType === 'video';
   }
 });

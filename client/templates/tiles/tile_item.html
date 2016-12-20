@@ -18,5 +18,18 @@
       {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditImage'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
     {{/if}}
 
+    {{#if tileTypeVideo}}
+      <video class="img-responsive">
+        <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.webm" type="video/webm"/>
+        <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.mp4" type="video/mp4"/>
+        <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.ogv" type="video/ogg"/>
+      </video>
+      <p>{{text}}</p>
+      {{#if latitude}}
+        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
+      {{/if}}
+      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditVideo'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
+    {{/if}}
+
   </div><!-- tile-text -->
 </template>
