@@ -31,7 +31,7 @@ Template.tileEditVideo.events({
       Session.set('videoUrlVar', result.secure_url);
       Session.set('videoIdVar', result.public_id);
       Session.set('uploadingVideo', 'false');
-      $( '.videoUploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/video/upload/' + result.public_id + '.jpg"/>');
+      $( '.videoUploadThumb' ).replaceWith('<video class="img-responsive" controls poster="https://res.cloudinary.com/orbitist/video/upload/' + result.public_id + '.jpg"><source src="https://res.cloudinary.com/orbitist/video/upload/' + result.public_id + '.webm" type="video/webm"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + result.public_id + '.mp4" type="video/mp4"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + result.public_id + '.ogv" type="video/ogg"/></video>');
 
     });
   },
