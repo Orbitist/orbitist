@@ -15,3 +15,12 @@ Template.storyMap.helpers({
     return this.userId === Meteor.userId();
   }
 });
+
+Template.storyMap.rendered = function () {
+    this.autorun(function () {
+        if (Mapbox.loaded()) {
+            L.mapbox.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsCcEnPNfo2ag';
+            var map = L.mapbox.map('map', 'mapbox.streets');
+        }
+    });
+};
