@@ -1,6 +1,7 @@
 <template name="storyHeader">
   <div class="story-header">
     <h1>{{title}}<br><small>by {{author}}</small></h1>
+    <a class="btn btn-success" href="{{pathFor 'storyMap'}}"><i class="fa fa-map-o"></i></a>
     {{#if ownStory}}<small><a href="{{pathFor 'storyEdit'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
     <hr>
   </div>
