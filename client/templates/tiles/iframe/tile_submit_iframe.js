@@ -22,6 +22,12 @@ Template.tileSubmitIframe.events({
       var topRank = 1;
     }
 
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -37,7 +43,7 @@ Template.tileSubmitIframe.events({
     var $iframe = $(e.target).find('[name=iframe]');
     var tile = {
       tileType: 'iframe',
-      text: '',
+      text: textInput,
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',

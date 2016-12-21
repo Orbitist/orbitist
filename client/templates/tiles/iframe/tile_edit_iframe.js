@@ -17,6 +17,12 @@ Template.tileEditIframe.events({
 
     var currentTileId = this._id;
 
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -32,6 +38,7 @@ Template.tileEditIframe.events({
     var $iframe = $(e.target).find('[name=iframe]');
     var tileProperties = {
       iframe: $iframe.val(),
+      text: textInput,
       latitude: latInput,
       longitude: lngInput
     }
