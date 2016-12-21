@@ -72,6 +72,7 @@ Template.tileSubmitVideo.events({
       imageId: '',
       videoUrl: videoUrlVar,
       videoId: videoIdVar,
+      iframe: '',
       storyId: template.data._id,
       rank: topRank,
       latitude: latInput,

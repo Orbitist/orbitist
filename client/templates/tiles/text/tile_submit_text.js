@@ -43,6 +43,7 @@ Template.tileSubmitText.events({
       imageId: '',
       videoUrl: '',
       videoId: '',
+      iframe: '',
       rank: topRank,
       latitude: latInput,
       longitude: lngInput

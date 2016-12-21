@@ -37,12 +37,13 @@ Template.tileSubmitIframe.events({
     var $iframe = $(e.target).find('[name=iframe]');
     var tile = {
       tileType: 'iframe',
-      iframe: $iframe.val(),
+      text: '',
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',
       videoUrl: '',
       videoId: '',
+      iframe: $iframe.val(),
       rank: topRank,
       latitude: latInput,
       longitude: lngInput
