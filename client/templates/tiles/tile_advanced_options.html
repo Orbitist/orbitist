@@ -1,12 +1,12 @@
-<template name="tileLocationControl">
+<template name="tileAdvancedOptions">
   <a href="#" class="btn btn-default geolocate" onclick="getLocation();"><i class="fa fa-location-arrow" aria-hidden="true"></i> Use my location</a>
-  <a href="#" class="pull-right" id="advanced-location-toggle">Search location <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+  <a href="#" class="pull-right" id="advanced-location-toggle">Advanced <i class="fa fa-caret-down" aria-hidden="true"></i></a>
   <div id="advanced-location">
     <hr>
     <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
     <div id="map" style="height:200px;"></div>
-    <input name="lat" id="lat" type="text" value="" placeholder="Latitude" class="form-control">
-    <input name="lng" id="lng" type="text" value="" placeholder="Longitude" class="form-control">
+    <input name="lat" id="lat" type="number" step="any" value="" placeholder="Latitude" class="form-control">
+    <input name="lng" id="lng" type="number" step="any" value="" placeholder="Longitude" class="form-control">
     <hr>
   </div>
 
@@ -38,15 +38,15 @@
   </script>
 </template>
 
-<template name="tileLocationControlEdit">
+<template name="tileAdvancedOptionsEdit">
   <a href="#" class="btn btn-default geolocate" onclick="getLocation();"><i class="fa fa-location-arrow" aria-hidden="true"></i> Use my location</a>
   <a href="#" class="pull-right" id="advanced-location-toggle">Search location <i class="fa fa-caret-down" aria-hidden="true"></i></a>
   <div id="advanced-location">
     <hr>
     <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
     <div id="map" style="height:200px;"></div>
-    <input name="lat" id="lat" type="text" placeholder="Latitude" class="form-control" value="{{latitude}}">
-    <input name="lng" id="lng" type="text" placeholder="Longitude" class="form-control" value="{{longitude}}">
+    <input name="lat" id="lat" type="number" step="any" placeholder="Latitude" class="form-control" value="{{latitude}}">
+    <input name="lng" id="lng" type="number" step="any" placeholder="Longitude" class="form-control" value="{{longitude}}">
     <hr>
   </div>
 

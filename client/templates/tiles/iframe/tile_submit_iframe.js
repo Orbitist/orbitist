@@ -23,13 +23,13 @@ Template.tileSubmitIframe.events({
     }
 
     var $lat = $(e.target).find('[name=lat]');
-    var latInput = $lat.val();
+    var latInput = Number($lat.val());
     if (!latInput) {
       latInput = NaN;
     }
 
     var $lng = $(e.target).find('[name=lng]');
-    var lngInput = $lng.val();
+    var lngInput = Number($lng.val());
     if (!lngInput) {
       lngInput = NaN;
     }
