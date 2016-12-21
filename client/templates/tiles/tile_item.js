@@ -13,5 +13,8 @@ Template.tileItem.helpers({
   },
   tileTypeVideo: function() {
     return this.tileType === 'video';
+  },
+  tileTypeIframe: function() {
+    return this.tileType === 'iframe';
   }
 });
