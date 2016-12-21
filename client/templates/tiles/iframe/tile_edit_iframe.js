@@ -29,8 +29,9 @@ Template.tileEditIframe.events({
       lngInput = NaN;
     }
 
+    var $iframe = $(e.target).find('[name=iframe]');
     var tileProperties = {
-      iframe: $(e.target).find('[name=iframe]').val(),
+      iframe: $iframe.val(),
       latitude: latInput,
       longitude: lngInput
     }

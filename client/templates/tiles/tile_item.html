@@ -32,11 +32,11 @@
     {{/if}}
 
     {{#if tileTypeIframe}}
-      {{iframe}}
+      {{iframeHtml}}
       {{#if latitude}}
         <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
       {{/if}}
-      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditText'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
+      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditIframe'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
     {{/if}}
 
 

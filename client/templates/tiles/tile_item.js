@@ -16,5 +16,8 @@ Template.tileItem.helpers({
   },
   tileTypeIframe: function() {
     return this.tileType === 'iframe';
+  },
+  iframeHtml: function() {
+    return this.iframe;
   }
 });
