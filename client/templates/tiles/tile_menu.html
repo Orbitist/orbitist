@@ -5,7 +5,7 @@
       <a class="btn btn-primary" id="tileTypeImage"><i class="fa fa-camera-retro" aria-hidden="true"></i> Image</a>
       <a class="btn btn-primary" id="tileTypeVideo"><i class="fa fa-video-camera" aria-hidden="true"></i> Video</a>
       <a class="btn btn-primary" id="tileTypeIframe">&lt;iframe&gt;</a>
-
+      <a class="btn btn-primary" id="tileTypePointOfInterest"><i class="fa fa-map-marker" aria-hidden="true"></i> Point of interest</a>
 
       {{#if isTileType 'text'}}
         {{> tileSubmitText}}
@@ -21,6 +21,10 @@
 
       {{#if isTileType 'iframe'}}
         {{> tileSubmitIframe}}
+      {{/if}}
+
+      {{#if isTileType 'pointOfInterest'}}
+        {{> tileSubmitPointOfInterest}}
       {{/if}}
 
     </div><!-- popup-menu -->
