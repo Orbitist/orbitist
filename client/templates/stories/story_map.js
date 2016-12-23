@@ -15,3 +15,31 @@ Template.storyMap.helpers({
     return this.userId === Meteor.userId();
   }
 });
+
+Template.storyMap.onRendered(function() {
+
+
+  function initMap() {
+
+    var bounds = new google.maps.LatLngBounds();
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+
+    });
+
+    Tiles.find({field:this._id}).forEach(function(point) {
+      if (point.latitude != NaN) {
+        var marker = new google.maps.Marker({
+          position: {lat: point.latitude, lng: point.longitude},
+          map: map
+        });
+        bounds.extend(marker.position);
+      }
+    });
+
+    map.fitBounds(bounds);
+  }
+
+  initMap();
+
+});
