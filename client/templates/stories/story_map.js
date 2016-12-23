@@ -26,6 +26,18 @@ Template.storyMap.onRendered(function() {
     });
 
     Tiles.find({field:this._id}).forEach(function(point) {
+      // Popup Templates
+      var popup;
+      if (point.tileType == 'text') {
+        popup = '<p>' + point.text + '</p>';
+      }
+      if (point.tileType == 'image') {
+        popup = '<img width="300" class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + point.imageId + '"/><br><p>' + point.text + '</p>';
+      }
+      if (point.tileType == 'video') {
+        popup = '<video width="300" controls poster="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.jpg"><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.webm" type="video/webm"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.mp4" type="video/mp4"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.ogv" type="video/ogg"/></video><br><p>' + point.text + '</p>';
+      }
+      // End Popup Templates
       if (point.latitude != NaN) {
         var orbitistIcon = {
           url: 'https://res.cloudinary.com/orbitist/image/upload/c_scale,w_60/v1481982860/eee0g1qjw3nh4p7doruq.png',
@@ -35,7 +47,7 @@ Template.storyMap.onRendered(function() {
           scaledSize: new google.maps.Size(30, 30)
         };
         var infowindow = new google.maps.InfoWindow({
-          content: point.text
+          content: '<div class="popup-content">' + popup + '</div>'
         });
         var marker = new google.maps.Marker({
           position: {lat: point.latitude, lng: point.longitude},

@@ -1,7 +1,7 @@
 <template name="storyMap">
   <div class="story-page page">
       <div class="story-header">
-        <h1>{{title}}<small> by {{author}}</small></h1>
+        <p>{{title}}<small> by {{author}}</small></p>
         <a class="btn btn-success" href="{{pathFor 'storyPage'}}"><i class="fa fa-list"></i></a>
         {{#if ownStory}}<small><a href="{{pathFor 'storyEdit'}}"><i class="fa fa-pencil" aria-hidden="true"></i> edit</a></small>{{/if}}
       </div>
