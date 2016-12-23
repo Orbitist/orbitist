@@ -1,7 +1,7 @@
 <template name="tileAdvancedOptions">
   <a href="#" class="btn btn-default geolocate" onclick="getLocation();"><i class="fa fa-location-arrow" aria-hidden="true"></i> Use my location</a>
-  <a href="#" class="pull-right" id="advanced-location-toggle">Advanced <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-  <div id="advanced-location">
+  <a href="#" class="pull-right" id="advanced-toggle">Advanced <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+  <div id="advanced">
     <hr>
     <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
     <div id="map" style="height:200px;"></div>
@@ -12,10 +12,10 @@
 
   <script>
     //Show advanced location menu
-    $("#advanced-location").css({'visibility':'hidden', 'position':'absolute'});
-    $("#advanced-location-toggle").click(function() {
-        $("#advanced-location").css({'visibility':'visible', 'position':'static'});
-        $("#advanced-location-toggle").css({'visibility':'hidden'});
+    $("#advanced").css({'visibility':'hidden', 'position':'absolute'});
+    $("#advanced-toggle").click(function() {
+        $("#advanced").css({'visibility':'visible', 'position':'static'});
+        $("#advanced-toggle").css({'visibility':'hidden'});
         google.maps.event.trigger(map, 'resize');
     });
 
@@ -40,8 +40,8 @@
 
 <template name="tileAdvancedOptionsEdit">
   <a href="#" class="btn btn-default geolocate" onclick="getLocation();"><i class="fa fa-location-arrow" aria-hidden="true"></i> Use my location</a>
-  <a href="#" class="pull-right" id="advanced-location-toggle">Search location <i class="fa fa-caret-down" aria-hidden="true"></i></a>
-  <div id="advanced-location">
+  <a href="#" class="pull-right" id="advanced-toggle">Advanced <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+  <div id="advanced">
     <hr>
     <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
     <div id="map" style="height:200px;"></div>
@@ -52,10 +52,10 @@
 
   <script>
     //Show advanced location menu
-    $("#advanced-location").css({'visibility':'hidden', 'position':'absolute'});
-    $("#advanced-location-toggle").click(function() {
-        $("#advanced-location").css({'visibility':'visible', 'position':'static'});
-        $("#advanced-location-toggle").css({'visibility':'hidden'});
+    $("#advanced").css({'visibility':'hidden', 'position':'absolute'});
+    $("#advanced-toggle").click(function() {
+        $("#advanced").css({'visibility':'visible', 'position':'static'});
+        $("#advanced-toggle").css({'visibility':'hidden'});
         google.maps.event.trigger(map, 'resize');
     });
 
