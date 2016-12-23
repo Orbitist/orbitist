@@ -22,5 +22,6 @@ Template.storyMap.rendered = function () {
             L.mapbox.accessToken = 'pk.eyJ1Ijoib3JiaXRpc3QiLCJhIjoiYnpUTnJBdyJ9.uxgaJ0R9ZNsCcEnPNfo2ag';
             var map = L.mapbox.map('map', 'mapbox.streets');
         }
+        
     });
 };

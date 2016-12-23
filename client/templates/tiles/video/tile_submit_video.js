@@ -68,6 +68,7 @@ Template.tileSubmitVideo.events({
     var tile = {
       tileType: 'video',
       text: textInput,
+      title: '',
       imageUrl: '',
       imageId: '',
       videoUrl: videoUrlVar,

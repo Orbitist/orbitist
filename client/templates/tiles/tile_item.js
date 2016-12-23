@@ -11,6 +11,9 @@ Template.tileItem.helpers({
   tileTypeImage: function() {
     return this.tileType === 'image';
   },
+  hasImage: function() {
+    return this.imageUrl != '';
+  },
   tileTypeVideo: function() {
     return this.tileType === 'video';
   },

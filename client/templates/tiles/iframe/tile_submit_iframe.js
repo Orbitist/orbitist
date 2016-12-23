@@ -44,6 +44,7 @@ Template.tileSubmitIframe.events({
     var tile = {
       tileType: 'iframe',
       text: textInput,
+      title: '',
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',

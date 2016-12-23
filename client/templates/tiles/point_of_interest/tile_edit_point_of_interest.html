@@ -5,11 +5,12 @@
           {{> uploading}}
         {{/if}}
         <div class="controls">
-            <div class="imageUploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/></div>
-            <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
-            <span class="help-block">{{errorMessage 'image'}}</span>
-            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your point of interest..." value="{{text}}"></textarea>
-            {{> tileAdvancedOptionsEdit}}
+          <input name="title" id="title" type="text" value="{{title}}" placeholder="Title of this point of interest" class="form-control"/>
+          <div class="imageUploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/></div>
+          <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
+          <span class="help-block">{{errorMessage 'image'}}</span>
+          <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your point of interest..." value="{{text}}"></textarea>
+          {{> tileAdvancedOptionsEdit}}
         </div>
     </div>
     <input type="submit" value="Submit" class="btn btn-primary submit"/>

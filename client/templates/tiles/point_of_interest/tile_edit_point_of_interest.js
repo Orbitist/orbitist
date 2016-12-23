@@ -43,15 +43,24 @@ Template.tileEditPointOfInterest.events({
 
     var $checkImageField = $(e.target).find('[name=image]');
     var imageInput = $checkImageField.val();
-    if (imageInput < 1) {
+    if (imageInput < 1 && this.imageUrl > 1) {
       imageUrlVar = this.imageUrl;
       imageIdVar = this.imageId;
+    } else if (imageInput < 1 && this.imageUrl < 1) {
+      imageUrlVar = '';
+      imageIdVar = '';
     }
 
     var $text = $(e.target).find('[name=text]');
     var textInput = $text.val();
     if (!textInput) {
       textInput = '';
+    }
+
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
     }
 
     var $lat = $(e.target).find('[name=lat]');
@@ -69,6 +78,7 @@ Template.tileEditPointOfInterest.events({
     var currentTileId = this._id;
     var tileProperties = {
       text: textInput,
+      title: titleInput,
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
       latitude: latInput,
@@ -76,8 +86,8 @@ Template.tileEditPointOfInterest.events({
     }
 
     var errors = {};
-    if (! tileProperties.imageUrl) {
-      errors.image = "Please select an image.";
+    if (! tileProperties.title) {
+      errors.title = "Please add a title.";
       return Session.set('tileSubmitErrors', errors);
     }
     Tiles.update(currentTileId, {$set: tileProperties}, function(error) {

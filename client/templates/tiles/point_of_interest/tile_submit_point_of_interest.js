@@ -39,6 +39,11 @@ Template.tileSubmitPointOfInterest.events({
 
     var imageUrlVar = Session.get('imageUrlVar');
     var imageIdVar = Session.get('imageIdVar');
+    if (!imageUrlVar) {
+      imageUrlVar = '';
+      imageIdVar = '';
+    }
+
 
     var topTile = Tiles.findOne({storyId: template.data._id}, {sort: {rank: 1}});
     if (topTile) {
@@ -51,6 +56,12 @@ Template.tileSubmitPointOfInterest.events({
     var textInput = $text.val();
     if (!textInput) {
       textInput = '';
+    }
+
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
     }
 
     var $lat = $(e.target).find('[name=lat]');
@@ -68,6 +79,7 @@ Template.tileSubmitPointOfInterest.events({
     var tile = {
       tileType: 'pointOfInterest',
       text: textInput,
+      title: titleInput,
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
       videoUrl: '',
@@ -80,8 +92,8 @@ Template.tileSubmitPointOfInterest.events({
     };
 
     var errors = {};
-    if (! tile.imageUrl) {
-      errors.image = "Please select an image.";
+    if (! tile.title) {
+      errors.title = "Please enter a title.";
       return Session.set('tileSubmitErrors', errors);
     }
 

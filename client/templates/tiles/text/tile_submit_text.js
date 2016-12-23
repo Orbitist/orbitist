@@ -38,6 +38,7 @@ Template.tileSubmitText.events({
     var tile = {
       tileType: 'text',
       text: $text.val(),
+      title: '',
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',
