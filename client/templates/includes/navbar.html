@@ -4,13 +4,13 @@
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
           <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
+          <span class="fa fa-cog"></span>
         </button>
-        <a class="navbar-brand" href="{{pathFor 'storiesList'}}">
-          <img alt="Brand" src="https://res.cloudinary.com/orbitist/image/upload/v1482159213/logo_blue_button_100_sjpiii.png">
-        </a>
+          {{#if isMap}}
+            <a class="navbar-brand" href="{{pathFor 'storyPage'}}"><i class="fa fa-chevron-left"></i> {{title}}</a>
+          {{else}}
+            <a class="navbar-brand navbar-brand-text" href="{{pathFor 'storiesList'}}"><img alt="Brand" src="https://res.cloudinary.com/orbitist/image/upload/v1482159213/logo_blue_button_100_sjpiii.png"></a>
+          {{/if}}
       </div>
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="nav navbar-nav navbar-right">
@@ -18,6 +18,8 @@
             <li><a href="https://goo.gl/forms/OSrIkaFIQHBvQnqh2" target="_blank"><i class="fa fa-bug" aria-hidden="true"></i></a></li>
             <li><a><i class="fa fa-user"></i> {{currentUser.username}}</a></li>
             {{>logout}}
+            {{else}}
+            <li><a href="/"><i class="fa fa-user"></i> Log in</a></li>
           {{/if}}
         </ul>
       </div>

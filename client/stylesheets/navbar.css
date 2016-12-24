@@ -1,3 +1,6 @@
+.navbar {
+}
+
 .navbar-default {
   background-color: white;
   border-color: #eee;
@@ -7,11 +10,8 @@
   border-color: #eee;
 }
 
-.navbar-brand {
-  padding: 10px 15px;
-}
-
 .navbar-brand img {
   width: 30px;
   border-radius: 3px;
+  margin-top: -5px;
 }

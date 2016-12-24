@@ -55,4 +55,5 @@ Template.storyPage.rendered = function() {
          Tiles.update({_id: Blaze.getData(el)._id}, {$set: {rank: newRank}})
        }
    })
+   $('.navbar').css('margin-top', '0px');
  }
