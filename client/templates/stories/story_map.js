@@ -22,7 +22,7 @@ Template.storyMap.onRendered(function() {
 
     var bounds = new google.maps.LatLngBounds();
     var map = new google.maps.Map(document.getElementById('map'), {
-      //Options
+      gestureHandling: 'greedy'
     });
 
     Tiles.find({field:this._id}).forEach(function(point) {
