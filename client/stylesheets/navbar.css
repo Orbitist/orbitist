@@ -6,6 +6,11 @@
   border-color: #eee;
 }
 
+.navbar-toggle {
+  border: none;
+  color: #333;
+}
+
 .navbar-collapse {
   border-color: #eee;
 }
