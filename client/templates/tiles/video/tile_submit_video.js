@@ -20,7 +20,8 @@ Template.tileSubmitVideo.events({
     var files;
     files = e.currentTarget.files;
     return Cloudinary.upload(files, {
-      resource_type: "video"
+      resource_type: "video",
+      timeout:6000000
       // folder: "secret",
       // type: "private"
     }, function(error, result) {

@@ -6,7 +6,7 @@ Template.tileAdvancedOptions.onRendered(function() {
         mapOptions: {
           draggable:true,
           zoom:1,
-          zoomControl:false,
+          zoomControl:true,
           streetViewControl:false,
           mapTypeControl:false,
           mapTypeId: 'hybrid',
@@ -40,7 +40,7 @@ Template.tileAdvancedOptionsEdit.onRendered(function() {
         mapOptions: {
           draggable:true,
           zoom:1,
-          zoomControl:false,
+          zoomControl:true,
           streetViewControl:false,
           mapTypeControl:false,
           mapTypeId: 'hybrid',
