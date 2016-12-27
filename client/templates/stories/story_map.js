@@ -37,8 +37,14 @@ Template.storyMap.onRendered(function() {
       if (point.tileType == 'video') {
         popup = '<video width="300" controls poster="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.jpg"><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.webm" type="video/webm"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.mp4" type="video/mp4"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.ogv" type="video/ogg"/></video><br><p>' + point.text + '</p>';
       }
+      if (point.tileType == 'iframe') {
+        popup = point.iframe + '<p>' + point.text + '</p>';
+      }
+      if (point.tileType == 'pointOfInterest') {
+        popup = '<img width="300" class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + point.imageId + '"/>' + '<p class="lead">' + point.title + '</p><p>' + point.text + '</p>';
+      }
       // End Popup Templates
-      
+
       if (point.latitude >= -91) {
         var orbitistIcon = {
           url: 'https://res.cloudinary.com/orbitist/image/upload/c_scale,w_60/v1481982860/eee0g1qjw3nh4p7doruq.png',

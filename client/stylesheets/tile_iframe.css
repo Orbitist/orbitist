@@ -2,3 +2,8 @@
   width: 100% !important;
   height: 600px !important;
 }
+
+.popup-content iframe {
+  width: 100% !important;
+  height: 250px !important;
+}
