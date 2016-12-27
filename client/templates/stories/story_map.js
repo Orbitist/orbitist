@@ -53,8 +53,24 @@ Template.storyMap.onRendered(function() {
           anchor: new google.maps.Point(15, 30),
           scaledSize: new google.maps.Size(30, 30)
         };
-        var infowindow = new google.maps.InfoWindow({
-          content: '<div class="popup-content">' + popup + '</div>'
+        var infowindow = new InfoBox({
+          content: popup,
+          boxClass: 'popup-content',
+          disableAutoPan: false,
+          maxWidth: 0,
+          pixelOffset: new google.maps.Size(-150, 0),
+          zIndex: null,
+          boxStyle: {
+           background: "none",
+           opacity: 1,
+           width: "300px"
+          },
+          closeBoxMargin: "0px 0px -20px 0px",
+          closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
+          infoBoxClearance: new google.maps.Size(1, 1),
+          isHidden: false,
+          pane: "floatPane",
+          enableEventPropagation: false
         });
         var marker = new google.maps.Marker({
           position: {lat: point.latitude, lng: point.longitude},

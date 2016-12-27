@@ -1,5 +1,7 @@
 .popup-content {
   max-width: 300px;
+  background-color: white !important;
+  border-radius: 3px;
 }
 
 .story-map {
