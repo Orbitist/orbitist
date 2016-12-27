@@ -38,7 +38,8 @@ Template.storyMap.onRendered(function() {
         popup = '<video width="300" controls poster="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.jpg"><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.webm" type="video/webm"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.mp4" type="video/mp4"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.ogv" type="video/ogg"/></video><br><p>' + point.text + '</p>';
       }
       // End Popup Templates
-      if (point.latitude != NaN) {
+      
+      if (point.latitude >= -91) {
         var orbitistIcon = {
           url: 'https://res.cloudinary.com/orbitist/image/upload/c_scale,w_60/v1481982860/eee0g1qjw3nh4p7doruq.png',
           size: new google.maps.Size(30, 30),
@@ -64,9 +65,7 @@ Template.storyMap.onRendered(function() {
       }
     });
     map.fitBounds(bounds);
-
   }
-
   initMap();
 
 });
