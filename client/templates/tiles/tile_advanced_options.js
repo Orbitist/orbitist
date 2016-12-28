@@ -42,6 +42,7 @@ Template.tileAdvancedOptionsEdit.onRendered(function() {
           zoom:1,
           zoomControl:true,
           streetViewControl:false,
+          fullscreenControl: true,
           mapTypeControl:false,
           mapTypeId: 'hybrid',
           markerOptions: {
