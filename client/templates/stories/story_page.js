@@ -101,19 +101,6 @@ Template.storyPage.rendered = function() {
      responsiveHeight: 0,
      responsiveSlides: false,
 
-     //Custom selectors
-     sectionSelector: '.section',
-     slideSelector: '.slide',
-
      lazyLoading: true,
-
-     //events
-     onLeave: function(index, nextIndex, direction){},
-     afterLoad: function(anchorLink, index){},
-     afterRender: function(){},
-     afterResize: function(){},
-     afterResponsive: function(isResponsive){},
-     afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
-     onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
    });
  }
