@@ -1,0 +1,23 @@
+<template name="storyPageEdit">
+  <div class="story-page page">
+    {{> storyHeader}}
+
+    {{#if currentUser}}
+      {{#if ownStory}}
+        <p class="btn-add"><a href="#" class="create-tile"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a tile</a></p>
+        {{#if showTileMenu 'true'}}
+          {{> tileMenu}}
+        {{/if}}
+      {{/if}}<!-- if ownStory -->
+    {{/if}}
+
+    <div id="tile-items">
+      {{#each tiles}}
+        <div class="tile-item">
+          {{> tileItem}}
+        </div><!-- tileItem -->
+      {{/each}}
+    </div><!-- #items -->
+
+  </div>
+</template>

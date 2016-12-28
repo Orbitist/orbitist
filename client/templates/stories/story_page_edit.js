@@ -1,12 +1,12 @@
 // Set session variable for which tile form to use
 
-Template.storyPage.events({
+Template.storyPageEdit.events({
   'click .create-tile': function() {
     return Session.set('tileMenu', 'true');
   }
 });
 
-Template.storyPage.helpers({
+Template.storyPageEdit.helpers({
   tiles: function() {
     return Tiles.find({storyId: this._id}, {sort: {rank: 1}});
   },
@@ -20,7 +20,7 @@ Template.storyPage.helpers({
 
 //Once the Template is rendered, run this function which
 //  sets up JQuery UI's sortable functionality
-Template.storyPage.rendered = function() {
+Template.storyPageEdit.rendered = function() {
   if (!Meteor.userId()) {return};
   var pageStory = Blaze.getData($('.story')[0]);
   if (pageStory.userId !== Meteor.userId()){return};
@@ -57,5 +57,4 @@ Template.storyPage.rendered = function() {
    })
    $('.navbar').css('margin-top', '0px');
    $( "iframe" ).addClass( "embed-responsive-item" );
-   $('#fullpage').fullpage();
  }

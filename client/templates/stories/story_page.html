@@ -1,23 +1,22 @@
 <template name="storyPage">
-  <div class="story-page page">
-    {{> storyHeader}}
-
-    {{#if currentUser}}
-      {{#if ownStory}}
-        <p class="btn-add"><a href="#" class="create-tile"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a tile</a></p>
-        {{#if showTileMenu 'true'}}
-          {{> tileMenu}}
-        {{/if}}
-      {{/if}}<!-- if ownStory -->
-    {{/if}}
-
-    <div id="tile-items">
-      {{#each tiles}}
-        <div class="tile-item">
-          {{> tileItem}}
-        </div><!-- tileItem -->
-      {{/each}}
-    </div><!-- #items -->
-
-  </div>
+  <div id="fullpage">
+    <div class="section">
+      {{> storyHeader}}
+      {{#if currentUser}}
+        {{#if ownStory}}
+          <p class="btn-add"><a href="#" class="create-tile"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a tile</a></p>
+          {{#if showTileMenu 'true'}}
+            {{> tileMenu}}
+          {{/if}}
+        {{/if}}<!-- if ownStory -->
+      {{/if}}
+    </div><!-- section -->
+    {{#each tiles}}
+    <div class="section">
+      <div class="tile-item">
+        {{> tileItem}}
+      </div><!-- tileItem -->
+    </div><!-- section -->
+    {{/each}}
+  </div><!-- fullpage -->
 </template>
