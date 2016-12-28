@@ -89,5 +89,4 @@ Template.storyMap.onRendered(function() {
     map.fitBounds(bounds);
   }
   initMap();
-
 });

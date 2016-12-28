@@ -32,7 +32,9 @@
     {{/if}}
 
     {{#if tileTypeIframe}}
-      {{{iframeHtml}}}
+      <div class="embed-responsive embed-responsive-16by9">
+        {{{iframeHtml}}}
+      </div>
       <p>{{text}}</p>
       {{#if latitude}}
         <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>

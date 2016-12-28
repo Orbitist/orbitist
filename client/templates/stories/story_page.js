@@ -56,4 +56,5 @@ Template.storyPage.rendered = function() {
        }
    })
    $('.navbar').css('margin-top', '0px');
+   $( "iframe" ).addClass( "embed-responsive-item" );
  }
