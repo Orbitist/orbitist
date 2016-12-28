@@ -1,0 +1,10 @@
+.story-controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99999;
+}
+
+.story-controls .btn {
+  border-radius: 50px;
+}

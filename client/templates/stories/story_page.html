@@ -1,15 +1,15 @@
 <template name="storyPage">
+  <div class="story-controls">
+    <a class="btn btn-success" href="{{pathFor 'storyMap'}}"><i class="fa fa-map-o"></i></a>
+    {{#if currentUser}}
+    {{#if ownStory}}
+    <a href="{{pathFor 'storyEdit'}}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    {{/if}}<!-- if ownStory -->
+    {{/if}}
+  </div><!-- story-controls -->
   <div id="fullpage">
     <div class="section">
       {{> storyHeader}}
-      {{#if currentUser}}
-        {{#if ownStory}}
-          <p class="btn-add"><a href="#" class="create-tile"><i class="fa fa-plus-circle" aria-hidden="true"></i> Add a tile</a></p>
-          {{#if showTileMenu 'true'}}
-            {{> tileMenu}}
-          {{/if}}
-        {{/if}}<!-- if ownStory -->
-      {{/if}}
     </div><!-- section -->
     {{#each tiles}}
     <div class="section">
