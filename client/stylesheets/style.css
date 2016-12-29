@@ -21,13 +21,13 @@ form {
 #main {
   position: relative;
   width: 100%;
+  margin-top: 50px;
 }
 
 .page {
   position: absolute;
   top: 0px;
   width: 100%;
-  margin-top: 50px;
 }
 
 #spinner {

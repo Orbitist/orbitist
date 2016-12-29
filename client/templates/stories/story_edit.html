@@ -1,6 +1,10 @@
 <template name="storyEdit">
   <div class="story-page page">
-    {{> storyHeader}}
+    <div class="row">
+      <div class="col-md-4 col-md-offset-4">
+        {{> storyHeader}}
+      </div>
+    </div>
 
     {{#if currentUser}}
       {{#if ownStory}}
@@ -14,7 +18,11 @@
     <div id="tile-items">
       {{#each tiles}}
         <div class="tile-item">
-          {{> tileItem}}
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              {{> tileItem}}
+            </div>
+          </div>
         </div><!-- tileItem -->
       {{/each}}
     </div><!-- #items -->

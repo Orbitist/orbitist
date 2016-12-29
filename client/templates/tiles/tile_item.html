@@ -3,19 +3,13 @@
 
     {{#if tileTypeText}}
       <p>{{text}}</p>
-      {{#if latitude}}
-        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
-      {{/if}}
-      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditText'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
+      {{> tileButtons}}
     {{/if}}
 
     {{#if tileTypeImage}}
       <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
       <p>{{text}}</p>
-      {{#if latitude}}
-        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
-      {{/if}}
-      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditImage'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
+      {{> tileButtons}}
     {{/if}}
 
     {{#if tileTypeVideo}}
@@ -25,10 +19,7 @@
         <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.ogv" type="video/ogg"/>
       </video>
       <p>{{text}}</p>
-      {{#if latitude}}
-        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
-      {{/if}}
-      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditVideo'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
+      {{> tileButtons}}
     {{/if}}
 
     {{#if tileTypeIframe}}
@@ -36,10 +27,7 @@
         {{{iframeHtml}}}
       </div>
       <p>{{text}}</p>
-      {{#if latitude}}
-        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
-      {{/if}}
-      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditIframe'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
+      {{> tileButtons}}
     {{/if}}
 
     {{#if tileTypePointOfInterest}}
@@ -56,10 +44,7 @@
           <p>{{text}}</p>
         </div><!-- col-xs-9 -->
       </div><!-- row -->
-      {{#if latitude}}
-        <small><a class="btn btn-xs btn-default" target="_blank" href="https://www.google.com/maps/@{{latitude}},{{longitude}},15z"><i class="fa fa-globe" aria-hidden="true"></i></a></small>
-      {{/if}}
-      {{#if ownTile}}<small><a class="btn btn-xs btn-default" href="{{pathFor 'tileEditPointOfInterest'}}"><i class="fa fa-pencil" aria-hidden="true"></i></a></small>{{/if}}
+      {{> tileButtons}}  
     {{/if}}
 
 
