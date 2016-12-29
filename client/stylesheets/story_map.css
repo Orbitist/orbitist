@@ -10,10 +10,15 @@
   margin-top: 50px;
 }
 
-.map-title a{
-  width: calc(100% - 50px);
+.map-title a {
+  width: 80%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-top: 2px;
+}
+@media (min-width: 784px) {
+  .map-title a {
+    width: 600px;
+  }
 }

@@ -57,5 +57,5 @@ Template.storyEdit.rendered = function() {
    })
    $('.navbar').css('margin-top', '0px');
    $( "iframe" ).addClass( "embed-responsive-item" );
-   $.fn.fullpage.destroy('all');
+   $.fn.fullpage.destroy();
  }

@@ -30,7 +30,7 @@ Template.storySettings.events({
         // display the error to the user
         throwError(error.reason);
       } else {
-        Router.go('storyPage', {_id: currentStoryId});
+        Router.go('storyEdit', {_id: currentStoryId});
       }
     });
   },
