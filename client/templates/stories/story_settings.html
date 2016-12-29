@@ -1,14 +1,16 @@
 <template name="storySettings">
-  <form>
-    <div class="form-group {{errorClass 'title'}}">
-      <label class="control-label" for="title">Title</label>
-      <div class="controls">
-          <input name="title" id="title" type="text" value="{{title}}" placeholder="Name your story" class="form-control"/>
-          <span class="help-block">{{errorMessage 'title'}}</span>
+    <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'title'}}">
+        <label class="control-label" for="title">Title</label>
+        <div class="controls">
+            <input name="title" id="title" type="text" value="{{title}}" placeholder="Name your story" class="form-control"/>
+            <span class="help-block">{{errorMessage 'title'}}</span>
+        </div>
       </div>
-    </div>
-    <input type="submit" value="Save" class="btn btn-primary submit"/>
-    <hr/>
-    <a class="btn btn-danger delete" href="#">Delete story</a>
-  </form>
+      <input type="submit" value="Save" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete story</a>
+    </form>
+  </div>
 </template>
