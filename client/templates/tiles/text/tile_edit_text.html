@@ -1,16 +1,18 @@
 <template name="tileEditText">
-  <form>
-    <div class="form-group {{errorClass 'text'}}">
-      <label class="control-label" for="title">Text</label>
-      <div class="controls">
-        <textarea name="text" id="text" class="form-control" rows="5" value="{{text}}"></textarea>
-        <span class="help-block">{{errorMessage 'text'}}</span>
-        {{> tileAdvancedOptionsEdit}}
+  <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'text'}}">
+        <label class="control-label" for="title">Text</label>
+        <div class="controls">
+          <textarea name="text" id="text" class="form-control" rows="5" value="{{text}}"></textarea>
+          <span class="help-block">{{errorMessage 'text'}}</span>
+          {{> tileAdvancedOptionsEdit}}
+        </div>
       </div>
-    </div>
-    <input type="submit" value="Save" class="btn btn-primary submit"/>
-    <hr/>
-    <a class="btn btn-danger delete" href="#">Delete tile</a>
-    <hr/>
-  </form>
+      <input type="submit" value="Save" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete tile</a>
+      <hr/>
+    </form>
+  </div>
 </template>

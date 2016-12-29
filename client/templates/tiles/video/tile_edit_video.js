@@ -86,7 +86,7 @@ Template.tileEditVideo.events({
         return throwError(error.reason);
       }
     });
-    Router.go('storyPage', {_id: this.storyId});
+    Router.go('storyEdit', {_id: this.storyId});
   },
   'click .delete': function(e) {
     e.preventDefault();

@@ -1,26 +1,28 @@
 <template name="tileEditVideo">
-  <form>
-    <div class="form-group {{errorClass 'video'}}">
-        {{#if uploadingVideo 'true'}}
-          {{> uploading}}
-        {{/if}}
-        <div class="controls">
-          <div class="videoUploadThumb">
-            <video class="img-responsive" controls poster="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.jpg">
-              <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.webm" type="video/webm"/>
-              <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.mp4" type="video/mp4"/>
-              <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.ogv" type="video/ogg"/>
-            </video>
+  <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'video'}}">
+          {{#if uploadingVideo 'true'}}
+            {{> uploading}}
+          {{/if}}
+          <div class="controls">
+            <div class="videoUploadThumb">
+              <video class="img-responsive" controls poster="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.jpg">
+                <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.webm" type="video/webm"/>
+                <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.mp4" type="video/mp4"/>
+                <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.ogv" type="video/ogg"/>
+              </video>
+            </div>
+            <input type="file" name="video" id="video" class="form-control" accept="video/mp4,video/x-m4v,video/*" value="">
+            <span class="help-block">{{errorMessage 'video'}}</span>
+            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your video..." value="{{text}}"></textarea>
+            {{> tileAdvancedOptionsEdit}}
           </div>
-          <input type="file" name="video" id="video" class="form-control" accept="video/mp4,video/x-m4v,video/*" value="">
-          <span class="help-block">{{errorMessage 'video'}}</span>
-          <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your video..." value="{{text}}"></textarea>
-          {{> tileAdvancedOptionsEdit}}
-        </div>
-    </div>
-    <input type="submit" value="Save" class="btn btn-primary submit"/>
-    <hr/>
-    <a class="btn btn-danger delete" href="#">Delete tile</a>
-    <hr>
-  </form>
+      </div>
+      <input type="submit" value="Save" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete tile</a>
+      <hr>
+    </form>
+  </div>
 </template>

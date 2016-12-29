@@ -1,20 +1,22 @@
 <template name="tileEditImage">
-  <form>
-    <div class="form-group {{errorClass 'image'}}">
-        {{#if uploadingImage 'true'}}
-          {{> uploading}}
-        {{/if}}
-        <div class="controls">
-            <div class="imageUploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/></div>
-            <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
-            <span class="help-block">{{errorMessage 'image'}}</span>
-            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your image..." value="{{text}}"></textarea>
-            {{> tileAdvancedOptionsEdit}}
-        </div>
-    </div>
-    <input type="submit" value="Save" class="btn btn-primary submit"/>
-    <hr/>
-    <a class="btn btn-danger delete" href="#">Delete tile</a>
-    <hr>
-  </form>
+  <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'image'}}">
+          {{#if uploadingImage 'true'}}
+            {{> uploading}}
+          {{/if}}
+          <div class="controls">
+              <div class="imageUploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/></div>
+              <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
+              <span class="help-block">{{errorMessage 'image'}}</span>
+              <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your image..." value="{{text}}"></textarea>
+              {{> tileAdvancedOptionsEdit}}
+          </div>
+      </div>
+      <input type="submit" value="Save" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete tile</a>
+      <hr>
+    </form>
+  </div>
 </template>
