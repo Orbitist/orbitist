@@ -7,7 +7,7 @@
           <span class="fa fa-cog"></span>
         </button>
           {{#if isMap}}
-            <a class="navbar-brand" href="{{pathFor 'storyPage'}}"><i class="fa fa-chevron-left"></i> {{title}}</a>
+            <div class="map-title"><a class="navbar-brand" href="{{pathFor 'storyPage'}}"><i class="fa fa-chevron-left"></i> {{title}}</a></div>
           {{else}}
             <a class="navbar-brand navbar-brand-text" href="{{pathFor 'storiesList'}}"><img alt="Brand" src="https://res.cloudinary.com/orbitist/image/upload/v1482159213/logo_blue_button_100_sjpiii.png"></a>
           {{/if}}

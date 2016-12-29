@@ -9,3 +9,11 @@
   width:100%;
   margin-top: 50px;
 }
+
+.map-title a{
+  width: calc(100% - 50px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
