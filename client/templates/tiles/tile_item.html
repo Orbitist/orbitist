@@ -1,5 +1,5 @@
 <template name="tileItem">
-  <div class="tile">
+  <div class="tile {{#if isStoryEditPage}}thumbnail{{/if}}">
 
     {{#if tileTypeText}}
       <p>{{text}}</p>
@@ -44,7 +44,7 @@
           <p>{{text}}</p>
         </div><!-- col-xs-9 -->
       </div><!-- row -->
-      {{> tileButtons}}  
+      {{> tileButtons}}
     {{/if}}
 
 

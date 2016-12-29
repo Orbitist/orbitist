@@ -1,7 +1,6 @@
 .tile {
   width: 100%;
   border-radius: 3px;
-  border: #ccc solid 1px;
   padding: 20px;
   margin: 5px auto;
   max-width: 640px;

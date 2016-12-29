@@ -1,4 +1,7 @@
 Template.tileItem.helpers({
+  isStoryEditPage: function() {
+    return Router.current().route.getName() == 'storyEdit'
+  },
   submittedText: function() {
     return this.submitted.toString();
   },
