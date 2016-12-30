@@ -4,6 +4,22 @@
   border-radius: 3px;
 }
 
+.popup-arrow {
+  width: 100%;
+  height: 15px;
+  bottom: -15px;
+  position: absolute;
+  overflow: hidden;
+}
+.popup-arrow i {
+  position: absolute;
+  width: 100%;
+  top: -22px;
+  font-size: 52px;
+  text-align: center;
+  color: white;
+}
+
 .story-map {
   height:calc(100vh - 50px);
   width:100%;

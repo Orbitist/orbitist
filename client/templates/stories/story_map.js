@@ -45,6 +45,8 @@ Template.storyMap.onRendered(function() {
       }
       // End Popup Templates
 
+      var infoBox = popup + '<div class="popup-arrow"><i class="fa fa-caret-down" aria-hidden="true"></i></div>';
+
       if (point.latitude >= -91) {
         var orbitistIcon = {
           url: 'https://res.cloudinary.com/orbitist/image/upload/c_scale,w_60/v1481982860/eee0g1qjw3nh4p7doruq.png',
@@ -54,13 +56,13 @@ Template.storyMap.onRendered(function() {
           scaledSize: new google.maps.Size(30, 30)
         };
         var infowindow = new InfoBox({
-          content: popup,
+          content: infoBox,
           boxClass: 'popup-content',
           disableAutoPan: false,
           maxWidth: 0,
           alignBottom: true,
-          pixelOffset: new google.maps.Size(-150, -40),
-          zIndex: null,
+          pixelOffset: new google.maps.Size(-150, -50),
+          zIndex: 2,
           boxStyle: {
            background: "none",
            opacity: 1,
@@ -68,7 +70,7 @@ Template.storyMap.onRendered(function() {
           },
           closeBoxMargin: "0px 0px -20px 0px",
           closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
-          infoBoxClearance: new google.maps.Size(20, 20),
+          infoBoxClearance: new google.maps.Size(10, 40),
           isHidden: false,
           pane: "floatPane",
           enableEventPropagation: false,
