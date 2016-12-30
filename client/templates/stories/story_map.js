@@ -58,7 +58,8 @@ Template.storyMap.onRendered(function() {
           boxClass: 'popup-content',
           disableAutoPan: false,
           maxWidth: 0,
-          pixelOffset: new google.maps.Size(-150, 0),
+          alignBottom: true,
+          pixelOffset: new google.maps.Size(-150, -40),
           zIndex: null,
           boxStyle: {
            background: "none",
@@ -67,10 +68,10 @@ Template.storyMap.onRendered(function() {
           },
           closeBoxMargin: "0px 0px -20px 0px",
           closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif",
-          infoBoxClearance: new google.maps.Size(1, 1),
+          infoBoxClearance: new google.maps.Size(20, 20),
           isHidden: false,
           pane: "floatPane",
-          enableEventPropagation: false
+          enableEventPropagation: false,
         });
         var marker = new google.maps.Marker({
           position: {lat: point.latitude, lng: point.longitude},
