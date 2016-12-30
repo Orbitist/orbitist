@@ -5,6 +5,7 @@
   margin: 5px auto;
   max-width: 640px;
   background-color: white;
+  overflow-y: hidden;
 }
 
 #tile-items {
