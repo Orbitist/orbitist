@@ -30,8 +30,9 @@ form {
   margin-top: 50px;
 }
 
-#spinner {
-  height: 300px;
+.row {
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .dropdown-menu span {

@@ -1,9 +1,8 @@
 <template name="storiesList">
   {{#if loggingIn}}
-    {{> spinner}}
+    {{> loading}}
   {{else}}
     {{#if currentUser}}
-
       <div class="container page">
         <p class="btn-add"><a href="{{pathFor 'storySubmit'}}"><i class="fa fa-plus-circle" aria-hidden="true"></i> Create Story</a></p>
         <div class="stories">

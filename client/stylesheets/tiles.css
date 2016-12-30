@@ -5,18 +5,8 @@
   margin: 5px auto;
   max-width: 640px;
   background-color: white;
-  /* These are technically the same, but use both */
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-
-  /* Adds a hyphen where the word breaks, if supported (No Blink) */
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
-  hyphens: auto;
 }
 
-.tile-item .row {
-  padding: 10px 30px;
-  margin: 0;
+#tile-items {
+  padding: 10px 40px;
 }
