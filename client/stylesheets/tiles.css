@@ -15,3 +15,8 @@
   -webkit-hyphens: auto;
   hyphens: auto;
 }
+
+.tile-item .row {
+  padding: 10px 30px;
+  margin: 0;
+}
