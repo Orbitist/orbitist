@@ -11,6 +11,9 @@ Template.tileMenu.events({
   'click #tileTypeIframe': function() {
     return Session.set('tileType', 'iframe');
   },
+  'click #tileTypeEmbed': function() {
+    return Session.set('tileType', 'embed');
+  },
   'click #tileTypePointOfInterest': function() {
     return Session.set('tileType', 'pointOfInterest');
   },

@@ -1,0 +1,16 @@
+<template name="tileSubmitEmbed">
+  <hr>
+  <form name="tile" class="tile-form form">
+    <div class="form-group {{errorClass 'embed'}}">
+        <div class="controls">
+            <label><i class="fa fa-code"></i> Embed code</label>
+            <textarea name="embed" id="embed" class="form-control" rows="2" placeholder="Paste embed code here..."></textarea>
+            <span class="help-block">{{errorMessage 'embed'}}</span>
+            <label>Description</label>
+            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your embed..." value="{{text}}"></textarea>
+            {{> tileAdvancedOptions}}
+        </div>
+    </div>
+    {{> tileSubmitButton}}
+  </form>
+</template>

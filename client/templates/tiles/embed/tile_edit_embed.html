@@ -1,0 +1,21 @@
+<template name="tileEditEmbed">
+  <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'embed'}}">
+        <label class="control-label" for="embed">Embed</label>
+        <div class="controls">
+          <label><i class="fa fa-code"></i> Embed code</label>
+          <textarea name="embed" id="embed" class="form-control" rows="2" value="{{embed}}"></textarea>
+          <span class="help-block">{{errorMessage 'embed'}}</span>
+          <label>Description</label>
+          <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your embed..." value="{{text}}"></textarea>
+          {{> tileAdvancedOptionsEdit}}
+        </div>
+      </div>
+      <input type="submit" value="Submit" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete tile</a>
+      <hr/>
+    </form>
+  </div>
+</template>

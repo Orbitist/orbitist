@@ -17,6 +17,9 @@ Template.tileEdit.helpers({
   tileTypeIframe: function() {
     return this.tileType === 'iframe';
   },
+  tileTypeEmbed: function() {
+    return this.tileType === 'embed';
+  },
   tileTypePointOfInterest: function() {
     return this.tileType === 'pointOfInterest';
   }
