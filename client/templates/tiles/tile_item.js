@@ -17,6 +17,21 @@ Template.tileItem.helpers({
   hasImage: function() {
     return this.imageUrl != '';
   },
+  hasPhone: function() {
+    return this.phone != '';
+  },
+  hasEmail: function() {
+    return this.email != '';
+  },
+  hasHours: function() {
+    return this.hours != '';
+  },
+  hasCost: function() {
+    return this.cost != '';
+  },
+  hasAccessibility: function() {
+    return this.accessibility != '';
+  },
   tileTypeVideo: function() {
     return this.tileType === 'video';
   },

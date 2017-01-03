@@ -45,6 +45,11 @@ Template.tileSubmitText.events({
       videoUrl: '',
       videoId: '',
       iframe: '',
+      phone: '',
+      email: '',
+      hours: '',
+      cost: '',
+      accessibility: '',
       rank: topRank,
       latitude: latInput,
       longitude: lngInput

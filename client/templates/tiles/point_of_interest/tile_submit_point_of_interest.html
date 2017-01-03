@@ -6,11 +6,33 @@
         {{> uploading}}
       {{/if}}
       <div class="controls">
+
+        <label>Title</label>
         <input name="title" id="title" type="text" value="" placeholder="Title of this point of interest" class="form-control"/>
+        <span class="help-block">{{errorMessage 'title'}}</span>
+
+        <label>Image</label>
         <div class="imageUploadThumb"></div>
         <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
-        <span class="help-block">{{errorMessage 'title'}}</span>
+
+        <label>Description</label>
         <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your point of interest..."></textarea>
+
+        <label><i class="fa fa-phone" aria-hidden="true"></i> Phone</label>
+        <input name="phone" id="phone" type="text" value="" placeholder="Enter phone number here" class="form-control"/>
+
+        <label><i class="fa fa-at" aria-hidden="true"></i> Email</label>
+        <input name="email" id="email" type="text" value="" placeholder="Enter email address here" class="form-control"/>
+
+        <label><i class="fa fa-clock-o" aria-hidden="true"></i> Hours</label>
+        <input name="hours" id="hours" type="text" value="" placeholder="Enter hours of operation here" class="form-control"/>
+
+        <label><i class="fa fa-money" aria-hidden="true"></i> Cost</label>
+        <input name="cost" id="cost" type="text" value="" placeholder="Enter cost information here" class="form-control"/>
+
+        <label><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> Accessibility</label>
+        <input name="accessibility" id="accessibility" type="text" value="" placeholder="Enter accessibility information here" class="form-control"/>
+
         {{> tileAdvancedOptions}}
       </div>
     </div>

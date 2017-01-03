@@ -1,12 +1,5 @@
 <template name="storyPage">
-  <div class="story-controls">
-    <a class="btn btn-success" href="{{pathFor 'storyMap'}}"><i class="fa fa-map-o"></i></a>
-    {{#if currentUser}}
-    {{#if ownStory}}
-    <a href="{{pathFor 'storyEdit'}}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i></a>
-    {{/if}}<!-- if ownStory -->
-    {{/if}}
-  </div><!-- story-controls -->
+{{> storyControls}}
   <div id="fullpage">
     <div class="section">
       <div class="story-header">

@@ -26,6 +26,12 @@ Template.storyMap.onRendered(function() {
       mapTypeControlOptions: {
         style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
         position: google.maps.ControlPosition.BOTTOM_CENTER
+      },
+      zoomControlOptions: {
+        position: google.maps.ControlPosition.TOP_RIGHT
+      },
+      streetViewControlOptions: {
+        position: google.maps.ControlPosition.TOP_RIGHT
       }
     });
 
@@ -45,7 +51,22 @@ Template.storyMap.onRendered(function() {
         popup = point.iframe + '<p>' + point.text + '</p>';
       }
       if (point.tileType == 'pointOfInterest') {
-        popup = '<img width="300" class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + point.imageId + '"/>' + '<p class="lead">' + point.title + '</p><p>' + point.text + '</p>';
+        if (point.phone != '') {
+          var phone = '<p><small><i class="fa fa-phone" aria-hidden="true"></i> ' + point.phone + '</small></p>';
+        }
+        if (point.email != '') {
+          var email = '<p><small><i class="fa fa-at" aria-hidden="true"></i> ' + point.email + '</small></p>';
+        }
+        if (point.hours != '') {
+          var hours = '<p><small><i class="fa fa-clock-o" aria-hidden="true"></i> ' + point.hours + '</small></p>';
+        }
+        if (point.cost != '') {
+          var cost = '<p><small><i class="fa fa-money" aria-hidden="true"></i> ' + point.cost + '</small></p>';
+        }
+        if (point.accessibility != '') {
+          var accessibility = '<p><small><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> ' + point.accessibility + '</small></p>';
+        }
+        popup = '<img width="300" class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + point.imageId + '"/>' + '<p class="lead">' + point.title + '</p><p>' + point.text + '</p>' + phone + email + hours + cost + accessibility;
       }
       // End Popup Templates
 

@@ -51,6 +51,11 @@ Template.tileSubmitIframe.events({
       videoUrl: '',
       videoId: '',
       iframe: $iframe.val(),
+      phone: '',
+      email: '',
+      hours: '',
+      cost: '',
+      accessibility: '',
       rank: topRank,
       latitude: latInput,
       longitude: lngInput

@@ -64,6 +64,36 @@ Template.tileSubmitPointOfInterest.events({
       titleInput = '';
     }
 
+    var $phone = $(e.target).find('[name=phone]');
+    var phoneInput = $phone.val();
+    if (!phoneInput) {
+      phoneInput = '';
+    }
+
+    var $email = $(e.target).find('[name=email]');
+    var emailInput = $email.val();
+    if (!emailInput) {
+      emailInput = '';
+    }
+
+    var $hours = $(e.target).find('[name=hours]');
+    var hoursInput = $hours.val();
+    if (!hoursInput) {
+      hoursInput = '';
+    }
+
+    var $cost = $(e.target).find('[name=cost]');
+    var costInput = $cost.val();
+    if (!costInput) {
+      costInput = '';
+    }
+
+    var $accessibility = $(e.target).find('[name=accessibility]');
+    var accessibilityInput = $accessibility.val();
+    if (!accessibilityInput) {
+      accessibilityInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -85,6 +115,11 @@ Template.tileSubmitPointOfInterest.events({
       videoUrl: '',
       videoId: '',
       iframe: '',
+      phone: phoneInput,
+      email: emailInput,
+      hours: hoursInput,
+      cost: costInput,
+      accessibility: accessibilityInput,
       storyId: template.data._id,
       rank: topRank,
       latitude: latInput,
