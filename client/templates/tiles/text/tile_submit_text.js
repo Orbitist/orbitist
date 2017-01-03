@@ -44,7 +44,7 @@ Template.tileSubmitText.events({
       imageId: '',
       videoUrl: '',
       videoId: '',
-      iframe: '',
+      embed: '',
       phone: '',
       email: '',
       hours: '',

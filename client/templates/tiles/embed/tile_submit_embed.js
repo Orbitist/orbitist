@@ -50,7 +50,6 @@ Template.tileSubmitEmbed.events({
       imageId: '',
       videoUrl: '',
       videoId: '',
-      iframe: '',
       embed: $embed.val(),
       phone: '',
       email: '',

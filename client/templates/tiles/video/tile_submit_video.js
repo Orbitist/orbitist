@@ -74,7 +74,7 @@ Template.tileSubmitVideo.events({
       imageId: '',
       videoUrl: videoUrlVar,
       videoId: videoIdVar,
-      iframe: '',
+      embed: '',
       phone: '',
       email: '',
       hours: '',

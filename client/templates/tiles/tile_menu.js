@@ -8,9 +8,6 @@ Template.tileMenu.events({
   'click #tileTypeVideo': function() {
     return Session.set('tileType', 'video');
   },
-  'click #tileTypeIframe': function() {
-    return Session.set('tileType', 'iframe');
-  },
   'click #tileTypeEmbed': function() {
     return Session.set('tileType', 'embed');
   },

@@ -61,7 +61,7 @@ Template.tileEditEmbed.events({
     if (confirm("Delete this tile?")) {
       var currentTileId = this._id;
       Tiles.remove(currentTileId);
-      Router.go('storyPage', {_id: this.storyId});
+      Router.go('storyEdit', {_id: this.storyId});
     }
   }
 });

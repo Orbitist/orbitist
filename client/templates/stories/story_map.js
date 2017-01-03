@@ -47,9 +47,6 @@ Template.storyMap.onRendered(function() {
       if (point.tileType == 'video') {
         popup = '<video width="300" controls poster="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.jpg"><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.webm" type="video/webm"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.mp4" type="video/mp4"/><source src="https://res.cloudinary.com/orbitist/video/upload/' + point.videoId + '.ogv" type="video/ogg"/></video><br><p>' + point.text + '</p>';
       }
-      if (point.tileType == 'iframe') {
-        popup = point.iframe + '<p>' + point.text + '</p>';
-      }
       if (point.tileType == 'embed') {
         popup = point.embed + '<p>' + point.text + '</p>';
       }
