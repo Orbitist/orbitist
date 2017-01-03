@@ -1,5 +1,5 @@
 <template name="navbar">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <!-- <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
@@ -23,6 +23,23 @@
           {{/if}}
         </ul>
       </div>
-    </div><!-- container-fluid -->
+    </div>
+  </nav> -->
+
+
+  <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+    <a class="navmenu-brand" href="#"><img alt="Brand" src="https://res.cloudinary.com/orbitist/image/upload/v1482159213/logo_blue_button_100_sjpiii.png"> ORBITIST</a>
+    <ul class="nav navmenu-nav">
+      {{#if currentUser}}
+        <li><a href="https://goo.gl/forms/OSrIkaFIQHBvQnqh2" target="_blank" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-bug" aria-hidden="true"></i> Submit bug report</a></li>
+        <li><a href="{{pathFor 'storiesList'}}" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-user"></i> {{currentUser.username}}</a></li>
+        {{>logout}}
+        {{else}}
+        <li><a href="{{pathFor 'storiesList'}}" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-user"></i> Log in</a></li>
+      {{/if}}
+    </ul>
   </nav>
+      <button type="button" class="navbar-toggle-orbitist btn btn-add" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+        <span class="fa fa-bars"></span>
+      </button>
 </template>

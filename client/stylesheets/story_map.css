@@ -21,9 +21,8 @@
 }
 
 .story-map {
-  height:calc(100vh - 50px);
+  height:100vh;
   width:100%;
-  margin-top: 50px;
 }
 
 .map-title a {
@@ -37,4 +36,16 @@
   .map-title a {
     width: 600px;
   }
+}
+
+.gm-iv-address {
+  position: absolute;
+  left: 88px;
+  top: 0px;
+}
+
+.gm-iv-container {
+  position: absolute;
+  left: 61px;
+  top: 0px;
 }
