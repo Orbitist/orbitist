@@ -56,4 +56,9 @@ Template.storyPage.rendered = function() {
    lazyLoading: true,
   });
   Session.set('fullPageInit', 'true');
+
+  window.setInterval(function(){
+    twttr.widgets.load(),
+    instgrm.Embeds.process()
+  }, 500);
  }

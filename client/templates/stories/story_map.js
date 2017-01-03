@@ -50,6 +50,9 @@ Template.storyMap.onRendered(function() {
       if (point.tileType == 'iframe') {
         popup = point.iframe + '<p>' + point.text + '</p>';
       }
+      if (point.tileType == 'embed') {
+        popup = point.embed + '<p>' + point.text + '</p>';
+      }
       if (point.tileType == 'pointOfInterest') {
         if (point.phone != '') {
           var phone = '<p><small><i class="fa fa-phone" aria-hidden="true"></i> ' + point.phone + '</small></p>';
@@ -117,4 +120,9 @@ Template.storyMap.onRendered(function() {
     map.fitBounds(bounds);
   }
   initMap();
+
+  window.setInterval(function(){
+    twttr.widgets.load(),
+    instgrm.Embeds.process()
+  }, 500);
 });

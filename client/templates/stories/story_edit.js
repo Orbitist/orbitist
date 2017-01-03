@@ -58,4 +58,9 @@ Template.storyEdit.rendered = function() {
    $('.navbar').css('margin-top', '0px');
    $( "iframe" ).addClass( "embed-responsive-item" );
    $.fn.fullpage.destroy();
+
+   window.setInterval(function(){
+     twttr.widgets.load(),
+     instgrm.Embeds.process()
+   }, 500);
  }
