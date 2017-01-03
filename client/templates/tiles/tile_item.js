@@ -40,8 +40,5 @@ Template.tileItem.helpers({
   },
   tileTypePointOfInterest: function() {
     return this.tileType === 'pointOfInterest';
-  },
-  iframeHtml: function() {
-    return this.iframe;
   }
 });

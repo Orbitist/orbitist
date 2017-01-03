@@ -29,7 +29,7 @@ Template.storySubmit.events({
         return throwError(error.reason);
 
       Session.set('storyMenu', 'false');
-      Router.go('storyPage', {_id: result._id});
+      Router.go('storyEdit', {_id: result._id});
     });
   }
 });
