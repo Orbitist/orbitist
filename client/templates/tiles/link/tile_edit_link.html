@@ -4,9 +4,14 @@
       <div class="form-group {{errorClass 'link'}}">
         <label class="control-label" for="title">Link</label>
         <div class="controls">
+
           <label><i class="fa fa-link" aria-hidden="true"></i> Link URL</label>
           <input name="link" id="link" class="form-control" value="{{url}}" />
           <span class="help-block">{{errorMessage 'link'}}</span>
+
+          <label>Link label</label>
+          <input name="text" id="text" class="form-control" value="{{text}}" placeholder="Enter link label..." />
+
           {{> tileAdvancedOptionsEdit}}
         </div>
       </div>

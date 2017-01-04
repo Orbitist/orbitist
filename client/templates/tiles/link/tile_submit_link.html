@@ -3,9 +3,14 @@
   <form name="tile" class="tile-form form">
     <div class="form-group {{errorClass 'link'}}">
         <div class="controls">
+
             <label><i class="fa fa-link" aria-hidden="true"></i> Link URL</label>
             <input name="link" id="link" class="form-control" placeholder="Paste a URL here..." />
             <span class="help-block">{{errorMessage 'link'}}</span>
+
+            <label>Link label</label>
+            <input name="text" id="text" class="form-control" placeholder="Enter link label..." />
+
             {{> tileAdvancedOptions}}
         </div>
     </div>

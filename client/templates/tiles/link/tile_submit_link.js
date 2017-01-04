@@ -22,6 +22,12 @@ Template.tileSubmitLink.events({
       var topRank = 1;
     }
 
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -37,7 +43,7 @@ Template.tileSubmitLink.events({
     var $link = $(e.target).find('[name=link]');
     var tile = {
       tileType: 'link',
-      text: '',
+      text: textInput,
       title: '',
       storyId: template.data._id,
       imageUrl: '',

@@ -17,6 +17,12 @@ Template.tileEditLink.events({
 
     var currentTileId = this._id;
 
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -31,6 +37,7 @@ Template.tileEditLink.events({
 
     var tileProperties = {
       url: $(e.target).find('[name=link]').val(),
+      text: textInput,
       latitude: latInput,
       longitude: lngInput
     }
