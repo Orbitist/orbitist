@@ -1,8 +1,8 @@
-Template.tileSubmitText.onCreated(function() {
+Template.tileSubmitLink.onCreated(function() {
   Session.set('tileSubmitErrors', {});
 });
 
-Template.tileSubmitText.helpers({
+Template.tileSubmitLink.helpers({
   errorMessage: function(field) {
     return Session.get('tileSubmitErrors')[field];
   },
@@ -11,7 +11,7 @@ Template.tileSubmitText.helpers({
   }
 });
 
-Template.tileSubmitText.events({
+Template.tileSubmitLink.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
@@ -34,16 +34,17 @@ Template.tileSubmitText.events({
       lngInput = NaN;
     }
 
-    var $text = $(e.target).find('[name=text]');
+    var $link = $(e.target).find('[name=link]');
     var tile = {
-      tileType: 'text',
-      text: $text.val(),
+      tileType: 'link',
+      text: '',
       title: '',
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',
       videoUrl: '',
       videoId: '',
+      url: $link.val(),
       embed: '',
       phone: '',
       email: '',
@@ -56,8 +57,8 @@ Template.tileSubmitText.events({
     };
 
     var errors = {};
-    if (! tile.text) {
-      errors.text = "Please write some content";
+    if (! tile.link) {
+      errors.link = "Please write some content";
       return Session.set('tileSubmitErrors', errors);
     }
 
@@ -65,7 +66,7 @@ Template.tileSubmitText.events({
       if (error){
         throwError(error.reason);
       } else {
-        $text.val('');
+        $link.val('');
         Session.set('tileMenu', 'false');
       }
     });

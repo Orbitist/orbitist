@@ -3,7 +3,8 @@
   <form name="tile" class="tile-form form">
     <div class="form-group {{errorClass 'link'}}">
         <div class="controls">
-            <textarea name="link" id="link" class="form-control" rows="5" placeholder="Tell a story..."></textarea>
+            <label><i class="fa fa-link" aria-hidden="true"></i> Link URL</label>
+            <input name="link" id="link" class="form-control" placeholder="Paste a URL here..." />
             <span class="help-block">{{errorMessage 'link'}}</span>
             {{> tileAdvancedOptions}}
         </div>

@@ -30,7 +30,7 @@ Template.tileEditLink.events({
     }
 
     var tileProperties = {
-      link: $(e.target).find('[name=link]').val(),
+      url: $(e.target).find('[name=link]').val(),
       latitude: latInput,
       longitude: lngInput
     }
