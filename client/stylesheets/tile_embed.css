@@ -1,0 +1,23 @@
+.popup-content iframe {
+  width: 100% !important;
+  height: 250px !important;
+}
+
+.tile-embed {
+  width: 100%;
+  height: 80vh;
+}
+
+.tile-embed iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+twitterwidget {
+  margin: 10px auto !important;
+}
+
+.tile-embed iframe.instagram-media {
+  max-width: 658px !important;
+  margin: 0 auto !important;
+}
