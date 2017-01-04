@@ -114,6 +114,7 @@ Template.tileSubmitPointOfInterest.events({
       imageId: imageIdVar,
       videoUrl: '',
       videoId: '',
+      url: '',
       embed: '',
       phone: phoneInput,
       email: emailInput,
