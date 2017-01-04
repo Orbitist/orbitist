@@ -51,22 +51,28 @@ Template.storyMap.onRendered(function() {
         popup = point.embed + '<p>' + point.text + '</p>';
       }
       if (point.tileType == 'pointOfInterest') {
-        if (point.phone != '') {
+        if (point.imageUrl !== '') {
+          var image = '<img width="300" class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + point.imageId + '"/>';
+        } else { var image = ''; }
+        if (point.phone !== '') {
           var phone = '<p><small><i class="fa fa-phone" aria-hidden="true"></i> ' + point.phone + '</small></p>';
-        }
-        if (point.email != '') {
+        } else { var phone = ''; }
+        if (point.email !== '') {
           var email = '<p><small><i class="fa fa-at" aria-hidden="true"></i> ' + point.email + '</small></p>';
-        }
-        if (point.hours != '') {
+        } else { var email = ''; }
+        if (point.hours !== '') {
           var hours = '<p><small><i class="fa fa-clock-o" aria-hidden="true"></i> ' + point.hours + '</small></p>';
-        }
-        if (point.cost != '') {
+        } else { var hours = ''; }
+        if (point.cost !== '') {
           var cost = '<p><small><i class="fa fa-money" aria-hidden="true"></i> ' + point.cost + '</small></p>';
-        }
-        if (point.accessibility != '') {
+        } else { var cost = ''; }
+        if (point.accessibility !== '') {
           var accessibility = '<p><small><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> ' + point.accessibility + '</small></p>';
-        }
-        popup = '<img width="300" class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + point.imageId + '"/>' + '<p class="lead">' + point.title + '</p><p>' + point.text + '</p>' + phone + email + hours + cost + accessibility;
+        } else { var accessibility = ''; }
+        popup = image + '<p class="lead">' + point.title + '</p><p>' + point.text + '</p>' + phone + email + hours + cost + accessibility;
+      }
+      if (point.tileType == 'link') {
+        popup = '<h2 class="lead link"><a href="' + point.url + '" target="_blank"><i class="fa fa-link"></i> ' + point.text + ' <small><i class="fa fa-external-link"></i></small></a></h2>';
       }
       // End Popup Templates
 
