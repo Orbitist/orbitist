@@ -57,7 +57,7 @@ Template.tileSubmitLink.events({
     };
 
     var errors = {};
-    if (! tile.link) {
+    if (! tile.url) {
       errors.link = "Please write some content";
       return Session.set('tileSubmitErrors', errors);
     }

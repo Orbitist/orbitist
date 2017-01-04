@@ -19,5 +19,8 @@ Template.tileEdit.helpers({
   },
   tileTypePointOfInterest: function() {
     return this.tileType === 'pointOfInterest';
+  },
+  tileTypeLink: function() {
+    return this.tileType === 'link';
   }
 });
