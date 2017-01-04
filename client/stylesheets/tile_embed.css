@@ -21,3 +21,7 @@ twitterwidget {
   max-width: 658px !important;
   margin: 0 auto !important;
 }
+
+.thumbnail .tile-embed {
+  height: 300px !important;
+}
