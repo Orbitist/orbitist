@@ -1,0 +1,13 @@
+<template name="tileSubmitLink">
+  <hr>
+  <form name="tile" class="tile-form form">
+    <div class="form-group {{errorClass 'link'}}">
+        <div class="controls">
+            <textarea name="link" id="link" class="form-control" rows="5" placeholder="Tell a story..."></textarea>
+            <span class="help-block">{{errorMessage 'link'}}</span>
+            {{> tileAdvancedOptions}}
+        </div>
+    </div>
+    {{> tileSubmitButton}}
+  </form>
+</template>

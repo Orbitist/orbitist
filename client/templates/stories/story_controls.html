@@ -1,14 +1,14 @@
 <template name="storyControls">
   <div class="story-controls">
     {{#if isStoryPage}}
-      <a class="btn btn-success" href="{{pathFor 'storyMap'}}"><i class="fa fa-map-o"></i> Map mode</a>
+      <a class="btn btn-success" href="{{pathFor 'storyMap'}}"><i class="fa fa-map-o"></i> Map</a>
     {{/if}}
     {{#if isStoryMapPage}}
-      <a class="btn btn-success" href="{{pathFor 'storyPage'}}"><i class="fa fa-list"></i> Story mode</a>
+      <a class="btn btn-success" href="{{pathFor 'storyPage'}}"><i class="fa fa-list"></i> Story</a>
     {{/if}}
     {{#if currentUser}}
     {{#if ownStory}}
-      <a href="{{pathFor 'storyEdit'}}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit mode</a>
+      <a href="{{pathFor 'storyEdit'}}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
     {{/if}}<!-- if ownStory -->
     {{/if}}
   </div><!-- story-controls -->

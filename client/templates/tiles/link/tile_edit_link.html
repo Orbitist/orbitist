@@ -1,0 +1,18 @@
+<template name="tileEditLink">
+  <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'link'}}">
+        <label class="control-label" for="title">Link</label>
+        <div class="controls">
+          <textarea name="link" id="link" class="form-control" rows="5" value="{{link}}"></textarea>
+          <span class="help-block">{{errorMessage 'link'}}</span>
+          {{> tileAdvancedOptionsEdit}}
+        </div>
+      </div>
+      <input type="submit" value="Save" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete tile</a>
+      <hr/>
+    </form>
+  </div>
+</template>
