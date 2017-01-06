@@ -1,9 +1,8 @@
 .tile {
   width: 100%;
   border-radius: 3px;
-  padding: 20px;
-  margin: 5px auto;
-  max-width: 900px;
+  padding: 0px;
+  margin: 0px auto;
   background-color: white;
   overflow-y: hidden;
 }

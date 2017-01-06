@@ -11,7 +11,9 @@
     {{#if tileTypeImage}}
     <div class="tile-image">
       <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
-      <p class="caption">{{text}}</p>
+      {{#if hasText}}
+        <p class="caption">{{text}}</p>
+      {{/if}}
       {{> tileButtons}}
     </div>
     {{/if}}
@@ -23,7 +25,9 @@
         <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.mp4" type="video/mp4"/>
         <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.ogv" type="video/ogg"/>
       </video>
-      <p>{{text}}</p>
+      {{#if hasText}}
+        <p>{{text}}</p>
+      {{/if}}
       {{> tileButtons}}
     </div>
     {{/if}}
@@ -31,8 +35,11 @@
     {{#if tileTypeEmbed}}
       <div class="tile-embed">
         {{{embed}}}
+        <div class="embed-overlay"></div>
       </div>
-      <p class="center">{{text}}</p>
+      {{#if hasText}}
+        <p class="caption">{{text}}</p>
+      {{/if}}
       {{> tileButtons}}
     {{/if}}
 

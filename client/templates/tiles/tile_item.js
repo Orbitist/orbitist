@@ -17,6 +17,9 @@ Template.tileItem.helpers({
   hasImage: function() {
     return this.imageUrl != '';
   },
+  hasText: function() {
+    return this.text != '';
+  },
   hasPhone: function() {
     return this.phone != '';
   },
@@ -44,4 +47,14 @@ Template.tileItem.helpers({
   tileTypeLink: function() {
     return this.tileType === 'link';
   }
+});
+
+Template.tileItem.onRendered(function() {
+  $(".embed-overlay").click(function() {
+      $(".embed-overlay").hide();
+      clearTimeout($.data(this, 'overlayTimer'));
+      $.data(this, 'overlayTimer', setTimeout(function() {
+        $(".embed-overlay").show();
+      }, 2000));
+  });
 });

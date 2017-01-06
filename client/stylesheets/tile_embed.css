@@ -5,7 +5,8 @@
 
 .tile-embed {
   width: 100%;
-  height: 80vh;
+  height: calc(100vh - 60px);
+  -webkit-overflow-scrolling : touch;
 }
 
 .tile-embed iframe {
@@ -24,4 +25,13 @@ twitterwidget {
 
 .thumbnail .tile-embed {
   height: 300px !important;
+}
+
+.embed-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999;
 }
