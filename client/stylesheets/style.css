@@ -10,7 +10,17 @@ a:hover {
 }
 
 p {
-  font-size: 20px;
+  font-size: 18px;
+  max-width: 680px;
+  margin: 20px auto;
+}
+
+p.caption {
+  font-size: 16px;
+  max-width: 480px;
+  margin: 20px auto 200px;
+  text-align: center;
+  color: #555;
 }
 
 form {

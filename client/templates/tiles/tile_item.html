@@ -2,17 +2,22 @@
   <div class="tile {{#if isStoryEditPage}}thumbnail{{/if}}">
 
     {{#if tileTypeText}}
+    <div class="tile-text">
       <p>{{text}}</p>
       {{> tileButtons}}
+    </div>
     {{/if}}
 
     {{#if tileTypeImage}}
+    <div class="tile-image">
       <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
-      <p>{{text}}</p>
+      <p class="caption">{{text}}</p>
       {{> tileButtons}}
+    </div>
     {{/if}}
 
     {{#if tileTypeVideo}}
+    <div class="tile-video">
       <video class="img-responsive" controls poster="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.jpg">
         <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.webm" type="video/webm"/>
         <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.mp4" type="video/mp4"/>
@@ -20,6 +25,7 @@
       </video>
       <p>{{text}}</p>
       {{> tileButtons}}
+    </div>
     {{/if}}
 
     {{#if tileTypeEmbed}}
@@ -31,6 +37,7 @@
     {{/if}}
 
     {{#if tileTypePointOfInterest}}
+    <div class="tile-point-of-interest">
       <div class="row">
         <div class="col-xs-3">
           {{#if hasImage}}
@@ -60,13 +67,16 @@
         </div><!-- col-xs-9 -->
       </div><!-- row -->
       {{> tileButtons}}
+    </div>
     {{/if}}
 
     {{#if tileTypeLink}}
+    <div class="tile-link">
       <h2 class="lead link"><a href="{{url}}" target="_blank"><i class="fa fa-link"></i> {{text}} <small><i class="fa fa-external-link"></i></small></a></h2>
       {{> tileButtons}}
+    </div>
     {{/if}}
 
 
-  </div><!-- tile-text -->
+  </div><!-- tile -->
 </template>
