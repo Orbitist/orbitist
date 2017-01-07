@@ -23,8 +23,12 @@ if (Meteor.isClient) {
         password: passwordVar
       },
       function(Error) {
-        if (Error)
+        if (Error) {
           return throwError(Error);
+        } else {
+          var userId = Meteor.userId();
+          Meteor.call( "initApiKey", userId );
+        }
       });
     }
   });

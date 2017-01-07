@@ -3,8 +3,11 @@
     <a class="navmenu-brand" href="#"><img alt="Brand" src="https://res.cloudinary.com/orbitist/image/upload/v1482159213/logo_blue_button_100_sjpiii.png"> ORBITIST</a>
     <ul class="nav navmenu-nav">
       {{#if currentUser}}
+        <li><a href="{{pathFor 'storiesList'}}" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-book"></i> Stories</a></li>
+        <li><a href="{{pathFor 'userSettings'}}" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-user"></i> Account</a></li>
+        <hr>
         <li><a href="https://goo.gl/forms/OSrIkaFIQHBvQnqh2" target="_blank" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-bug" aria-hidden="true"></i> Submit bug report</a></li>
-        <li><a href="{{pathFor 'storiesList'}}" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-user"></i> {{currentUser.username}}</a></li>
+        <hr>
         {{>logout}}
         {{else}}
         <li><a href="{{pathFor 'storiesList'}}" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"><i class="fa fa-user"></i> Log in</a></li>
