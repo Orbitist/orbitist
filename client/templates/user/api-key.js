@@ -18,7 +18,6 @@ Template.apiKey.events({
          confirmRegeneration = confirm( "Are you sure? This will invalidate your current key!" );
 
      if ( confirmRegeneration ) {
-       Meteor.call( "initApiKey", userId ); // REMOVE ONCE PRE API USERS ALL HAVE INITIAL KEYS
        Meteor.call( "regenerateApiKey", userId, function( error, response ) {
          if ( error ) {
            throwError(error.reason);
