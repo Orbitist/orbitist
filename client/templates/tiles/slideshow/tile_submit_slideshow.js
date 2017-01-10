@@ -109,20 +109,34 @@ Template.tileSubmitSlideshow.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
-    var slideshowUrlVar = Session.get('slideshowUrlVar');
-    var slideshowIdVar = Session.get('slideshowIdVar');
+    var slides = [
+      {
+        url: Session.get('image1UrlVar'),
+        id: Session.get('image1UrlVar')
+      },
+      {
+        url: Session.get('image2UrlVar'),
+        id: Session.get('image2UrlVar')
+      },
+      {
+        url: Session.get('image3UrlVar'),
+        id: Session.get('image3UrlVar')
+      },
+      {
+        url: Session.get('image4UrlVar'),
+        id: Session.get('image4UrlVar')
+      },
+      {
+        url: Session.get('image5UrlVar'),
+        id: Session.get('image5UrlVar')
+      }
+    ];
 
     var topTile = Tiles.findOne({storyId: template.data._id}, {sort: {rank: 1}});
     if (topTile) {
       var topRank = topTile.rank - 1;
     } else {
       var topRank = 1;
-    }
-
-    var $text = $(e.target).find('[name=text]');
-    var textInput = $text.val();
-    if (!textInput) {
-      textInput = '';
     }
 
     var $lat = $(e.target).find('[name=lat]');
@@ -139,10 +153,11 @@ Template.tileSubmitSlideshow.events({
 
     var tile = {
       tileType: 'slideshow',
-      text: textInput,
+      text: '',
       title: '',
-      slideshowUrl: slideshowUrlVar,
-      slideshowId: slideshowIdVar,
+      imageUrl: '',
+      imageId: '',
+      slideshow: slides,
       videoUrl: '',
       videoId: '',
       url: '',
@@ -159,17 +174,11 @@ Template.tileSubmitSlideshow.events({
     };
 
     var errors = {};
-    if (! tile.slideshowUrl) {
-      errors.slideshow = "Please select an slideshow.";
-      return Session.set('tileSubmitErrors', errors);
-    }
 
     Meteor.call('tileInsert', tile, function(error, tileId) {
       if (error){
         throwError(error.reason);
       } else {
-        var $slideshowField = $(e.target).find('[name=slideshow]');
-        $slideshowField.val('');
         Session.set('tileMenu', 'false');
       }
     });
