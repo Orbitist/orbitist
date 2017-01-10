@@ -15,7 +15,8 @@ Template.tileSubmitSlideshow.helpers({
 });
 
 Template.tileSubmitSlideshow.events({
-  "change input[type='file']": function(e, template) {
+
+  "change input[name='image1']": function(e, template) {
     Session.set('uploadingSlideshow', 'true');
     var files;
     files = e.currentTarget.files;
@@ -26,11 +27,82 @@ Template.tileSubmitSlideshow.events({
       if (error){
         return throwError(error)
       }
-      Session.set('slideshowUrlVar', result.secure_url);
-      Session.set('slideshowIdVar', result.public_id);
+      Session.set('image1UrlVar', result.secure_url);
+      Session.set('image1IdVar', result.public_id);
+      $( '.image1UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
       Session.set('uploadingSlideshow', 'false');
-      $( '.slideshowUploadThumb' ).append( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/slideshow/upload/t_1500/' + result.public_id + '"/>');
+    });
+  },
 
+  "change input[name='image2']": function(e, template) {
+    Session.set('uploadingSlideshow', 'true');
+    var files;
+    files = e.currentTarget.files;
+    return Cloudinary.upload(files, {
+      // folder: "secret",
+      // type: "private"
+    }, function(error, result) {
+      if (error){
+        return throwError(error)
+      }
+      Session.set('image2UrlVar', result.secure_url);
+      Session.set('image2IdVar', result.public_id);
+      $( '.image2UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      Session.set('uploadingSlideshow', 'false');
+    });
+  },
+
+  "change input[name='image3']": function(e, template) {
+    Session.set('uploadingSlideshow', 'true');
+    var files;
+    files = e.currentTarget.files;
+    return Cloudinary.upload(files, {
+      // folder: "secret",
+      // type: "private"
+    }, function(error, result) {
+      if (error){
+        return throwError(error)
+      }
+      Session.set('image3UrlVar', result.secure_url);
+      Session.set('image3IdVar', result.public_id);
+      $( '.image3UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      Session.set('uploadingSlideshow', 'false');
+    });
+  },
+
+  "change input[name='image4']": function(e, template) {
+    Session.set('uploadingSlideshow', 'true');
+    var files;
+    files = e.currentTarget.files;
+    return Cloudinary.upload(files, {
+      // folder: "secret",
+      // type: "private"
+    }, function(error, result) {
+      if (error){
+        return throwError(error)
+      }
+      Session.set('image4UrlVar', result.secure_url);
+      Session.set('image4IdVar', result.public_id);
+      $( '.image4UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      Session.set('uploadingSlideshow', 'false');
+    });
+  },
+
+  "change input[name='image5']": function(e, template) {
+    Session.set('uploadingSlideshow', 'true');
+    var files;
+    files = e.currentTarget.files;
+    return Cloudinary.upload(files, {
+      // folder: "secret",
+      // type: "private"
+    }, function(error, result) {
+      if (error){
+        return throwError(error)
+      }
+      Session.set('image5UrlVar', result.secure_url);
+      Session.set('image5IdVar', result.public_id);
+      $( '.image5UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      Session.set('uploadingSlideshow', 'false');
     });
   },
 
