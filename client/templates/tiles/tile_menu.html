@@ -7,6 +7,8 @@
       <a class="btn btn-primary" id="tileTypeEmbed"><i class="fa fa-code" aria-hidden="true"></i> embed</a>
       <a class="btn btn-primary" id="tileTypePointOfInterest"><i class="fa fa-binoculars" aria-hidden="true"></i> Point of interest</a>
       <a class="btn btn-primary" id="tileTypeLink"><i class="fa fa-link" aria-hidden="true"></i> Link</a>
+      <a class="btn btn-primary" id="tileTypeSlideshow"><i class="fa fa-window-restore" aria-hidden="true"></i> Slideshow</a>
+
 
       {{#if isTileType 'text'}}
         {{> tileSubmitText}}
@@ -30,6 +32,10 @@
 
       {{#if isTileType 'link'}}
         {{> tileSubmitLink}}
+      {{/if}}
+
+      {{#if isTileType 'slideshow'}}
+        {{> tileSubmitSlideshow}}
       {{/if}}
 
     </div><!-- popup-menu -->

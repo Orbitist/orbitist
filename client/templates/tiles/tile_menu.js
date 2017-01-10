@@ -17,6 +17,9 @@ Template.tileMenu.events({
   'click #tileTypeLink': function() {
     return Session.set('tileType', 'link');
   },
+  'click #tileTypeSlideshow': function() {
+    return Session.set('tileType', 'slideshow');
+  },
   'click .popup-screen': function(e) {
     var container = $('.popup-menu');
     if (!container.is(e.target)&& container.has(e.target).length === 0) {
