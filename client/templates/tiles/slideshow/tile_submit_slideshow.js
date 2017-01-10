@@ -109,26 +109,37 @@ Template.tileSubmitSlideshow.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
+    var image1Caption = $(e.target).find('[name=image1Caption]').val();
+    var image2Caption = $(e.target).find('[name=image2Caption]').val();
+    var image3Caption = $(e.target).find('[name=image3Caption]').val();
+    var image4Caption = $(e.target).find('[name=image4Caption]').val();
+    var image5Caption = $(e.target).find('[name=image5Caption]').val();
+
     var slides = [
       {
-        url: Session.get('image1UrlVar'),
-        id: Session.get('image1UrlVar')
+        'url': Session.get('image1UrlVar'),
+        'id': Session.get('image1IdVar'),
+        'caption': image1Caption
       },
       {
-        url: Session.get('image2UrlVar'),
-        id: Session.get('image2UrlVar')
+        'url': Session.get('image2UrlVar'),
+        'id': Session.get('image2IdVar'),
+        'caption': image2Caption
       },
       {
-        url: Session.get('image3UrlVar'),
-        id: Session.get('image3UrlVar')
+        'url': Session.get('image3UrlVar'),
+        'id': Session.get('image3IdVar'),
+        'caption': image3Caption
       },
       {
-        url: Session.get('image4UrlVar'),
-        id: Session.get('image4UrlVar')
+        'url': Session.get('image4UrlVar'),
+        'id': Session.get('image4IdVar'),
+        'caption': image4Caption
       },
       {
-        url: Session.get('image5UrlVar'),
-        id: Session.get('image5UrlVar')
+        'url': Session.get('image5UrlVar'),
+        'id': Session.get('image5IdVar'),
+        'caption': image5Caption
       }
     ];
 
@@ -180,6 +191,21 @@ Template.tileSubmitSlideshow.events({
         throwError(error.reason);
       } else {
         Session.set('tileMenu', 'false');
+        Session.set('image1UrlVar', '');
+        Session.set('image1IdVar', '');
+        Session.set('caption1Var', '');
+        Session.set('image2UrlVar', '');
+        Session.set('image2IdVar', '');
+        Session.set('caption2Var', '');
+        Session.set('image3UrlVar', '');
+        Session.set('image3IdVar', '');
+        Session.set('caption3Var', '');
+        Session.set('image4UrlVar', '');
+        Session.set('image4IdVar', '');
+        Session.set('caption4Var', '');
+        Session.set('image5UrlVar', '');
+        Session.set('image5IdVar', '');
+        Session.set('caption5Var', '');
       }
     });
   }

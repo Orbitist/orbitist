@@ -73,6 +73,7 @@ Template.tileSubmitImage.events({
       imageId: imageIdVar,
       videoUrl: '',
       videoId: '',
+      slideshow: [],
       url: '',
       embed: '',
       phone: '',
