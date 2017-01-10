@@ -14,6 +14,9 @@ Template.tileEdit.helpers({
   tileTypeVideo: function() {
     return this.tileType === 'video';
   },
+  tileTypeSlideshow: function() {
+    return this.tileType === 'slideshow';
+  },
   tileTypeEmbed: function() {
     return this.tileType === 'embed';
   },
