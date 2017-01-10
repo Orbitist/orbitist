@@ -6,6 +6,7 @@
             {{> uploading}}
           {{/if}}
           <div class="controls">
+            <label>Image</label>
               <div class="imageUploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/></div>
               <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
               <span class="help-block">{{errorMessage 'image'}}</span>
