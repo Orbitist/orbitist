@@ -32,6 +32,18 @@
     </div>
     {{/if}}
 
+    {{#if tileTypeSlideshow}}
+      {{#each slideshow}}
+        {{#if hasSlide}}
+          <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{id}}"/>
+        {{/if}}
+        {{#if hasCaption}}
+          <p>{{caption}}</p>
+        {{/if}}
+      {{/each}}
+      {{> tileButtons}}
+    {{/if}}
+
     {{#if tileTypeEmbed}}
       <div class="tile-embed">
         {{{embed}}}

@@ -38,6 +38,15 @@ Template.tileItem.helpers({
   tileTypeVideo: function() {
     return this.tileType === 'video';
   },
+  tileTypeSlideshow: function() {
+    return this.tileType === 'slideshow';
+  },
+  hasSlide: function() {
+    return this.url.length > 1;
+  },
+  hasCaption: function() {
+    return this.caption.length > 1;
+  },
   tileTypeEmbed: function() {
     return this.tileType === 'embed';
   },
