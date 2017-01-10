@@ -74,6 +74,7 @@ Template.tileSubmitVideo.events({
       imageId: '',
       videoUrl: videoUrlVar,
       videoId: videoIdVar,
+      slideshow: [],
       url: '',
       embed: '',
       phone: '',
