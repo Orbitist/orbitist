@@ -16,5 +16,8 @@ Template.storyControls.helpers({
 Template.storyControls.events({
   'click #map-activate': function() {
     return Session.set('storyMap', 'true');
+  },
+  'click #map-inactive': function() {
+    return Session.set('storyMap', 'false');
   }
 });
