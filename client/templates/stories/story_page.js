@@ -4,6 +4,9 @@ Template.storyPage.helpers({
   },
   ownStory: function() {
     return this.userId === Meteor.userId();
+  },
+  isStoryMap: function(n) {
+    return Session.equals('storyMap', n);
   }
 });
 
@@ -52,7 +55,7 @@ Template.storyPage.rendered = function() {
    responsiveHeight: 0,
    responsiveSlides: false,
 
-   lazyLoading: true,
+   lazyLoading: true
   });
   Session.set('fullPageInit', 'true');
 

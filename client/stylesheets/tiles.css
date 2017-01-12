@@ -14,3 +14,10 @@
 .link {
   text-align: center;
 }
+
+.tile-edit {
+  height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: move;
+}

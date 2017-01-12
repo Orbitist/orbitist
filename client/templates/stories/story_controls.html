@@ -1,7 +1,7 @@
 <template name="storyControls">
   <div class="story-controls">
     {{#if isStoryPage}}
-      <a class="btn btn-success" href="{{pathFor 'storyMap'}}"><i class="fa fa-map-o"></i> Map</a>
+      <a class="btn btn-success" id="map-activate" href="#"><i class="fa fa-map-o"></i> Map</a>
     {{/if}}
     {{#if isStoryMapPage}}
       <a class="btn btn-success" href="{{pathFor 'storyPage'}}"><i class="fa fa-list"></i> Story</a>

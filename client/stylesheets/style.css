@@ -13,15 +13,7 @@ p {
   font-size: 18px;
   max-width: 680px;
   margin: 20px auto;
-  padding: 20px;
-}
-
-p.caption {
-  font-size: 16px;
-  max-width: 480px;
-  margin: 20px auto 200px;
-  text-align: center;
-  color: #555;
+  padding: 0 20px;
 }
 
 form {

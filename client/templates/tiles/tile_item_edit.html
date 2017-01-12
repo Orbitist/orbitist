@@ -1,23 +1,19 @@
-<template name="tileItem">
-  <div class="tile {{#if isStoryEditPage}}thumbnail{{/if}}">
+<template name="tileItemEdit">
+  <div class="col-md-4">
+    <div class="tile-edit thumbnail">
 
     {{#if tileTypeText}}
-    <div class="tile-text">
       <p>{{text}}</p>
-    </div>
     {{/if}}
 
     {{#if tileTypeImage}}
-    <div class="tile-image">
-      <img  src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
+      <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
       {{#if hasText}}
         <p>{{text}}</p>
       {{/if}}
-    </div>
     {{/if}}
 
     {{#if tileTypeVideo}}
-    <div class="tile-video">
       <video class="img-responsive" controls poster="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.jpg">
         <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.webm" type="video/webm"/>
         <source src="https://res.cloudinary.com/orbitist/video/upload/{{videoId}}.mp4" type="video/mp4"/>
@@ -26,36 +22,33 @@
       {{#if hasText}}
         <p>{{text}}</p>
       {{/if}}
-    </div>
     {{/if}}
 
     {{#if tileTypeSlideshow}}
       {{#each slideshow}}
-
         {{#if hasSlide}}
         <div class="slide">
-          {{#if hasCaption}}
-            <p>{{caption}}</p>
-          {{/if}}
           <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{id}}"/>
+          {{#if hasCaption}}
+            <small>{{caption}}</small>
+            <hr>
+          {{/if}}
         </div>
         {{/if}}
-
       {{/each}}
     {{/if}}
 
     {{#if tileTypeEmbed}}
-      <div class="tile-embed">
+    <div class="tile-embed">
         {{{embed}}}
         <div class="embed-overlay"></div>
-      </div>
       {{#if hasText}}
         <p>{{text}}</p>
       {{/if}}
+    </div>
     {{/if}}
 
     {{#if tileTypePointOfInterest}}
-    <div class="tile-point-of-interest">
       <div class="row">
         <div class="col-xs-3">
           {{#if hasImage}}
@@ -84,15 +77,13 @@
           {{/if}}
         </div><!-- col-xs-9 -->
       </div><!-- row -->
-    </div>
     {{/if}}
 
     {{#if tileTypeLink}}
-    <div class="tile-link">
       <h2 class="lead link"><a href="{{url}}" target="_blank"><i class="fa fa-link"></i> {{text}} <small><i class="fa fa-external-link"></i></small></a></h2>
-    </div>
     {{/if}}
 
-
+    {{> tileButtons}}
+    </div>
   </div><!-- tile -->
 </template>

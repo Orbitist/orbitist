@@ -12,3 +12,9 @@ Template.storyControls.helpers({
     return Router.current().route.getName() == 'storyPage'
   }
 });
+
+Template.storyControls.events({
+  'click #map-activate': function() {
+    return Session.set('storyMap', 'true');
+  }
+});
