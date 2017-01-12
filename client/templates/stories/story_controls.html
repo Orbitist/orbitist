@@ -1,7 +1,11 @@
 <template name="storyControls">
   <div class="story-controls">
-    <a class="btn btn-success" id="map-activate" href="#"><i class="fa fa-map-o"></i> Map</a>
-    <a class="btn btn-success" id="map-inactive" href="#"><i class="fa fa-list"></i> Story</a>
+    {{#if isStoryMap 'true'}}
+      <a class="btn btn-success" id="map-inactive" href="#"><i class="fa fa-list"></i> Story</a>
+    {{/if}}
+    {{#if isStoryMap 'false'}}
+      <a class="btn btn-success" id="map-activate" href="#"><i class="fa fa-map-o"></i> Map</a>
+    {{/if}}
     {{#if currentUser}}
     {{#if ownStory}}
       <a href="{{pathFor 'storyEdit'}}" class="btn btn-success"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
