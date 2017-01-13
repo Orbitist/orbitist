@@ -184,6 +184,18 @@ Template.tileEditSlideshow.events({
       }
     ];
 
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -201,6 +213,8 @@ Template.tileEditSlideshow.events({
 
     var currentTileId = this._id;
     var tileProperties = {
+      text: textInput,
+      title: titleInput,
       slideshow: slides,
       latitude: latInput,
       longitude: lngInput,

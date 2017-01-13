@@ -150,6 +150,18 @@ Template.tileSubmitSlideshow.events({
       var topRank = 1;
     }
 
+    var $text = $(e.target).find('[name=text]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -167,8 +179,8 @@ Template.tileSubmitSlideshow.events({
 
     var tile = {
       tileType: 'slideshow',
-      text: '',
-      title: '',
+      text: textInput,
+      title: titleInput,
       imageUrl: '',
       imageId: '',
       slideshow: slides,

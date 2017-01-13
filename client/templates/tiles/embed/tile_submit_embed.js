@@ -28,6 +28,12 @@ Template.tileSubmitEmbed.events({
       textInput = '';
     }
 
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -47,7 +53,7 @@ Template.tileSubmitEmbed.events({
     var tile = {
       tileType: 'embed',
       text: textInput,
-      title: '',
+      title: titleInput,
       storyId: template.data._id,
       imageUrl: '',
       imageId: '',

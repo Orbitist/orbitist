@@ -54,6 +54,12 @@ Template.tileEditImage.events({
       textInput = '';
     }
 
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -72,6 +78,7 @@ Template.tileEditImage.events({
     var currentTileId = this._id;
     var tileProperties = {
       text: textInput,
+      title: titleInput,
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
       latitude: latInput,

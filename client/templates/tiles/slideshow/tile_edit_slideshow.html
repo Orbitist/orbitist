@@ -6,6 +6,11 @@
             {{> uploading}}
           {{/if}}
           <div class="controls">
+            <label>Slideshow Title</label>
+            <input name="title" id="title" type="text" value="{{title}}" placeholder="Title of this slideshow..." class="form-control"/>
+            <label>Slideshow Description</label>
+            <textarea name="text" id="text" class="form-control" rows="5" value="{{text}}" placeholder="Descripe this slideshow..."></textarea>
+            <hr>
 
               <!-- Image slot 1 -->
               <label>Image slot 1</label>

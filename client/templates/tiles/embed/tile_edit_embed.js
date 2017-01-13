@@ -23,6 +23,12 @@ Template.tileEditEmbed.events({
       textInput = '';
     }
 
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -42,6 +48,7 @@ Template.tileEditEmbed.events({
     var tileProperties = {
       embed: $embed.val(),
       text: textInput,
+      title: titleInput,
       latitude: latInput,
       longitude: lngInput,
       tags: tagsInput

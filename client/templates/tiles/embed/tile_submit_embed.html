@@ -6,6 +6,8 @@
             <label><i class="fa fa-code"></i> Embed code</label>
             <textarea name="embed" id="embed" class="form-control" rows="2" placeholder="Paste embed code here. Supports any iframe. Supports Twitter and Instagram embed codes."></textarea>
             <span class="help-block">{{errorMessage 'embed'}}</span>
+            <label>Embed Title</label>
+            <input name="title" id="title" type="text" value="" placeholder="Title of this embed..." class="form-control"/>
             <label>Description</label>
             <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your embed..." value="{{text}}"></textarea>
             {{> tileAdvancedOptions}}

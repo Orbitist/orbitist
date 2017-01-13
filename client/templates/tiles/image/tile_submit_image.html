@@ -10,6 +10,9 @@
             <div class="imageUploadThumb"></div>
             <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
             <span class="help-block">{{errorMessage 'image'}}</span>
+            <label>Image title</label>
+            <input name="title" id="title" type="text" value="" placeholder="Title of this image..." class="form-control"/>
+            <label>Image description</label>
             <textarea name="text" id="text" class="form-control" rows="5" placeholder="Describe your image..."></textarea>
             {{> tileAdvancedOptions}}
         </div>

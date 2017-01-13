@@ -53,6 +53,12 @@ Template.tileSubmitImage.events({
       textInput = '';
     }
 
+    var $title = $(e.target).find('[name=title]');
+    var titleInput = $title.val();
+    if (!titleInput) {
+      titleInput = '';
+    }
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -71,7 +77,7 @@ Template.tileSubmitImage.events({
     var tile = {
       tileType: 'image',
       text: textInput,
-      title: '',
+      title: titleInput,
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
       videoUrl: '',
