@@ -3,14 +3,23 @@
   <a href="#" class="pull-right" id="advanced-toggle">Advanced <i class="fa fa-caret-down" aria-hidden="true"></i></a>
   <div id="advanced">
     <hr>
-    <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
-    <div id="map" style="height:200px;"></div>
-    <input name="lat" id="lat" type="number" step="any" value="" placeholder="Latitude" class="form-control">
-    <input name="lng" id="lng" type="number" step="any" value="" placeholder="Longitude" class="form-control">
+      <label>Tags</label>
+      <input id="tags" type="text" value="" data-role="tagsinput" />
     <hr>
+      <label>Location Search</label>
+      <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
+      <div id="map" style="height:200px;"></div>
+      <label>Latitude</label>
+      <input name="lat" id="lat" type="number" step="any" value="" placeholder="Latitude" class="form-control">
+      <label>Longitude</label>
+      <input name="lng" id="lng" type="number" step="any" value="" placeholder="Longitude" class="form-control">
+      <hr>
   </div>
 
   <script>
+
+    $("input#tags").tagsinput('items');
+
     //Show advanced location menu
     $("#advanced").css({'visibility':'hidden', 'position':'absolute'});
     $("#advanced-toggle").click(function() {
