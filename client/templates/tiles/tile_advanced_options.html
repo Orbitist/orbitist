@@ -4,7 +4,7 @@
   <div id="advanced">
     <hr>
       <label>Tags</label>
-      <input id="tags" type="text" value="" data-role="tagsinput" />
+      <input name="tags" id="tags" type="text" value="" data-role="tagsinput" />
     <hr>
       <label>Location Search</label>
       <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
@@ -52,14 +52,22 @@
   <a href="#" class="pull-right" id="advanced-toggle">Advanced <i class="fa fa-caret-down" aria-hidden="true"></i></a>
   <div id="advanced">
     <hr>
-    <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
-    <div id="map" style="height:200px;"></div>
-    <input name="lat" id="lat" type="number" step="any" placeholder="Latitude" class="form-control" value="{{latitude}}">
-    <input name="lng" id="lng" type="number" step="any" placeholder="Longitude" class="form-control" value="{{longitude}}">
+      <label>Tags</label>
+      <input name="tags" id="tags" type="text" value="{{tags}}" data-role="tagsinput" />
+    <hr>
+      <label>Location Search</label>
+      <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
+      <div id="map" style="height:200px;"></div>
+      <label>Latitude</label>
+      <input name="lat" id="lat" type="number" step="any" placeholder="Latitude" class="form-control" value="{{latitude}}">
+      <label>Longitude</label>
+      <input name="lng" id="lng" type="number" step="any" placeholder="Longitude" class="form-control" value="{{longitude}}">
     <hr>
   </div>
 
   <script>
+    $("input#tags").tagsinput('items');
+
     //Show advanced location menu
     $("#advanced").css({'visibility':'hidden', 'position':'absolute'});
     $("#advanced-toggle").click(function() {

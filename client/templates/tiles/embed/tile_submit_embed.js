@@ -40,6 +40,9 @@ Template.tileSubmitEmbed.events({
       lngInput = NaN;
     }
 
+    var $tags = $(e.target).find('[name=tags]');
+    var tagsInput = $tags.tagsinput('items');
+
     var $embed = $(e.target).find('[name=embed]');
     var tile = {
       tileType: 'embed',
@@ -60,7 +63,8 @@ Template.tileSubmitEmbed.events({
       accessibility: '',
       rank: topRank,
       latitude: latInput,
-      longitude: lngInput
+      longitude: lngInput,
+      tags: tagsInput
     };
 
     var errors = {};

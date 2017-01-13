@@ -34,6 +34,9 @@ Template.tileSubmitText.events({
       lngInput = NaN;
     }
 
+    var $tags = $(e.target).find('[name=tags]');
+    var tagsInput = $tags.tagsinput('items');
+
     var $text = $(e.target).find('[name=text]');
     var tile = {
       tileType: 'text',
@@ -54,7 +57,8 @@ Template.tileSubmitText.events({
       accessibility: '',
       rank: topRank,
       latitude: latInput,
-      longitude: lngInput
+      longitude: lngInput,
+      tags: tagsInput
     };
 
     var errors = {};

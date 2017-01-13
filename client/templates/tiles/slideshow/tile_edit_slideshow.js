@@ -130,6 +130,32 @@ Template.tileEditSlideshow.events({
     var image4Caption = $(e.target).find('[name=image4Caption]').val();
     var image5Caption = $(e.target).find('[name=image5Caption]').val();
 
+    var image1Input = $(e.target).find('[name=image1]').val();
+    if (image1Input.length < 1) {
+      image1Url = this.slideshow[0].url;
+      image1Id = this.slideshow[0].id;
+    }
+    var image2Input = $(e.target).find('[name=image2]').val();
+    if (image1Input.length < 1) {
+      image2Url = this.slideshow[1].url;
+      image2Id = this.slideshow[1].id;
+    }
+    var image3Input = $(e.target).find('[name=image3]').val();
+    if (image1Input.length < 1) {
+      image3Url = this.slideshow[2].url;
+      image3Id = this.slideshow[2].id;
+    }
+    var image4Input = $(e.target).find('[name=image4]').val();
+    if (image1Input.length < 1) {
+      image4Url = this.slideshow[3].url;
+      image4Id = this.slideshow[3].id;
+    }
+    var image5Input = $(e.target).find('[name=image5]').val();
+    if (image1Input.length < 1) {
+      image5Url = this.slideshow[4].url;
+      image5Id = this.slideshow[4].id;
+    }
+
     var slides = [
       {
         'url': image1Url,
@@ -170,11 +196,15 @@ Template.tileEditSlideshow.events({
       lngInput = NaN;
     }
 
+    var $tags = $(e.target).find('[name=tags]');
+    var tagsInput = $tags.tagsinput('items');
+
     var currentTileId = this._id;
     var tileProperties = {
       slideshow: slides,
       latitude: latInput,
-      longitude: lngInput
+      longitude: lngInput,
+      tags: tagsInput
     }
 
     var errors = {};

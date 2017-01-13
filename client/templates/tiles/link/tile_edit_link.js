@@ -35,11 +35,15 @@ Template.tileEditLink.events({
       lngInput = NaN;
     }
 
+    var $tags = $(e.target).find('[name=tags]');
+    var tagsInput = $tags.tagsinput('items');
+
     var tileProperties = {
       url: $(e.target).find('[name=link]').val(),
       text: textInput,
       latitude: latInput,
-      longitude: lngInput
+      longitude: lngInput,
+      tags: tagsInput
     }
 
     var errors = validateTile(tileProperties);

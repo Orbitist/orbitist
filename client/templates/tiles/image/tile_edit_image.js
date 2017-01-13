@@ -66,13 +66,17 @@ Template.tileEditImage.events({
       lngInput = NaN;
     }
 
+    var $tags = $(e.target).find('[name=tags]');
+    var tagsInput = $tags.tagsinput('items');
+
     var currentTileId = this._id;
     var tileProperties = {
       text: textInput,
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
       latitude: latInput,
-      longitude: lngInput
+      longitude: lngInput,
+      tags: tagsInput
     }
 
     var errors = {};

@@ -40,6 +40,9 @@ Template.tileSubmitLink.events({
       lngInput = NaN;
     }
 
+    var $tags = $(e.target).find('[name=tags]');
+    var tagsInput = $tags.tagsinput('items');
+
     var $link = $(e.target).find('[name=link]');
     var tile = {
       tileType: 'link',
@@ -60,7 +63,8 @@ Template.tileSubmitLink.events({
       accessibility: '',
       rank: topRank,
       latitude: latInput,
-      longitude: lngInput
+      longitude: lngInput,
+      tags: tagsInput
     };
 
     var errors = {};

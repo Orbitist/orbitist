@@ -67,13 +67,17 @@ Template.tileEditVideo.events({
       lngInput = NaN;
     }
 
+    var $tags = $(e.target).find('[name=tags]');
+    var tagsInput = $tags.tagsinput('items');
+
     var currentTileId = this._id;
     var tileProperties = {
       text: textInput,
       videoUrl: videoUrlVar,
       videoId: videoIdVar,
       latitude: latInput,
-      longitude: lngInput
+      longitude: lngInput,
+      tags: tagsInput
     }
 
     var errors = {};
