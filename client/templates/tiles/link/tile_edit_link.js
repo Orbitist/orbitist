@@ -38,12 +38,19 @@ Template.tileEditLink.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
+    var $attribution = $(e.target).find('[name=attribution]');
+    var attributionInput = $attribution.val();
+    if (!attributionInput) {
+      attributionInput = '';
+    }
+
     var tileProperties = {
       url: $(e.target).find('[name=link]').val(),
       text: textInput,
       latitude: latInput,
       longitude: lngInput,
-      tags: tagsInput
+      tags: tagsInput,
+      attribution: attributionInput
     }
 
     var errors = validateTile(tileProperties);

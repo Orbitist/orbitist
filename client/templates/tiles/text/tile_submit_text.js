@@ -22,6 +22,8 @@ Template.tileSubmitText.events({
       var topRank = 1;
     }
 
+    var $text = $(e.target).find('[name=text]');
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -37,7 +39,12 @@ Template.tileSubmitText.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
-    var $text = $(e.target).find('[name=text]');
+    var $attribution = $(e.target).find('[name=attribution]');
+    var attributionInput = $attribution.val();
+    if (!attributionInput) {
+      attributionInput = '';
+    }
+
     var tile = {
       tileType: 'text',
       text: $text.val(),
@@ -58,7 +65,8 @@ Template.tileSubmitText.events({
       rank: topRank,
       latitude: latInput,
       longitude: lngInput,
-      tags: tagsInput
+      tags: tagsInput,
+      attribution: attributionInput
     };
 
     var errors = {};

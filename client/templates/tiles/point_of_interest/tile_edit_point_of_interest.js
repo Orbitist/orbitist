@@ -38,6 +38,8 @@ Template.tileEditPointOfInterest.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
+    var currentTileId = this._id;
+
     var imageUrlVar = Session.get('imageUrlVar');
     var imageIdVar = Session.get('imageIdVar');
 
@@ -108,7 +110,12 @@ Template.tileEditPointOfInterest.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
-    var currentTileId = this._id;
+    var $attribution = $(e.target).find('[name=attribution]');
+    var attributionInput = $attribution.val();
+    if (!attributionInput) {
+      attributionInput = '';
+    }
+
     var tileProperties = {
       text: textInput,
       title: titleInput,
@@ -121,7 +128,8 @@ Template.tileEditPointOfInterest.events({
       accessibility: accessibilityInput,
       latitude: latInput,
       longitude: lngInput,
-      tags: tagsInput
+      tags: tagsInput,
+      attribution: attributionInput
     }
 
     var errors = {};

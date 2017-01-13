@@ -17,6 +17,8 @@ Template.tileEditEmbed.events({
 
     var currentTileId = this._id;
 
+    var $embed = $(e.target).find('[name=embed]');
+
     var $text = $(e.target).find('[name=text]');
     var textInput = $text.val();
     if (!textInput) {
@@ -44,14 +46,20 @@ Template.tileEditEmbed.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
-    var $embed = $(e.target).find('[name=embed]');
+    var $attribution = $(e.target).find('[name=attribution]');
+    var attributionInput = $attribution.val();
+    if (!attributionInput) {
+      attributionInput = '';
+    }
+
     var tileProperties = {
       embed: $embed.val(),
       text: textInput,
       title: titleInput,
       latitude: latInput,
       longitude: lngInput,
-      tags: tagsInput
+      tags: tagsInput,
+      attribution: attributionInput
     }
 
     var errors = validateTile(tileProperties);

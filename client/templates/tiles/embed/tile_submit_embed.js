@@ -22,6 +22,8 @@ Template.tileSubmitEmbed.events({
       var topRank = 1;
     }
 
+    var $embed = $(e.target).find('[name=embed]');
+
     var $text = $(e.target).find('[name=text]');
     var textInput = $text.val();
     if (!textInput) {
@@ -49,7 +51,12 @@ Template.tileSubmitEmbed.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
-    var $embed = $(e.target).find('[name=embed]');
+    var $attribution = $(e.target).find('[name=attribution]');
+    var attributionInput = $attribution.val();
+    if (!attributionInput) {
+      attributionInput = '';
+    }
+
     var tile = {
       tileType: 'embed',
       text: textInput,
@@ -70,7 +77,8 @@ Template.tileSubmitEmbed.events({
       rank: topRank,
       latitude: latInput,
       longitude: lngInput,
-      tags: tagsInput
+      tags: tagsInput,
+      attribution: attributionInput
     };
 
     var errors = {};

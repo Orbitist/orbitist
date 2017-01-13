@@ -109,6 +109,12 @@ Template.tileSubmitPointOfInterest.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
+    var $attribution = $(e.target).find('[name=attribution]');
+    var attributionInput = $attribution.val();
+    if (!attributionInput) {
+      attributionInput = '';
+    }
+
     var tile = {
       tileType: 'pointOfInterest',
       text: textInput,
@@ -129,7 +135,8 @@ Template.tileSubmitPointOfInterest.events({
       rank: topRank,
       latitude: latInput,
       longitude: lngInput,
-      tags: tagsInput
+      tags: tagsInput,
+      attribution: attributionInput
     };
 
     var errors = {};

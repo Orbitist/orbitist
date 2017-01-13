@@ -4,7 +4,7 @@
   <div id="advanced">
     <hr>
       <label>Tags</label>
-      <input name="tags" id="tags" type="text" value="" data-role="tagsinput" />
+      <input name="tags" id="tags" type="text" value="" data-role="tagsinput" class="form-control"/>
     <hr>
       <label>Location Search</label>
       <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
@@ -13,7 +13,10 @@
       <input name="lat" id="lat" type="number" step="any" value="" placeholder="Latitude" class="form-control">
       <label>Longitude</label>
       <input name="lng" id="lng" type="number" step="any" value="" placeholder="Longitude" class="form-control">
-      <hr>
+    <hr>
+      <label>Attribution</label>
+      <input name="attribution" id="attribution" type="text" value="" class="form-control" placeholder="Give credit here..."/>
+    <hr>
   </div>
 
   <script>
@@ -53,7 +56,7 @@
   <div id="advanced">
     <hr>
       <label>Tags</label>
-      <input name="tags" id="tags" type="text" value="{{tags}}" data-role="tagsinput" />
+      <input name="tags" id="tags" type="text" value="{{tags}}" data-role="tagsinput" class="form-control" />
     <hr>
       <label>Location Search</label>
       <input name="locationSearch" id="locationSearch" type="text" value="" placeholder="Search for a location..." class="form-control"/>
@@ -62,6 +65,9 @@
       <input name="lat" id="lat" type="number" step="any" placeholder="Latitude" class="form-control" value="{{latitude}}">
       <label>Longitude</label>
       <input name="lng" id="lng" type="number" step="any" placeholder="Longitude" class="form-control" value="{{longitude}}">
+    <hr>
+      <label>Attribution</label>
+      <input name="attribution" id="attribution" type="text" value="{{attribution}}" data-role="tagsinput" class="form-control" placeholder="Give credit here" />
     <hr>
   </div>
 

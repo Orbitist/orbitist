@@ -28,6 +28,8 @@ Template.tileSubmitLink.events({
       textInput = '';
     }
 
+    var $link = $(e.target).find('[name=link]');
+
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
     if (!latInput) {
@@ -43,7 +45,12 @@ Template.tileSubmitLink.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
-    var $link = $(e.target).find('[name=link]');
+    var $attribution = $(e.target).find('[name=attribution]');
+    var attributionInput = $attribution.val();
+    if (!attributionInput) {
+      attributionInput = '';
+    }
+
     var tile = {
       tileType: 'link',
       text: textInput,
@@ -64,7 +71,8 @@ Template.tileSubmitLink.events({
       rank: topRank,
       latitude: latInput,
       longitude: lngInput,
-      tags: tagsInput
+      tags: tagsInput,
+      attribution: attributionInput
     };
 
     var errors = {};
