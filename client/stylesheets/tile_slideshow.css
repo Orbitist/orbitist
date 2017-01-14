@@ -1,9 +1,28 @@
+.slideshow {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .slide {
   position: relative;
+  height: 100vh !important;
+  overflow: hidden;
 }
 
 .fp-slide {
   position: relative;
+  display: block;
+  height: 100vh !important;
+  overflow: hidden;
+}
+
+.fp-slide.fp-table {
+  display: block;
+}
+
+.fp-tableCell {
+  height: 100% !important;
+  overflow: hidden;
 }
 
 .slide p {

@@ -1,4 +1,6 @@
 .tile-image {
+  height: 100vh;
+  overflow: scroll;
 }
 
 .tile-image p {

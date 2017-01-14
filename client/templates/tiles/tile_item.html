@@ -4,14 +4,20 @@
     {{#if tileTypeText}}
     <div class="tile-text">
       <p>{{text}}</p>
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
+      {{/if}}
     </div>
     {{/if}}
 
     {{#if tileTypeImage}}
     <div class="tile-image">
-      <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
+      <div class="hero" style="background-image: url('https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}');"></div>
       {{#if hasText}}
         <p>{{text}}</p>
+      {{/if}}
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
       {{/if}}
     </div>
     {{/if}}
@@ -26,10 +32,14 @@
       {{#if hasText}}
         <p>{{text}}</p>
       {{/if}}
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
+      {{/if}}
     </div>
     {{/if}}
 
     {{#if tileTypeSlideshow}}
+    <div class="slideshow">
       {{#each slideshow}}
 
         {{#if hasSlide}}
@@ -37,11 +47,15 @@
           {{#if hasCaption}}
             <p>{{caption}}</p>
           {{/if}}
-          <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{id}}"/>
+          {{#if hasAttribution}}
+            <p><small>{{attribution}}</small></p>
+          {{/if}}
+          <div class="hero" style="background-image: url('https://res.cloudinary.com/orbitist/image/upload/t_1500/{{id}}');"></div>
         </div>
         {{/if}}
 
       {{/each}}
+    </div>
     {{/if}}
 
     {{#if tileTypeEmbed}}
@@ -51,6 +65,9 @@
       </div>
       {{#if hasText}}
         <p>{{text}}</p>
+      {{/if}}
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
       {{/if}}
     {{/if}}
 
@@ -75,6 +92,9 @@
           {{#if hasAccessibility}}
             <p><i class="fa fa-wheelchair-alt" aria-hidden="true"></i> {{accessibility}}</p>
           {{/if}}
+          {{#if hasAttribution}}
+            <p><small>{{attribution}}</small></p>
+          {{/if}}
         </div><!-- col-xs-9 -->
         <div class="col-xs-3">
           {{#if hasImage}}
@@ -91,6 +111,9 @@
     <div class="tile-link">
       <h2 class="lead link"><a href="{{url}}" target="_blank"><i class="fa fa-link"></i> {{text}} <small><i class="fa fa-external-link"></i></small></a></h2>
     </div>
+    {{#if hasAttribution}}
+      <p><small>{{attribution}}</small></p>
+    {{/if}}
     {{/if}}
 
 

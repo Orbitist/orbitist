@@ -32,8 +32,8 @@ Template.storyPage.rendered = function() {
    //Design
    controlArrows: true,
 
-   scrollOverflow: true,
-   scrollOverflowReset: true,
+   scrollOverflow: false,
+   scrollOverflowReset: false,
 
    lazyLoading: true
   });

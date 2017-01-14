@@ -47,6 +47,9 @@ Template.tileItem.helpers({
   hasCaption: function() {
     return this.caption.length > 1;
   },
+  hasAttribution: function() {
+    return this.attribution.length > 1;
+  },
   tileTypeEmbed: function() {
     return this.tileType === 'embed';
   },
