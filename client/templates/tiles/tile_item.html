@@ -13,12 +13,14 @@
     {{#if tileTypeImage}}
     <div class="tile-image">
       <div class="hero" style="background-image: url('https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}');"></div>
-      {{#if hasText}}
-        <p>{{text}}</p>
-      {{/if}}
-      {{#if hasAttribution}}
-        <p><small>{{attribution}}</small></p>
-      {{/if}}
+      <div class="image-caption">
+        {{#if hasText}}
+          <p>{{text}}</p>
+        {{/if}}
+        {{#if hasAttribution}}
+          <p><small>{{attribution}}</small></p>
+        {{/if}}
+      </div><!-- image-caption -->
     </div>
     {{/if}}
 
@@ -44,17 +46,21 @@
 
         {{#if hasSlide}}
         <div class="slide">
-          {{#if hasCaption}}
-            <p>{{caption}}</p>
-          {{/if}}
-          {{#if hasAttribution}}
-            <p><small>{{attribution}}</small></p>
-          {{/if}}
+          <div class="image-caption">
+            {{#if hasCaption}}
+              <p>{{caption}}</p>
+            {{/if}}
+          </div><!-- image-caption -->
           <div class="hero" style="background-image: url('https://res.cloudinary.com/orbitist/image/upload/t_1500/{{id}}');"></div>
         </div>
         {{/if}}
 
       {{/each}}
+      {{#if hasAttribution}}
+        <div class="slide">
+          <p class="slides-attribution">{{attribution}}</p>
+        </div><!-- slide -->
+      {{/if}}
     </div>
     {{/if}}
 
