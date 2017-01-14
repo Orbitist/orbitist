@@ -44,5 +44,4 @@ Template.storyPage.rendered = function() {
     instgrm.Embeds.process()
   }, 500);
 
-
  }
