@@ -29,7 +29,7 @@ Template.tileSubmitSlideshow.events({
       }
       Session.set('image1UrlVar', result.secure_url);
       Session.set('image1IdVar', result.public_id);
-      $( '.image1UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      $( '.image1UploadThumb' ).html( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/><a href="#" class="btn btn-danger btn-xs delete-image1"><span class="fa fa-close"></span> Delete Image</a>');
       Session.set('uploadingSlideshow', 'false');
     });
   },
@@ -47,7 +47,7 @@ Template.tileSubmitSlideshow.events({
       }
       Session.set('image2UrlVar', result.secure_url);
       Session.set('image2IdVar', result.public_id);
-      $( '.image2UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      $( '.image2UploadThumb' ).html( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/><a href="#" class="btn btn-danger btn-xs delete-image2"><span class="fa fa-close"></span> Delete Image</a>');
       Session.set('uploadingSlideshow', 'false');
     });
   },
@@ -65,7 +65,7 @@ Template.tileSubmitSlideshow.events({
       }
       Session.set('image3UrlVar', result.secure_url);
       Session.set('image3IdVar', result.public_id);
-      $( '.image3UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      $( '.image3UploadThumb' ).html( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/><a href="#" class="btn btn-danger btn-xs delete-image3"><span class="fa fa-close"></span> Delete Image</a>');
       Session.set('uploadingSlideshow', 'false');
     });
   },
@@ -83,7 +83,7 @@ Template.tileSubmitSlideshow.events({
       }
       Session.set('image4UrlVar', result.secure_url);
       Session.set('image4IdVar', result.public_id);
-      $( '.image4UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      $( '.image4UploadThumb' ).html( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/><a href="#" class="btn btn-danger btn-xs delete-image4"><span class="fa fa-close"></span> Delete Image</a>');
       Session.set('uploadingSlideshow', 'false');
     });
   },
@@ -101,9 +101,35 @@ Template.tileSubmitSlideshow.events({
       }
       Session.set('image5UrlVar', result.secure_url);
       Session.set('image5IdVar', result.public_id);
-      $( '.image5UploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      $( '.image5UploadThumb' ).html( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/><a href="#" class="btn btn-danger btn-xs delete-image5"><span class="fa fa-close"></span> Delete Image</a>');
       Session.set('uploadingSlideshow', 'false');
     });
+  },
+
+  'click .delete-image1': function() {
+    Session.set('image1UrlVar', '');
+    Session.set('image1IdVar', '');
+    $( '.image1UploadThumb' ).html('');
+  },
+  'click .delete-image2': function() {
+    Session.set('image2UrlVar', '');
+    Session.set('image2IdVar', '');
+    $( '.image2UploadThumb' ).html('');
+  },
+  'click .delete-image3': function() {
+    Session.set('image3UrlVar', '');
+    Session.set('image3IdVar', '');
+    $( '.image3UploadThumb' ).html('');
+  },
+  'click .delete-image4': function() {
+    Session.set('image4UrlVar', '');
+    Session.set('image4IdVar', '');
+    $( '.image4UploadThumb' ).html('');
+  },
+  'click .delete-image5': function() {
+    Session.set('image5UrlVar', '');
+    Session.set('image5IdVar', '');
+    $( '.image5UploadThumb' ).html('');
   },
 
   'submit form': function(e, template) {

@@ -13,34 +13,44 @@
             <hr>
 
               <!-- Image slot 1 -->
-              <label>Image slot 1</label>
-              <div class="image1UploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[0].id}}"/></div>
-              <input type="file" name="image1" id="image1" class="form-control" accept="image/*" value="">
-              <textarea name="image1Caption" id="image1Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[0].caption}}"></textarea>
+              <div class="thumbnail">
+                <label>Image slot 1</label>
+                <div class="image1UploadThumb">{{#if slideshow.[0].id}}<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[0].id}}"/><a href="#" class="btn btn-danger btn-xs delete-image1"><span class="fa fa-close"></span> Delete Image</a>{{/if}}</div>
+                <input type="file" name="image1" id="image1" class="form-control" accept="image/*" value="">
+                <textarea name="image1Caption" id="image1Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[0].caption}}"></textarea>
+              </div>
 
               <!-- Image slot 2 -->
-              <label>Image slot 2</label>
-              <div class="image2UploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[1].id}}"/></div>
-              <input type="file" name="image2" id="image2" class="form-control" accept="image/*" value="">
-              <textarea name="image2Caption" id="image2Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[1].caption}}"></textarea>
+              <div class="thumbnail">
+                <label>Image slot 2</label>
+                <div class="image2UploadThumb">{{#if slideshow.[1].id}}<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[1].id}}"/><a href="#" class="btn btn-danger btn-xs delete-image2"><span class="fa fa-close"></span> Delete Image</a>{{/if}}</div>
+                <input type="file" name="image2" id="image2" class="form-control" accept="image/*" value="">
+                <textarea name="image2Caption" id="image2Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[1].caption}}"></textarea>
+              </div>
 
               <!-- Image slot 3 -->
-              <label>Image slot 3</label>
-              <div class="image3UploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[2].id}}"/></div>
-              <input type="file" name="image3" id="image3" class="form-control" accept="image/*" value="">
-              <textarea name="image3Caption" id="image3Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[2].caption}}"></textarea>
+              <div class="thumbnail">
+                <label>Image slot 3</label>
+                <div class="image3UploadThumb">{{#if slideshow.[2].id}}<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[2].id}}"/><a href="#" class="btn btn-danger btn-xs delete-image3"><span class="fa fa-close"></span> Delete Image</a>{{/if}}</div>
+                <input type="file" name="image3" id="image3" class="form-control" accept="image/*" value="">
+                <textarea name="image3Caption" id="image3Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[2].caption}}"></textarea>
+              </div>
 
               <!-- Image slot 4 -->
-              <label>Image slot 4</label>
-              <div class="image4UploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[3].id}}"/></div>
-              <input type="file" name="image4" id="image4" class="form-control" accept="image/*" value="">
-              <textarea name="image4Caption" id="image4Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[3].caption}}"></textarea>
+              <div class="thumbnail">
+                <label>Image slot 4</label>
+                <div class="image4UploadThumb">{{#if slideshow.[3].id}}<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[3].id}}"/><a href="#" class="btn btn-danger btn-xs delete-image4"><span class="fa fa-close"></span> Delete Image</a>{{/if}}</div>
+                <input type="file" name="image4" id="image4" class="form-control" accept="image/*" value="">
+                <textarea name="image4Caption" id="image4Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[3].caption}}"></textarea>
+              </div>
 
               <!-- Image slot 5 -->
-              <label>Image slot 5</label>
-              <div class="image5UploadThumb"><img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[4].id}}"/></div>
-              <input type="file" name="image5" id="image5" class="form-control" accept="image/*" value="">
-              <textarea name="image5Caption" id="image5Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[4].caption}}"></textarea>
+              <div class="thumbnail">
+                <label>Image slot 5</label>
+                <div class="image5UploadThumb">{{#if slideshow.[4].id}}<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{slideshow.[4].id}}"/><a href="#" class="btn btn-danger btn-xs delete-image5"><span class="fa fa-close"></span> Delete Image</a>{{/if}}</div>
+                <input type="file" name="image5" id="image5" class="form-control" accept="image/*" value="">
+                <textarea name="image5Caption" id="image5Caption" class="form-control" rows="5" placeholder="Caption your image..." value="{{slideshow.[4].caption}}"></textarea>
+              </div>
 
               {{> tileAdvancedOptionsEdit}}
           </div>
