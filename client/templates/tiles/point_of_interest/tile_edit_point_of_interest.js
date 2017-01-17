@@ -11,6 +11,9 @@ Template.tileEditPointOfInterest.helpers({
   },
   uploadingImage: function(n) {
     return Session.equals('uploadingImage', n);
+  },
+  hasImage: function() {
+    return this.imageUrl.length > 1;
   }
 });
 
@@ -30,9 +33,14 @@ Template.tileEditPointOfInterest.events({
       Session.set('imageUrlVar', result.secure_url);
       Session.set('imageIdVar', result.public_id);
       Session.set('uploadingImage', 'false');
-      $( '.imageUploadThumb' ).replaceWith( '<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/>');
+      $( '.imageUploadThumb' ).replaceWith('<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/' + result.public_id + '"/><a href="#" class="btn btn-danger btn-xs delete-image"><span class="fa fa-close"></span> Delete Image</a>');
 
     });
+  },
+  'click .delete-image': function() {
+    Session.set('imageUrlVar', '');
+    Session.set('imageIdVar', '');
+    $( '.imageUploadThumb' ).replaceWith('');
   },
 
   'submit form': function(e, template) {
