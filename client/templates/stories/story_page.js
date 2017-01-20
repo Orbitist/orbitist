@@ -31,9 +31,6 @@ Template.storyPage.rendered = function() {
 
    //Design
    controlArrows: true,
-
-   scrollOverflow: false,
-   scrollOverflowReset: false,
    scrollBar: true,
 
    lazyLoading: true
