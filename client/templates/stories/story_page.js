@@ -34,6 +34,7 @@ Template.storyPage.rendered = function() {
 
    scrollOverflow: false,
    scrollOverflowReset: false,
+   scrollBar: true,
 
    lazyLoading: true
   });
