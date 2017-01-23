@@ -1,8 +1,8 @@
-Template.tileSubmitText.onCreated(function() {
+Template.tileSubmitFigure.onCreated(function() {
   Session.set('tileSubmitErrors', {});
 });
 
-Template.tileSubmitText.helpers({
+Template.tileSubmitFigure.helpers({
   errorMessage: function(field) {
     return Session.get('tileSubmitErrors')[field];
   },
@@ -11,7 +11,7 @@ Template.tileSubmitText.helpers({
   }
 });
 
-Template.tileSubmitText.events({
+Template.tileSubmitFigure.events({
   'submit form': function(e, template) {
     e.preventDefault();
 
@@ -22,7 +22,19 @@ Template.tileSubmitText.events({
       var topRank = 1;
     }
 
-    var $text = $(e.target).find('[name=text]');
+    var $figure = $(e.target).find('[name=figure]');
+
+    var $text = $(e.target).find('[name=description]');
+    var textInput = $text.val();
+    if (!textInput) {
+      textInput = '';
+    }
+
+    var $icon = $(e.target).find('[name=icon]');
+    var iconInput = $icon.val();
+    if (!iconInput) {
+      iconInput = '';
+    }
 
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
@@ -46,8 +58,8 @@ Template.tileSubmitText.events({
     }
 
     var tile = {
-      tileType: 'text',
-      text: $text.val(),
+      tileType: 'figure',
+      text: textInput,
       title: '',
       storyId: template.data._id,
       imageUrl: '',
@@ -62,18 +74,18 @@ Template.tileSubmitText.events({
       hours: '',
       cost: '',
       accessibility: '',
-      figure: '',
-      icon: '',
+      figure: $figure.val(),
+      icon: iconInput,
       rank: topRank,
       latitude: latInput,
       longitude: lngInput,
       tags: tagsInput,
-      attribution: attributionInput
+      attribution: attributionInput,
     };
 
     var errors = {};
-    if (! tile.text) {
-      errors.text = "Please write some content";
+    if (! tile.figure) {
+      errors.figure = "Please enter a figure";
       return Session.set('tileSubmitErrors', errors);
     }
 

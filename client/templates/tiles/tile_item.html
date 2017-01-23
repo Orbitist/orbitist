@@ -114,12 +114,22 @@
     {{/if}}
 
     {{#if tileTypeLink}}
-    <div class="tile-link">
-      <h2 class="lead link"><a href="{{url}}" target="_blank"><i class="fa fa-link"></i> {{text}} <small><i class="fa fa-external-link"></i></small></a></h2>
-    </div>
-    {{#if hasAttribution}}
-      <p><small>{{attribution}}</small></p>
+      <div class="tile-link">
+        <h2 class="lead link"><a href="{{url}}" target="_blank"><i class="fa fa-link"></i> {{text}} <small><i class="fa fa-external-link"></i></small></a></h2>
+      </div>
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
+      {{/if}}
     {{/if}}
+
+    {{#if tileTypeFigure}}
+      <div class="tile-figure">
+        <h1 class="figure"><i class="{{icon}}"></i> {{figure}}</h1>
+        <p class="center lead">{{text}}</p>
+      </div>
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
+      {{/if}}
     {{/if}}
 
 

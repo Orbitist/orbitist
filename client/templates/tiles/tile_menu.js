@@ -20,6 +20,9 @@ Template.tileMenu.events({
   'click #tileTypeSlideshow': function() {
     return Session.set('tileType', 'slideshow');
   },
+  'click #tileTypeFigure': function() {
+    return Session.set('tileType', 'figure');
+  },
   'click .popup-screen': function(e) {
     var container = $('.popup-menu');
     if (!container.is(e.target)&& container.has(e.target).length === 0) {

@@ -8,6 +8,7 @@
       <a class="btn btn-primary" id="tileTypePointOfInterest"><i class="fa fa-binoculars" aria-hidden="true"></i> Point of interest</a>
       <a class="btn btn-primary" id="tileTypeLink"><i class="fa fa-link" aria-hidden="true"></i> Link</a>
       <a class="btn btn-primary" id="tileTypeSlideshow"><i class="fa fa-window-restore" aria-hidden="true"></i> Slideshow</a>
+      <a class="btn btn-primary" id="tileTypeFigure"><i class="fa fa-percent" aria-hidden="true"></i> Figure</a>
 
 
       {{#if isTileType 'text'}}
@@ -36,6 +37,10 @@
 
       {{#if isTileType 'slideshow'}}
         {{> tileSubmitSlideshow}}
+      {{/if}}
+
+      {{#if isTileType 'figure'}}
+        {{> tileSubmitFigure}}
       {{/if}}
 
     </div><!-- popup-menu -->

@@ -225,6 +225,8 @@ Template.tileSubmitSlideshow.events({
       hours: '',
       cost: '',
       accessibility: '',
+      figure: '',
+      icon: '',
       storyId: template.data._id,
       rank: topRank,
       latitude: latInput,

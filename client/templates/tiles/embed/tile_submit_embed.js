@@ -74,6 +74,8 @@ Template.tileSubmitEmbed.events({
       hours: '',
       cost: '',
       accessibility: '',
+      figure: '',
+      icon: '',
       rank: topRank,
       latitude: latInput,
       longitude: lngInput,

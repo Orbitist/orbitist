@@ -137,6 +137,8 @@ Template.tileSubmitPointOfInterest.events({
       hours: hoursInput,
       cost: costInput,
       accessibility: accessibilityInput,
+      figure: '',
+      icon: '',
       storyId: template.data._id,
       rank: topRank,
       latitude: latInput,

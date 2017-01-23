@@ -83,6 +83,16 @@
       <h2 class="lead link"><a href="{{url}}" target="_blank"><i class="fa fa-link"></i> {{text}} <small><i class="fa fa-external-link"></i></small></a></h2>
     {{/if}}
 
+    {{#if tileTypeFigure}}
+      <div class="tile-figure">
+        <h1 class="lead link"><i class="{{icon}}"></i> {{figure}}</h1>
+        <p>{{text}}</p>
+      </div>
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
+      {{/if}}
+    {{/if}}
+
     {{> tileButtons}}
     </div>
   </div><!-- tile -->

@@ -1,0 +1,22 @@
+<template name="tileEditFigure">
+  <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'figure'}}">
+          <div class="controls">
+            <label><i class="fa fa-percent" aria-hidden="true"></i> Figure</label>
+            <input name="figure" id="figure" type="text" value="{{figure}}" placeholder="Enter a figure here" class="form-control"/>
+            <label>Description</label>
+            <textarea name="description" id="description" value="{{text}}" class="form-control" rows="5" placeholder="Describe your figure..."></textarea>
+            <label>Icon</label>
+            <input name="icon" id="icon" type="text" value="{{icon}}" placeholder="Enter a font awesome class. Eg: 'fa fa-percent'" class="form-control"/>
+            <span class="help-block">{{errorMessage 'figure'}}</span>
+              {{> tileAdvancedOptions}}
+          </div>
+      </div>
+      <input type="submit" value="Save" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete tile</a>
+      <hr/>
+    </form>
+  </div>
+</template>

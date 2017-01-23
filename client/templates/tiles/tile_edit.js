@@ -25,5 +25,8 @@ Template.tileEdit.helpers({
   },
   tileTypeLink: function() {
     return this.tileType === 'link';
+  },
+  tileTypeFigure: function() {
+    return this.tileType === 'figure';
   }
 });

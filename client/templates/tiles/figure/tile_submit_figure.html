@@ -1,0 +1,18 @@
+<template name="tileSubmitFigure">
+  <hr>
+  <form name="tile" class="tile-form form">
+    <div class="form-group {{errorClass 'figure'}}">
+        <div class="controls">
+          <label><i class="fa fa-percent" aria-hidden="true"></i> Figure</label>
+          <input name="figure" id="figure" type="text" value="" placeholder="Enter a figure here" class="form-control"/>
+          <span class="help-block">{{errorMessage 'figure'}}</span>
+          <label>Description</label>
+          <textarea name="description" id="description" value="" class="form-control" rows="5" placeholder="Describe your figure..."></textarea>
+          <label>Icon</label>
+          <input name="icon" id="icon" type="text" value="" placeholder="Enter a font awesome class. Eg: 'fa fa-percent'" class="form-control"/>
+            {{> tileAdvancedOptions}}
+        </div>
+    </div>
+    {{> tileSubmitButton}}
+  </form>
+</template>
