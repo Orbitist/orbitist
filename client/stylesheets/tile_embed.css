@@ -35,3 +35,7 @@ twitterwidget {
   height: 100%;
   z-index: 999999999;
 }
+
+.infogram-embed {
+  height: 100%;
+}
