@@ -27,13 +27,12 @@
     {{#if tileTypeSlideshow}}
       {{#each slideshow}}
         {{#if hasSlide}}
-        <div class="slide">
+
           <img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{id}}"/>
           {{#if hasCaption}}
             <small>{{caption}}</small>
             <hr>
           {{/if}}
-        </div>
         {{/if}}
       {{/each}}
     {{/if}}
