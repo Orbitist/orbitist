@@ -26,8 +26,6 @@ Template.storyPage.rendered = function() {
    easing: 'easeInOutCubic',
    easingcss3: 'ease',
 
-   navigation: true,
-
    //Accessibility
    keyboardScrolling: true,
 

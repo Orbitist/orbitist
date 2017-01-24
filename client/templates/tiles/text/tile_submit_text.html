@@ -4,11 +4,35 @@
     <div class="form-group {{errorClass 'text'}}">
         <div class="controls">
           <label>Text</label>
-            <textarea name="text" id="text" class="form-control" rows="5" placeholder="Tell a story..."></textarea>
+            <textarea name="text" id="text" class="form-control simple-editor" rows="5" placeholder="Tell a story..."></textarea>
             <span class="help-block">{{errorMessage 'text'}}</span>
             {{> tileAdvancedOptions}}
         </div>
     </div>
     {{> tileSubmitButton}}
+
+    <script>
+      $('.simple-editor').trumbowyg({
+        btnsDef: {
+          formattingLight: {
+            dropdown: ['h1', 'p'],
+            ico: 'formatting'
+          }
+        },
+        fullscreenable: false,
+        btns: [
+            ['formattingLight'],
+            ['bold'],
+            ['italic'],
+            ['justifyLeft'],
+            ['justifyCenter'],
+            'btnGrp-lists',
+            ['link'],
+            ['removeformat']
+        ],
+        autogrow: true
+      });
+    </script>
+
   </form>
 </template>

@@ -4,7 +4,7 @@
       <div class="form-group {{errorClass 'text'}}">
         <div class="controls">
           <label>Text</label>
-          <textarea name="text" id="text" class="form-control" rows="5" value="{{text}}"></textarea>
+          <textarea name="text" id="text" class="form-control simple-editor" rows="5" value="{{text}}"></textarea>
           <span class="help-block">{{errorMessage 'text'}}</span>
           {{> tileAdvancedOptionsEdit}}
         </div>
@@ -14,5 +14,29 @@
       <a class="btn btn-danger delete" href="#">Delete tile</a>
       <hr/>
     </form>
+
+    <script>
+      $('.simple-editor').trumbowyg({
+        btnsDef: {
+          formattingLight: {
+            dropdown: ['h1', 'p'],
+            ico: 'formatting'
+          }
+        },
+        fullscreenable: false,
+        btns: [
+            ['formattingLight'],
+            ['bold'],
+            ['italic'],
+            ['justifyLeft'],
+            ['justifyCenter'],
+            'btnGrp-lists',
+            ['link'],
+            ['removeformat']
+        ],
+        autogrow: true
+      });
+    </script>
+
   </div>
 </template>
