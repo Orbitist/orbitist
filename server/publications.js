@@ -1,9 +1,10 @@
 Meteor.publish('stories', function(options) {
+  var user = this.userId;
   check(options, {
     sort: Object,
     limit: Number
   });
-  return Stories.find({}, options);
+  return Stories.find({userId: user}, options);
 });
 
 Meteor.publish('singleStory', function(id) {
