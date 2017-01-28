@@ -131,6 +131,7 @@ Template.tileEditPointOfInterest.events({
       imageId: imageIdVar,
       phone: phoneInput,
       email: emailInput,
+      website: $(e.target).find('[name=website]').val(),
       hours: hoursInput,
       cost: costInput,
       accessibility: accessibilityInput,

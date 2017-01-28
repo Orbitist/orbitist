@@ -65,6 +65,9 @@
           {{#if hasEmail}}
             <p><i class="fa fa-at" aria-hidden="true"></i> {{email}}</p>
           {{/if}}
+          {{#if website}}
+            <p><i class="fa fa-globe" aria-hidden="true"></i> <a href="{{website}}" target="_blank">{{website}}</a></p>
+          {{/if}}
           {{#if hasHours}}
             <p><i class="fa fa-clock-o" aria-hidden="true"></i> {{hours}}</p>
           {{/if}}
