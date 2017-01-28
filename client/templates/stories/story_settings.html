@@ -3,10 +3,12 @@
     <form>
       <div class="form-group {{errorClass 'title'}}">
         <small>Story ID: <code>{{_id}}</code></small><br>
-        <label class="control-label" for="title">Title</label>
         <div class="controls">
+            <label class="control-label" for="title">Title</label>
             <input name="title" id="title" type="text" value="{{title}}" placeholder="Name your story" class="form-control"/>
             <span class="help-block">{{errorMessage 'title'}}</span>
+            <label class="control-label" for="byline">By Line</label>
+            <input name="byline" id="byline" type="text" value="{{byline}}" placeholder="Who is this story by?" class="form-control"/>
         </div>
       </div>
       <input type="submit" value="Save" class="btn btn-primary submit"/>

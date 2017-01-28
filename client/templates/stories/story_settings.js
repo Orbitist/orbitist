@@ -18,7 +18,8 @@ Template.storySettings.events({
     var currentStoryId = this._id;
 
     var storyProperties = {
-      title: $(e.target).find('[name=title]').val()
+      title: $(e.target).find('[name=title]').val(),
+      byline: $(e.target).find('[name=byline]').val()
     }
 
     var errors = validateStory(storyProperties);

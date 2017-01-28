@@ -16,7 +16,8 @@ Template.storySubmit.events({
     e.preventDefault();
 
     var story = {
-      title: $(e.target).find('[name=title]').val()
+      title: $(e.target).find('[name=title]').val(),
+      byline: $(e.target).find('[name=byline]').val()
     };
 
     var errors = validateStory(story);
