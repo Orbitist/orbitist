@@ -9,6 +9,7 @@
       <a class="btn btn-primary" id="tileTypeLink"><i class="fa fa-link" aria-hidden="true"></i> Link</a>
       <a class="btn btn-primary" id="tileTypeSlideshow"><i class="fa fa-window-restore" aria-hidden="true"></i> Slideshow</a>
       <a class="btn btn-primary" id="tileTypeFigure"><i class="fa fa-percent" aria-hidden="true"></i> Figure</a>
+      <a class="btn btn-primary" id="tileTypeQuote"><i class="fa fa-quote-left" aria-hidden="true"></i> Quote</a>
 
 
       {{#if isTileType 'text'}}
@@ -41,6 +42,10 @@
 
       {{#if isTileType 'figure'}}
         {{> tileSubmitFigure}}
+      {{/if}}
+
+      {{#if isTileType 'quote'}}
+        {{> tileSubmitQuote}}
       {{/if}}
 
     </div><!-- popup-menu -->

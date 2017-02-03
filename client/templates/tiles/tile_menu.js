@@ -23,6 +23,9 @@ Template.tileMenu.events({
   'click #tileTypeFigure': function() {
     return Session.set('tileType', 'figure');
   },
+  'click #tileTypeQuote': function() {
+    return Session.set('tileType', 'quote');
+  },
   'click .popup-screen': function(e) {
     var container = $('.popup-menu');
     if (!container.is(e.target)&& container.has(e.target).length === 0) {

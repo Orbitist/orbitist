@@ -1,0 +1,26 @@
+<template name="tileSubmitQuote">
+  <hr>
+  <form name="tile" class="tile-form form">
+    <div class="form-group {{errorClass 'title'}}">
+      {{#if uploadingImage 'true'}}
+        {{> uploading}}
+      {{/if}}
+      <div class="controls">
+
+        <label>Quote</label>
+        <textarea name="quote" id="quote" class="form-control" rows="5" placeholder="Write the quote here..." value=""></textarea>
+        <span class="help-block">{{errorMessage 'quote'}}</span>
+
+        <label>Dictator</label>
+        <input name="dictator" id="dictator" type="text" value="" placeholder="Name of the person who said this..." class="form-control"/>
+
+        <label>Image</label>
+        <div class="imageUploadThumb"></div>
+        <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
+
+        {{> tileAdvancedOptions}}
+      </div>
+    </div>
+    {{> tileSubmitButton}}
+  </form>
+</template>
