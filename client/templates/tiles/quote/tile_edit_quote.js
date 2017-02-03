@@ -50,57 +50,11 @@ Template.tileEditQuote.events({
 
     var imageUrlVar = Session.get('imageUrlVar');
     var imageIdVar = Session.get('imageIdVar');
-
     var $checkImageField = $(e.target).find('[name=image]');
     var imageInput = $checkImageField.val();
     if (imageInput < 1 && this.imageUrl > 1) {
       imageUrlVar = this.imageUrl;
       imageIdVar = this.imageId;
-    } else if (imageInput < 1 && this.imageUrl < 1) {
-      imageUrlVar = '';
-      imageIdVar = '';
-    }
-
-    var $text = $(e.target).find('[name=text]');
-    var textInput = $text.val();
-    if (!textInput) {
-      textInput = '';
-    }
-
-    var $title = $(e.target).find('[name=title]');
-    var titleInput = $title.val();
-    if (!titleInput) {
-      titleInput = '';
-    }
-
-    var $phone = $(e.target).find('[name=phone]');
-    var phoneInput = $phone.val();
-    if (!phoneInput) {
-      phoneInput = '';
-    }
-
-    var $email = $(e.target).find('[name=email]');
-    var emailInput = $email.val();
-    if (!emailInput) {
-      emailInput = '';
-    }
-
-    var $hours = $(e.target).find('[name=hours]');
-    var hoursInput = $hours.val();
-    if (!hoursInput) {
-      hoursInput = '';
-    }
-
-    var $cost = $(e.target).find('[name=cost]');
-    var costInput = $cost.val();
-    if (!costInput) {
-      costInput = '';
-    }
-
-    var $accessibility = $(e.target).find('[name=accessibility]');
-    var accessibilityInput = $accessibility.val();
-    if (!accessibilityInput) {
-      accessibilityInput = '';
     }
 
     var $lat = $(e.target).find('[name=lat]');
@@ -118,32 +72,20 @@ Template.tileEditQuote.events({
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
-    var $attribution = $(e.target).find('[name=attribution]');
-    var attributionInput = $attribution.val();
-    if (!attributionInput) {
-      attributionInput = '';
-    }
-
     var tileProperties = {
-      text: textInput,
-      title: titleInput,
+      text: $(e.target).find('[name=quote]').val(),
+      dictator: $(e.target).find('[name=dictator]').val(),
       imageUrl: imageUrlVar,
       imageId: imageIdVar,
-      phone: phoneInput,
-      email: emailInput,
-      website: $(e.target).find('[name=website]').val(),
-      hours: hoursInput,
-      cost: costInput,
-      accessibility: accessibilityInput,
       latitude: latInput,
       longitude: lngInput,
       tags: tagsInput,
-      attribution: attributionInput
+      attribution: $(e.target).find('[name=attribution]').val()
     }
 
     var errors = {};
-    if (! tileProperties.title) {
-      errors.title = "Please add a title.";
+    if (! tileProperties.text) {
+      errors.quote = "Please add a quote.";
       return Session.set('tileSubmitErrors', errors);
     }
     Tiles.update(currentTileId, {$set: tileProperties}, function(error) {

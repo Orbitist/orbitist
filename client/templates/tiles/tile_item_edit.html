@@ -95,6 +95,19 @@
       {{/if}}
     {{/if}}
 
+    {{#if tileTypeQuote}}
+      <div class="tile-quote">
+        {{#if hasImage}}
+          <img class="img-responsive img-rounded center-block" style="max-height:150px;" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/>
+        {{/if}}
+        <h6 class="center"><i class="fa fa-quote-left"></i></h6>
+        <p class="center"><small>{{text}} ~{{dictator}}</small></p>
+      </div>
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
+      {{/if}}
+    {{/if}}
+
     {{> tileButtons}}
     </div>
   </div><!-- tile -->

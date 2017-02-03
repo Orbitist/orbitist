@@ -1,0 +1,31 @@
+<template name="tileEditQuote">
+  <div class="page">
+    <form>
+      <div class="form-group {{errorClass 'quote'}}">
+          {{#if uploadingImage 'true'}}
+            {{> uploading}}
+          {{/if}}
+          <div class="controls">
+
+            <label>Quote</label>
+            <textarea name="quote" id="quote" class="form-control" rows="5" placeholder="Write the quote here..." value="{{text}}"></textarea>
+            <span class="help-block">{{errorMessage 'quote'}}</span>
+
+            <label>Dictator</label>
+            <input name="dictator" id="dictator" type="text" value="{{dictator}}" placeholder="Name of the person who said this..." class="form-control"/>
+
+            <label>Image</label>
+            <div class="imageUploadThumb">{{#if hasImage}}<img class="img-responsive" src="https://res.cloudinary.com/orbitist/image/upload/t_1500/{{imageId}}"/><a href="#" class="btn btn-danger btn-xs delete-image"><span class="fa fa-close"></span> Delete Image</a>{{/if}}</div>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*" value="">
+            <span class="help-block">{{errorMessage 'image'}}</span>
+
+            {{> tileAdvancedOptionsEdit}}
+          </div>
+      </div>
+      <input type="submit" value="Save" class="btn btn-primary submit"/>
+      <hr/>
+      <a class="btn btn-danger delete" href="#">Delete tile</a>
+      <hr>
+    </form>
+  </div>
+</template>

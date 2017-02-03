@@ -32,6 +32,10 @@
     {{> tileEditFigure}}
   {{/if}}
 
+  {{#if tileTypeQuote}}
+    {{> tileEditQuote}}
+  {{/if}}
+
   <p style="position:fixed;top:0px;left:50px;"><a class="btn btn-success btn-xs" href="{{pathFor 'storyEdit' _id=this.storyId}}"><span class="fa fa-arrow-left"></span> Back to story</a></p>
 
 </template>

@@ -58,6 +58,9 @@ Template.tileItemEdit.helpers({
   },
   tileTypeFigure: function() {
     return this.tileType === 'figure';
+  },
+  tileTypeQuote: function() {
+    return this.tileType === 'quote';
   }
 });
 
