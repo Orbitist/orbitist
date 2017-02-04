@@ -21,36 +21,18 @@ Template.tileEditEmbed.events({
 
     var $text = $(e.target).find('[name=text]');
     var textInput = $text.val();
-    if (!textInput) {
-      textInput = '';
-    }
-
-    var $title = $(e.target).find('[name=title]');
-    var titleInput = $title.val();
-    if (!titleInput) {
-      titleInput = '';
-    }
 
     var $lat = $(e.target).find('[name=lat]');
     var latInput = Number($lat.val());
-    if (!latInput) {
-      latInput = NaN;
-    }
 
     var $lng = $(e.target).find('[name=lng]');
     var lngInput = Number($lng.val());
-    if (!lngInput) {
-      lngInput = NaN;
-    }
 
     var $tags = $(e.target).find('[name=tags]');
     var tagsInput = $tags.tagsinput('items');
 
     var $attribution = $(e.target).find('[name=attribution]');
     var attributionInput = $attribution.val();
-    if (!attributionInput) {
-      attributionInput = '';
-    }
 
     var tileProperties = {
       embed: $embed.val(),

@@ -38,13 +38,7 @@
     {{/if}}
 
     {{#if tileTypeEmbed}}
-    <div class="tile-embed">
-        {{{embed}}}
-        <div class="embed-overlay"></div>
-      {{#if hasText}}
-        <p>{{text}}</p>
-      {{/if}}
-    </div>
+      {{> tileItemEmbedEdit}}
     {{/if}}
 
     {{#if tileTypePointOfInterest}}

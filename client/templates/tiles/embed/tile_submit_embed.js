@@ -22,57 +22,21 @@ Template.tileSubmitEmbed.events({
       var topRank = 1;
     }
 
-    var $embed = $(e.target).find('[name=embed]');
-
-    var $text = $(e.target).find('[name=text]');
-    var textInput = $text.val();
-    if (!textInput) {
-      textInput = '';
-    }
-
-    var $title = $(e.target).find('[name=title]');
-    var titleInput = $title.val();
-    if (!titleInput) {
-      titleInput = '';
-    }
-
-    var $lat = $(e.target).find('[name=lat]');
-    var latInput = Number($lat.val());
-    if (!latInput) {
-      latInput = NaN;
-    }
-
-    var $lng = $(e.target).find('[name=lng]');
-    var lngInput = Number($lng.val());
-    if (!lngInput) {
-      lngInput = NaN;
-    }
-
-    var $tags = $(e.target).find('[name=tags]');
-    var tagsInput = $tags.tagsinput('items');
-
-    var $attribution = $(e.target).find('[name=attribution]');
-    var attributionInput = $attribution.val();
-    if (!attributionInput) {
-      attributionInput = '';
-    }
-
     var tile = {
       tileType: 'embed',
-      text: textInput,
-      title: titleInput,
+      text: $(e.target).find('[name=text]').val(),
       storyId: template.data._id,
-      embed: $embed.val(),
+      embed: $(e.target).find('[name=embed]').val(),
       rank: topRank,
-      latitude: latInput,
-      longitude: lngInput,
-      tags: tagsInput,
-      attribution: attributionInput
+      latitude: Number($(e.target).find('[name=lat]').val()),
+      longitude: Number($(e.target).find('[name=lng]').val()),
+      tags: $(e.target).find('[name=tags]').tagsinput('items'),
+      attribution: $(e.target).find('[name=attribution]').val()
     };
 
     var errors = {};
     if (! tile.embed) {
-      errors.embed = "Please write some content";
+      errors.embed = "Please enter an embed code!";
       return Session.set('tileSubmitErrors', errors);
     }
 
@@ -80,7 +44,6 @@ Template.tileSubmitEmbed.events({
       if (error){
         throwError(error.reason);
       } else {
-        $embed.val('');
         Session.set('tileMenu', 'false');
       }
     });

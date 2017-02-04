@@ -1,0 +1,24 @@
+<template name="tileItemEmbed">
+  <div class="tile-embed">
+    {{{embed}}}
+    <div class="embed-overlay"></div>
+  </div>
+  {{#if hasText}}
+    <div class="tile-caption">
+      <p>{{text}}</p>
+      {{#if hasAttribution}}
+        <p><small>{{attribution}}</small></p>
+      {{/if}}
+    </div>
+  {{/if}}
+</template>
+
+<template name="tileItemEmbedEdit">
+  <div class="tile-embed">
+      {{{embed}}}
+      <div class="embed-overlay"></div>
+    {{#if hasText}}
+      <p>{{text}}</p>
+    {{/if}}
+  </div>
+</template>
